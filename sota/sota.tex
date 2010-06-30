@@ -10,7 +10,7 @@
 %%========================================
 %% Commands: pdflatex tese
 %%           bibtex tese
-%%           makeindex tese (only if creating an index) 
+%%           makeindex tese (only if creating an index)
 %%           pdflatex tese
 %%========================================
 
@@ -24,10 +24,10 @@
 \usepackage[english]{babel}
 
 %% For the final version, comment next line and uncomment the second line
-\usepackage[portuges,provisional,numericrefs]{feupteses}
-%\usepackage[portuges]{feupteses} 
+\usepackage[portuges,provisional,alpharefs]{feupteses}
+%\usepackage[portuges]{feupteses}
 
-%% Options: 
+%% Options:
 %% - portuges: titles, etc in portuguese
 %% - provisional: the thesis has not been approved yet
 %% - alpharefs: bibliography references are alphabetic (style
@@ -35,7 +35,7 @@
 %%   document sources)
 %% - numericrefs: bibliography references are numbered (in order of citation)
 %% ( by default: author-date format of the ``natbib'' package is used.
-%%   The portuguese version requires the file ``plainnat-pt.bst'' to be 
+%%   The portuguese version requires the file ``plainnat-pt.bst'' to be
 %%   present in the same directory as the document sources.)
 
 %% Provide a version number in order to keep track of
@@ -124,11 +124,11 @@
 \StartBody
 
 %% TIP: use a separate  file for each
-\include{chapter1} 
+\include{chapter1}
 \include{chapter2}
 \include{chapter3}
 \include{chapter4}
-\include{chapter5} 
+\include{chapter5}
 
 %% Comment next 2 commands if numbered appendixes are not used
 \appendix
@@ -140,14 +140,15 @@
 
 \begin{singlespace}
   %% Bibliography
-  %% Comment the next command if BibTeX file not used, 
+  %% Comment the next command if BibTeX file not used,
   %% bibliography is in ``myrefs.bib''
-  \PrintBib{myrefs}
+  \PrintBib{sota}
 
   %% Index
-  %% Uncomment next command if index is required, 
+  %% Uncomment next command if index is required,
   %% don't forget to run ``makeindex tese'' command
   %\PrintIndex
 \end{singlespace}
 
 \end{document}
+
