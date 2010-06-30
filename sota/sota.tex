@@ -1,0 +1,153 @@
+%% FEUP THESIS STYLE for LaTeX2e
+%% how to use feupteses (changed from the original for MIEEC)
+%%
+%% FEUP, JCL & JCF, Sun Jan 18 21:34:13 2009
+%% Version v2009-rc1 (MIEEC)
+%%
+%% PLEASE send improvements to jlopes at fe.up.pt, jcf at fe.up.pt
+%%
+
+%%========================================
+%% Commands: pdflatex tese
+%%           bibtex tese
+%%           makeindex tese (only if creating an index) 
+%%           pdflatex tese
+%%========================================
+
+\documentclass[11pt,a4paper,twoside,openright]{report}
+
+%% For iso-8858-1 (latin1), comment next line and uncomment the second line
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+
+%% Use option portuges if needed
+\usepackage[english]{babel}
+
+%% For the final version, comment next line and uncomment the second line
+\usepackage[portuges,provisional,numericrefs]{feupteses}
+%\usepackage[portuges]{feupteses} 
+
+%% Options: 
+%% - portuges: titles, etc in portuguese
+%% - provisional: the thesis has not been approved yet
+%% - alpharefs: bibliography references are alphabetic (style
+%%   alpha-pt.bst must be present in the same directory as the
+%%   document sources)
+%% - numericrefs: bibliography references are numbered (in order of citation)
+%% ( by default: author-date format of the ``natbib'' package is used.
+%%   The portuguese version requires the file ``plainnat-pt.bst'' to be 
+%%   present in the same directory as the document sources.)
+
+%% Provide a version number in order to keep track of
+%% thesis versions (it will printed in the footer of most pages)
+
+\version{0.99}
+
+%% The version will automatically ``disappear'' in the final
+%% (non-provisional) version of the document.
+
+%% Uncomment to create an index (at the end of the document)
+%\makeindex
+
+%% path to the figures directory
+%% TIP: use folder ``figures'' to keep all your figures
+\graphicspath{{figures/}}
+
+%%----------------------------------------
+%% TIP: if you want to define more macros, use an external file to
+%% keep them
+\include{mymacros}
+%%----------------------------------------
+
+%%========================================
+%% Start of document
+%%========================================
+\begin{document}
+
+%%----------------------------------------
+%% Information about the work
+%%----------------------------------------
+\title{End-User Reconfiguration of Applications using Adaptive Object-Models}
+\author{João Gradim Pereira}
+\degree{Mestrado Integrado em Engenharia Informática}
+%% Date of submission
+\thesisdate{July 16 2010}
+
+%% insert copyright text if used
+\copyrightnotice{João Gradim Pereira, 2010}
+
+\supervisor{Supervisor}{Ademar Aguiar}{(Ph.D)}
+%% Uncomment next line if necessary
+\supervisor{Co-supervisor}{Hugo Sereno Ferreira}{(Ph.D. AbD)}
+
+%% Uncomment committee stuff in the final version if used
+%\committeetext{Aprovado em provas públicas pelo Júri:}
+%\committeemember{Presidente}{Nome do presidente do júri}{(Título)}
+%\signature
+%\committeemember{Arguente}{Nome do arguente do júri}{(Título)}
+%\signature
+%\committeemember{Vogal}{Nome do vogal do júri}{(Título)}
+%\signature
+%\committeedate{31 de Julho de 2009}
+
+%% specify cover logo (in folder ``figures'')
+\logo{feup-logo.png}
+
+%%----------------------------------------
+%% Cover page(s)
+%%----------------------------------------
+\maketitle
+%% Uncomment next line in the final version if used
+%\committeepage
+
+%% Preliminary materials
+\StartPrelim
+\begin{singlespace}
+  \include{abstract} % the abstract
+  \include{acknows}  % the acknowledgments
+  \include{quote}    % initial quotation if desired
+  \cleardoublepage
+  \pdfbookmark[0]{Contents}{contents}
+  \tableofcontents
+  \cleardoublepage
+   \pdfbookmark[0]{List of Figures}{figures}
+  \listoffigures
+  \cleardoublepage
+  \pdfbookmark[0]{List of Tables}{tables}
+  \listoftables
+  \include{abbrevs}  % the list of abbreviations used
+\end{singlespace}
+
+%%----------------------------------------
+%% Body
+%%----------------------------------------
+\StartBody
+
+%% TIP: use a separate  file for each
+\include{chapter1} 
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5} 
+
+%% Comment next 2 commands if numbered appendixes are not used
+\appendix
+\include{appendix1}
+
+%%----------------------------------------
+%% Final materials
+%%----------------------------------------
+
+\begin{singlespace}
+  %% Bibliography
+  %% Comment the next command if BibTeX file not used, 
+  %% bibliography is in ``myrefs.bib''
+  \PrintBib{myrefs}
+
+  %% Index
+  %% Uncomment next command if index is required, 
+  %% don't forget to run ``makeindex tese'' command
+  %\PrintIndex
+\end{singlespace}
+
+\end{document}

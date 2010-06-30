@@ -1,0 +1,3 @@
+Distribution: MIEEC
+Current version: v2009c
+feupteses.sty: 0.9c
