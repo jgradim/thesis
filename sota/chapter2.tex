@@ -4,15 +4,36 @@
 
 Generative programming methods approach the adaptability of a system by using an ontological model representative of this system to automatically create executable artifacts or code skeleton than can be further refined according to different needs.
 
-Rails scaffolding is an excelent example of this approach, which will be further explained in Section \ref{sec:ror}
+Rails scaffolding and model generation is an excellent example of this approach, which will be further explained in Section \ref{sec:ror}
 
 \subsection{Model-Driven Engineering}\label{sec:mda}
 
-Model-Driven Engineering first appeared in 2001 \cite{mda_omg} as an answer to the growing complexity system architectures. This growing complexity and the lack of a integrated view ``forced many developers to implement suboptimal solutions that unnecessarily duplicate code, violate key architectural principles, and complicate system evolution and quality assurance'' \cite{Sch06}.
+Model-Driven Engineering first appeared in 2001 \cite{Mil03} as an answer to the growing complexity system architectures. This growing complexity and the lack of a integrated view ``forced many developers to implement suboptimal solutions that unnecessarily duplicate code, violate key architectural principles, and complicate system evolution and quality assurance'' \cite{Sch06}.
+
+To address these issues, Model-Driven engineering combines \textit{domain-specific modeling languages} with \textit{transformation engines} and \textit{generators} in order to generate various types of artifacts, such as source code or alternative model definitions.
+
+% why it's a good thing
+The usage of DSMLs ensures that the domain model is perfectly captured in terms of syntax and semantics. This guarantees a flatter learning curve as the concepts present in the language are already known by the domain experts. This also helps a broader range of experts, such as system engineers and experienced software architects, ensure that software systems meet user needs.
+
+ Th ability to synthesize artifacts from models helps ensure the consistency between application implementations and analysis information associated with functional and quality of service requirements captured by models.
 
 \subsection{Ruby On Rails}\label{sec:ror}
 
+Ruby on Rails is a full-stack Web framework, initially developed by David Heinemeier Hansson in 2003, based on the MVC design pattern. As stated by \cite{rubyonrails}:
+
+\begin{quote}
+  ``Ruby on Rails is an open-source that's optimized for programmers happiness and sustainable productivity. It lets you write beautiful code by favoring convention over configuration.''
+\end{quote}
+
+As for code generation, the Ruby on Rails framework includes a series of mechanisms for system artifacts generation, be it Models, Controllers or even Views. It does so by analyzing the underlying relational database model and deriving the model specifications from the column's type and name. However, RoR does not generate a static model definition, as it deduces the necessary information whenever the system is loaded. Instead, it uses these informations to create an adequate code skeleton for basic CRUD operations in views, greatly accelerating the development process by providing the developers with a basic blueprint of a fully functional system that can be refined and tailored to specific needs.
+
 \subsection{Frameworks}\label{sec:frameworks}
+
+Frameworks provide a series of loosely-coupled components created for a specific purpose that provide generic functionality for the creation of software systems. These components can be overriden or specialized in order to create specific functionality. Frameworks can improve developer productivity and improve the quality, reliability and robustness of new software.  Developer productivity is improved by allowing developers to focus on the unique requirements of their application instead of spending time on application infrastructure.
+
+Frameworks can be used together with code-generation techniques \cite{DH04} to improve the overall production speed ???.
+
+XNA\cite{xna} and RoR\cite{rubyonrails} are good examples of popular frameworks that aim to cut development time and costs.
 
 %-------------------------------------------------------------------------------
 
