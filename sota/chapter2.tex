@@ -49,11 +49,15 @@ A metaprogramming system is a programming facility (subprogramming system or lan
 
 Ruby is a dynamic, pure object-oriented programming language. It developed by Japanese programmer Yukihiro Matsumoto and it was first released to public in 1995. In its author words, Ruby was created to be a ``a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write''\cite{ruby}.
 
+The Ruby language was designed with a meta-architecture in mind: it allows for changes to class definitions in run-time, constantly adapting to change. It does so by providing open, active class definitions \cite{metaprogramming_ruby}.
+
 \subsection{Adaptive Object-Models}\label{sec:aom}
 
 Despite all of the advances in the aforementioned areas, most (if not all) the currently used techniques and methodologies still require a programmer or a domain expert in order to modify a system definition and model. A specific type of architecture is required for the end-user to be able to modify part or the entirety of a system to fit the underlying model to their own needs.
 
 As such, an end-user is not expected to have kind of knowledge about programming, design patterns and system architectures, or about a system of this type comes to be. However, the end-user is the most knowledgeable part of the development chain, in regards to how the system should behave.
 
-An Adaptive Object-Model is a system that represents classes, attributes, relationships, and behavior as \textit{metadata} \cite{YBJ01}.
+An Adaptive Object-Model architecture is a system architecture that represents classes, attributes, relationships, and behavior as \textit{metadata}. The system definition is based on instances of model abstractions rather than classes. This allows the modification of these model abstractions in run-time to reflect changes in the domain, effectively modifying the system behavior. As a direct consequence, the system instantly adapts to these changes, making it adaptable to change, without the need for recompiling or redeploying \cite{YBJ01}.
+
+\subsubsection{Architecture}\label{sec:aom:architecture}
 
