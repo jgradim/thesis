@@ -1,4 +1,4 @@
-TARGET=sota
+TARGET=thesis
 
 all:
 	pdflatex $(TARGET).tex
