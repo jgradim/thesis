@@ -1,163 +1,67 @@
-% FEUP THESIS STYLE for LaTeX2e
-% how to use feupteses (changed from the original for MIEEC)
-%
-% FEUP, JCL & JCF, Tue May 20 18:53:15 2008
-%
-% PLEASE send improvements to jlopes at fe.up.pt, jcf at fe.up.pt
-%
+\chapter{State Of The Art in Adaptive Systems}\label{chap:sota}
 
-%%========================================
-%% Commands: pdflatex mieic
-%%           bibtex mieic
-%%           makeindex mieic (only if crating an index)
-%%           pdflatex mieic
-%%========================================
+\section{Generative Programming}\label{sec:generative_programming}
 
-%% For one side layout comment next line and uncomment the second line
-\documentclass[11pt,a4paper,twoside,openright]{report}
-%\documentclass[11pt,a4paper]{report}
+Generative programming methods approach the adaptability of a system by using an ontological model representative of this system to automatically create executable artifacts or code skeleton than can be further refined according to different needs.
 
-%% For iso-8859-1 (latin1), comment next line and uncomment the second line
-\usepackage[utf8]{inputenc}
-%\usepackage[latin1]{inputenc}
+Rails scaffolding and model generation is an excellent example of this approach, which will be further explained in Section \ref{sec:ror}
 
-%% Use option portuges if needed
-\usepackage[english]{babel}
+\subsection{Model-Driven Engineering}\label{sec:mda}
 
-%% For the final version, comment next line and uncomment the second line
-%\usepackage[provisional,alpharefs]{feupteses}
-\usepackage[alpharefs]{feupteses}
+Model-Driven Engineering first appeared in 2001 \cite{Mil03} as an answer to the growing complexity system architectures. This growing complexity and the lack of a integrated view ``forced many developers to implement suboptimal solutions that unnecessarily duplicate code, violate key architectural principles, and complicate system evolution and quality assurance'' \cite{Sch06}.
 
-\usepackage{float}
+To address these issues, Model-Driven engineering combines \textit{domain-specific modeling languages} (DSMLs) with \textit{transformation engines} and \textit{generators} in order to generate various types of artifacts, such as source code or alternative model definitions.
 
-%% Options:
-%% - portuges: titles, etc in portuguese
-%% - provisional: the thesis has not been approved yet
-%% - usewatermark: use watermark instaed of provisonal text
-%% - print: links are not shown (for paper versions)
-%% - alpharefs: bibliography references are alphabetic
-%% - numericrefs: bibliography references are numbered (in order of citation)
-%% ( by default: author-date format of the ``natbib'' package is used
-%%   the portuguese version requires the file ``plainnat-pt.bst'' to be
-%%   present in the same directory )
+% why it's a good thing
+The usage of DSMLs ensures that the domain model is perfectly captured in terms of syntax and semantics. This guarantees a flatter learning curve as the concepts present in the language are already known by the domain experts. This also helps a broader range of experts, such as system engineers and experienced software architects, ensure that software systems meet user needs.
 
-%% Include MIEIC definitions different from standard style
-\usepackage{mieicpatch}
+The ability to synthesize artifacts from models helps ensure the consistency between application implementations and analysis information associated with functional and quality of service requirements captured by models.
 
-%% Provide a version number in order to keep track of
-%% thesis versions (it will printed in the footer of most pages)
+\subsection{Ruby On Rails}\label{sec:ror}
 
-\version{0.99}
+Ruby on Rails is a full-stack Web framework, initially developed by David Heinemeier Hansson in 2003, based on the MVC design pattern. As stated by \cite{rubyonrails}:
 
-%% Uncomment in the final version in order to make version footer disappear
-\noversiontrue
+\begin{quote}
+  ``Ruby on Rails is an open-source that's optimized for programmers happiness and sustainable productivity. It lets you write beautiful code by favoring convention over configuration.''
+\end{quote}
 
-%% Uncomment to create an index (at the end of the document)
-%\makeindex
+As for code generation, the Ruby on Rails framework includes a series of mechanisms for system artifacts generation, be it Models, Controllers or even Views. It does so by analyzing the underlying relational database model and deriving the model specifications from the column's type and name. However, RoR does not generate a static model definition, as it deduces the necessary information whenever the system is loaded. Instead, it uses these informations to create an adequate code skeleton for basic CRUD operations in views, greatly accelerating the development process by providing the developers with a basic blueprint of a fully functional system that can be refined and tailored to specific needs.
 
-%% Path to the figures directory
-%% TIP: use folder ``figures'' to keep all your figures
-\graphicspath{{figures/}}
+\subsection{Frameworks}\label{sec:frameworks}
 
-%%----------------------------------------
-%% TIP: if you want to define more macros, use an external file to
-%% keep them
-\include{mymacros}
-%%----------------------------------------
+Frameworks provide a series of loosely-coupled components created for a specific purpose that provide generic functionality for the creation of software systems. These components can be overridden or specialized in order to create specific functionality. Frameworks can improve developer productivity and improve the quality, reliability and robustness of new software.  Developer productivity is improved by allowing developers to focus on the unique requirements of their application instead of spending time on application infrastructure. XNA \cite{xna} and RoR \cite{rubyonrails} are good examples of popular frameworks that aim to cut development time and costs in very different scenarios.
 
-%%========================================
-%% Start of document
-%%========================================
-\begin{document}
+Frameworks can also be used together with code-generation techniques \cite{DH04, rails_generators} to improve the overall production speed and ease of use.
 
-%%----------------------------------------
-%% Information about the work
-%%----------------------------------------
-\title{End-User Reconfiguration of Applications using Adaptive Object-Models}
-\author{João Gradim Pereira}
-\degree{Master in Informatics and Computing Engineering}
-%% Date of submission
-\thesisdate{16$^{th}$ July, 2010}
+%-------------------------------------------------------------------------------
 
-%% Insert copyright text if used
-%\copyrightnotice{Name of the Author, 2008}
+\section{Meta-Architecture}\label{sec:meta-architecture}
 
-\supervisor{Supervisor}{Ademar Aguiar}{(Ph.D)}
-%% Uncomment next line if necessary
-\supervisor{Second Supervisor}{Hugo Sereno Ferreira}{(Ph.D AbD)}
+Systems created with a special architecture designed to adapt at runtime to new user requirements and rules by using descriptive information about the system model that can be interpreted at runtime are sometimes said to possess a ``reflective architecture'' or a ``meta-architecture'' \cite{YBJ01}.
 
-%% Uncomment committee stuff in the final version
-%\committeetext{Approved in oral examination by the committee:}
-%\committeemember{Chair}{Name of the President}{(Title)}
-%\committeemember{External Examiner}{Name of the Examiner}{(Title)}
-%\committeemember{Supervisor}{Name of the Supervisor}{(Title)}
-%\signature
-%\committeedate{31$^{st}$ July, 2010}
+\subsection{Metaprogramming}\label{sec:metaprogramming}
 
-%% Specify cover logo (in folder ``figures'')
-\logo{feup-logo.pdf}
+As defined by Robert D. Cameron and M. Robert Ito in \cite{CI84},
 
-%%----------------------------------------
-%% Cover page(s)
-%%----------------------------------------
-\maketitle
+\begin{quote}
+ ``A metaprogramming system is a programming facility (subprogramming system or language) whose basic data objects include the programs and program fragments of some particular programming language, known as the target language of the system. Such systems are designed to facilitate the writing of metaprograms, that is, programs about programs. Metaprograms take as input programs and fragments in the target language, perform various operations on them, and possibly, generate modified target-language programs as output.''
+\end{quote}
 
-%% Uncomment next line in the final version
-\committeepage
-%MIEEC uses an external PDF page with the signatures (juri.pdf)
-%\includepdf[pagecommand={},noautoscale=false,fitpaper=true,pages=-]{juri.pdf}
+The advantages of metaprogramming have been described many times in software reuse literature. The translation of high-level descriptions into low-level implementations (by means of application generators) allows a developer to focus on specification based on tested standards rather than implementation, making tasks like system maintenance and evolution much easier and affordable \cite{Bas87,Cle88}. However, the focus of this studies is directed to the code level rather than the underlying domain concepts.
 
-%% Preliminary materials
-\StartPrelim
-\begin{singlespace}
-  \include{abstract} % the abstract
-  \include{acknows}  % the acknowledgments
-  %\include{quote}    % initial quotation if desired
-  \cleardoublepage
-  \pdfbookmark[0]{Table of Contents}{contents}
-  \tableofcontents
-  \cleardoublepage
-  \pdfbookmark[0]{List of Figures}{figures}
-  \listoffigures
-  \cleardoublepage
-  \pdfbookmark[0]{List of Tables}{tables}
-  \listoftables
-  \cleardoublepage
-  \pdfbookmark[0]{Abbreviations}{abbrevs}
-  \include{abbrevs}  % the list of abbreviations used
-\end{singlespace}
+\subsection{Ruby}\label{sec:ruby}
 
-%%----------------------------------------
-%% Body
-%%----------------------------------------
-\StartBody
+Ruby is a dynamic, pure object-oriented programming language. It developed by Japanese programmer Yukihiro Matsumoto and it was first released to public in 1995. In its author words, Ruby was created to be a ``a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write'' \cite{ruby}.
 
-%% TIP: use a separate file for each chapter
-\include{introduction}
-\include{technologies}
-\include{state_of_the_art}
-\include{approach}
-\include{conclusions}
+The Ruby language was designed with a meta-architecture in mind: it allows for changes to class definitions in run-time, constantly adapting to change. It does so by providing open, active class definitions. A common part of the development process when writing a Ruby program is to extend the language itself by writing higher level abstractions --- effectively extending the core language classes (such as \verb!String! and \verb!Float!) with custom methods \cite{metaprogramming_ruby}.
 
-%%----------------------------------------
-%% Final materials
-%%----------------------------------------
+\subsection{Adaptive Object-Models}\label{sec:aom}
 
-\begin{singlespace}
-  %% Bibliography
-  %% Comment the next command if BibTeX file not used,
-  %% bibliography is in ``myrefs.bib''
-  \PrintBib{sota}
+Despite all of the advances in the aforementioned areas, most (if not all) the currently used techniques and methodologies still require a programmer or a domain expert in order to modify a system definition and model. A specific type of architecture is required for the end-user to be able to modify part or the entirety of a system to fit the underlying model to their own needs.
 
-  %% Index
-  %% Uncomment next command if index is required,
-  %% don't forget to run ``makeindex mieic'' command
-  %\PrintIndex
+As such, an end-user is not expected to have kind of knowledge about programming, design patterns and system architectures, or about a system of this type comes to be. However, the end-user is the most knowledgeable part of the development chain, in regards to how the system should behave.
 
-  %% Comment next 2 commands if numbered appendixes not used
-  \appendix
-  \include{appendix1}
-\end{singlespace}
+An Adaptive Object-Model architecture is a system architecture that represents classes, attributes, relationships, and behavior as \textit{metadata}. The system definition is based on instances of model abstractions rather than classes. This allows the modification of these model abstractions in run-time to reflect changes in the domain, effectively modifying the system behavior. As a direct consequence, the system instantly adapts to these changes, making it adaptable to change, without the need for recompiling or redeploying \cite{YBJ01}.
 
-\end{document}
+\subsubsection{Architecture}\label{sec:aom:architecture}
 
