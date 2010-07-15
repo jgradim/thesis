@@ -51,7 +51,7 @@ The advantages of metaprogramming have been described many times in software reu
 
 \subsection{Ruby}\label{sec:ruby}
 
-Ruby is a dynamic, pure object-oriented programming language. It developed by Japanese programmer Yukihiro Matsumoto and it was first released to public in 1995. In its author words, Ruby was created to be a ``a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write'' \cite{ruby}.
+Ruby is a dynamic, purely object-oriented programming language. It was created by Japanese programmer Yukihiro Matsumoto and it was first released to public in 1995. In its author words, Ruby was created to be a ``a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write'' \cite{ruby}.
 
 The Ruby language was designed with a meta-architecture in mind: it allows for changes to class definitions in run-time, constantly adapting to change. It does so by providing open, active class definitions. A common part of the development process when writing a Ruby program is to extend the language itself by writing higher level abstractions --- effectively extending the core language classes (such as \verb!String! and \verb!Float!) with custom methods \cite{metaprogramming_ruby}.
 
@@ -64,4 +64,6 @@ As such, an end-user is not expected to have kind of knowledge about programming
 An Adaptive Object-Model architecture is a system architecture that represents classes, attributes, relationships, and behavior as \textit{metadata}. The system definition is based on instances of model abstractions rather than classes. This allows the modification of these model abstractions in run-time to reflect changes in the domain, effectively modifying the system behavior. As a direct consequence, the system instantly adapts to these changes, making it adaptable to change, without the need for recompiling or redeploying \cite{YBJ01}.
 
 \subsubsection{Architecture}\label{sec:aom:architecture}
+
+The architecture of adaptive object-models relies on a series of design patterns to allow the modification of the system model in run-time. The most fundamental building block of these systems is the \textsc{type square} pattern (see Fig.~\ref{fig:type_square}). This pattern relies on two other patterns, the \textsc{type-object} and \textsc{property} patterns.
 
