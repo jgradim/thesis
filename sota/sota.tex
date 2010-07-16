@@ -55,11 +55,46 @@ Ruby is a dynamic, purely object-oriented programming language. It was created b
 
 The Ruby language was designed with a meta-architecture in mind: it allows for changes to class definitions in run-time, constantly adapting to change. It does so by providing open, active class definitions. A common part of the development process when writing a Ruby program is to extend the language itself by writing higher level abstractions --- effectively extending the core language classes (such as \verb!String! and \verb!Float!) with custom methods \cite{metaprogramming_ruby}.
 
-\subsection{Adaptive Object-Models}\label{sec:meta-architecture:aom}
+\subsection{Adaptive Object-Models}\label{sec:aom}
 
 Despite all of the advances in the aforementioned areas, most (if not all) the currently used techniques and methodologies still require a programmer or a domain expert in order to modify a system definition and model. A specific type of architecture is required for the end-user to be able to modify part or the entirety of a system to fit the underlying model to their own needs.
 
 As such, an end-user is not expected to have kind of knowledge about programming, design patterns and system architectures, or about a system of this type comes to be. However, the end-user is the most knowledgeable part of the development chain, in regards to how the system should behave.
 
-An Adaptive Object-Model architecture is a system architecture that represents classes, attributes, relationships, and behavior as \textit{metadata}. The system definition is based on instances of model abstractions rather than classes. This allows the modification of these model abstractions in run-time to reflect changes in the domain, effectively modifying the system behavior. As a direct consequence, the system instantly adapts to these changes, making it adaptable to change, without the need for recompiling or redeploying \cite{YBJ01}.
+\subsection{Adaptive Object-Models Architecture}\label{sec:aom_architecture}
+
+An Adaptive Object-Model architecture is a system architecture that represents classes, attributes, relationships, and behavior as \textit{metadata}. The system definition is based on instances of model abstractions rather than classes. This allows the modification of these model abstractions in run-time to reflect changes in the domain, effectively modifying the system behavior. As a direct consequence, the system instantly adapts to these changes, making it adaptable to change, without the need for recompiling or redeploying \cite{YBJ01}. This architectural pattern is based on the Meta Object Facility (MOF), which main purpose is to provide a metadata management and implementation framework. The basic architecture is divided into four tiers, each one compliant with the higher level: \cite{mof}
+
+\begin{itemize}
+  \item M0: Data storage
+  \item M1: Knowledge level --- system model definition
+  \item M2 (invariant): Meta-model --- provides an infrastructure to model the M1 level
+  \item M3 (invariant): Meta-model definition (self-compliant)
+\end{itemize}
+
+This kind of architecture relies on a series of design patterns: the \textsc{type-entity} and \textsc{property} patterns form the basic building blocks whereupon the AOM architecture settles. Despite being extremely simple, they create the fundamental infrastructure able to decouple the model definition from the code-level implementation.
+
+\subsubsection{\textsc{Type-Object} Pattern}\label{sec:type-entity_pattern}
+
+Object-oriented languages usually structure a program as a set of classes that define the structure and behavior of objects, usually organizing them as a separate class for each object type, which means that any structural change to the model requires code-level modifications. However, variable systems are usually faced with the problem of having a class that will be subclassed by an arbitrary number of specializations. The key to solving this problem is to detach the object definition from the code level and instead define it using meta-data --- generalizing objects and describing their variation as parameters. \textsc{type-object} works by splitting a class in two: the meta-class for the object to be created --- EntityType, and an instance of that class --- Type. Fig. \ref{fig:type-object_pattern} shows the UML model for this design pattern.
+
+\begin{figure}[H]
+  \centering
+  %\includegraphics[width=70mm]{type_object}
+  \caption{\textsc{type-object} pattern}
+  \label{fig:type-object_pattern}
+\end{figure}
+
+\subsubsection{\textsc{Property} Pattern}\label{sec:property_pattern}
+
+Similar to the problem solved by the \textsc{Type-Object}, the \textsc{property} pattern addresses the analogous issues of having the need to change the attributes of a class. The anticipation of these structural changes leads to the \textsc{property} pattern, where an attribute is split in two classes: the meta-class for the object to be created --- PropertyType, and an instance of that attribute --- Property. Fig. \ref{fig:property_pattern} represents the UML model for the \textsc{property} design pattern.
+
+\begin{figure}[H]
+  \centering
+  %\includegraphics[width=70mm]{type_object}
+  \caption{\textsc{property} pattern}
+  \label{fig:property_pattern}
+\end{figure}
+
+\subsubsection{\textsc{Type-Square} Pattern}\label{sec:type-square_pattern}
 
