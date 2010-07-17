@@ -14,11 +14,19 @@ The planning shown on Fig. \ref{fig:work_plan} was created based on the prioriti
 
 \section{Oghma and Design Patterns}\label{sec:oghma_and_design_patterns}
 
-As the Oghma framework will act as the engine behind the interfaces to be developed, it is crucial that a solid knowledge of its API is acquired. Not only that, a careful study of the Oghma interface generation techniques must be performed in order to comprehend how the backend links itself with the user interfaces.
+As the Oghma framework will act as the engine behind the interfaces to be developed, it is crucial that a solid knowledge of its API is acquired. Not only that, a careful study of the Oghma interface generation techniques must be performed in order to comprehend how the back end links itself with the user interfaces.
 
 \section{Mining of Web Patterns for AOMs}\label{sec:mining_of_web_patterns}
 
 This stage will be concerned with studying what the most effective GUI patterns are for applications of this type. A user should not perceive he or she is actually modifying the elementary structure of the system. As such, the user interface should be as intuitive as possible, with as less interference with the normal user workflow as possible. An initial study will be performed regarding current customization systems present in a multitude of websites --- what real-life paradigms and manipulation mechanisms are most commonly used, and try to transpose them to an AOM interface.
+
+\section{Implementation}\label{sec:implementation}
+
+Will all the acquired knowledge from stages \ref{sec:oghma_and_design_patterns} and \ref{sec:mining_of_web_patterns}, the implementation can now take place, alongside the final stages of mining of web patterns for AOMs. This stage will encompass the creation of a Ruby module for communicating with the Oghma framework, in order to use it as a back end for the system architecture. After this interface is complete, the initial GUIs will be created. These user interfaces will be static and prototypical in nature, in order to act as a blueprint from where the dynamic interfaces will be built. Finally, at the end of this stage, a proof-of-concept application will be created in order to validate the work developed during the past months.
+
+\subsection{Testing}\label{sec:testing}
+
+A test-driven development (TDD) methodology will be used, in order to guarantee less bugs and a quality, more consistent code base.
 
 \section{Tasks}\label{sec:tasks}
 
@@ -27,14 +35,19 @@ This section will present a detailed list of all the major tasks planned for the
 \begin{table}[H]
   \centering
   \begin{tabular}{c|c|c}
-    \textbf{Task Description} & \textbf{Starting Date} & \textbf{Duration}\\
+    \textbf{\textsc{Task Description}} & \textbf{\textsc{Starting Date}} & \textbf{\textsc{Planned Duration}}\\
     \hline
     \hline
-    Oghma API study                                   & September 20, 2010  & 2 weeks\\\hline
-    Oghma interface generation                        & October 4, 2010     & 2 weeks\\\hline
-    Studying current paradigms of web customization   & October 4, 2010     & 1.5 weeks\\\hline
-    Adapting current paradigms to AOM interfaces      & October 13, 2010    & 2 weeks\\\hline
-    QUALQUER COISA PARA COMPLETAR ISTO                & DATA                & DATA\\\hline
+    Oghma API study                                 & September 20, 2010  & 2 weeks\\\hline
+    Oghma interface generation                      & October 4, 2010     & 2 weeks\\\hline
+    Studying current paradigms of web customization & October 4, 2010     & 1.5 weeks\\\hline
+    Adapting current paradigms to AOM interfaces    & October 13, 2010    & 2 weeks\\\hline
+    Interfacing Oghma and Ruby                      & October 20, 2010    & 1 week\\\hline
+    Initial interface building                      & October 27, 2010    & 2 weeks\\\hline
+    Dynamic interfaces creation                     & November 15, 2010   & 4 weeks\\\hline
+    Proof-of-concept application                    & December 13, 2010   & 3 weeks\\\hline
+    Dissertation report writing                     & January 3, 2011     & 4 weeks\\\hline
+    Article writing                                 & January 10, 2011    & 1.5 weeks\\\hline
   \end{tabular}
   \vspace{3mm}
   \caption{Detailed tasks descriptions and durations}
