@@ -103,6 +103,15 @@ Similar to the problem solved by the \textsc{Type-Object}, the \textsc{property}
 
 \subsubsection{\textsc{Type-Square} Pattern}\label{sec:type-square_pattern}
 
+Usually a class is modeled with a number of different attributes, representing their real world counterparts. So, in order to make a run-time modifiable class, an user must be able to modify both its \emph{definition} and \emph{attributes}. The answer to this issue is to use both \textsc{type-object} and \textsc{property} patterns at the same time, creating what is know as the \textsc{type-square} pattern --- which forms the basis of any AOM architecture \cite{YJ02}. Figure \ref{fig:type_square} shows the UML model for this pattern.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=90mm]{type_square}
+  \caption{\textsc{type-square} pattern}
+  \label{fig:type_square}
+\end{figure}
+
 \section{Adaptability On The Web}\label{sec:web_adaptability}
 
 Up until now, there has been very little work regarding adaptive systems on the web. There are a plethora of websites which offer varying degrees of customization, such as repositioning content on the webpage, or adding new content (usually small applications known as widgets), or changing the overall look of the application (more commonly known as \textit{skinning} or \textit{theming}) \cite{igoogle, pageflakes, protopage, webwag}.
