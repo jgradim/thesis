@@ -4,13 +4,18 @@
 
 Generative programming methods approach the adaptability of a system by using an ontological model representative of this system to automatically create executable artifacts or code skeleton than can be further refined according to different needs.
 
-Rails scaffolding and model generation is an excellent example of this approach, which will be further explained in Section \ref{sec:ror}
+Rails scaffolding and model generation is an excellent example of this approach, which will be further explained in Section \ref{sec:ror}.
+
+\subsection{Software Product Lines}
+
+The Software Product Lines (SPL) software development paradigm is promoted as means of reducing time to market, increasing productivity, improving quality and gaining cost effectiveness and efficiency through large-scale reuse \cite{TC06}. Software product line methods (SPLMs) are practices-based, or plan-driven, software development approaches in which a set of software-intensive systems that share a common, managed set of features are produced from a set of re-usable core assets in a predictive, rather than opportunistic way --- meaning artifacts are only created when the need for their use arises, instead of providing generic, reusable components.
+
 
 \subsection{Model-Driven Engineering}\label{sec:mda}
 
 Model-Driven Engineering first appeared in 2001 \cite{Mil03} as an answer to the growing complexity system architectures. This growing complexity and the lack of a integrated view ``forced many developers to implement suboptimal solutions that unnecessarily duplicate code, violate key architectural principles, and complicate system evolution and quality assurance'' \cite{Sch06}.
 
-To address these issues, Model-Driven engineering combines \textit{domain-specific modeling languages} (DSMLs) with \textit{transformation engines} and \textit{generators} in order to generate various types of artifacts, such as source code or alternative model definitions.
+To address these issues, Model-Driven engineering combines \emph{domain-specific modeling languages} (DSMLs) with \emph{transformation engines} and \emph{generators} in order to generate various types of artifacts, such as source code or alternative model definitions.
 
 % why it's a good thing
 The usage of DSMLs ensures that the domain model is perfectly captured in terms of syntax and semantics. This guarantees a flatter learning curve as the concepts present in the language are already known by the domain experts. This also helps a broader range of experts, such as system engineers and experienced software architects, ensure that software systems meet user needs.
@@ -25,7 +30,7 @@ Ruby on Rails is a full-stack Web framework, initially developed by David Heinem
   ``Ruby on Rails is an open-source that's optimized for programmers happiness and sustainable productivity. It lets you write beautiful code by favoring convention over configuration.''
 \end{quote}
 
-As for code generation, the Ruby on Rails framework includes a series of mechanisms for system artifacts generation, be it Models, Controllers or even Views. It does so by analyzing the underlying relational database model and deriving the model specifications from the column's type and name. However, RoR does not generate a static model definition, as it deduces the necessary information whenever the system is loaded. Instead, it uses these informations to create an adequate code skeleton for basic CRUD operations in views, greatly accelerating the development process by providing the developers with a basic blueprint of a fully functional system that can be refined and tailored to specific needs.
+In regards to code generation, the Ruby on Rails framework includes a series of mechanisms for system artifacts generation, be it Models, Controllers or even Views. It does so by analyzing the underlying relational database model and deriving the model specifications from the column's type and name. However, RoR does not generate a static model definition, as it deduces the necessary information whenever the system is loaded. Instead, it uses these informations to create an adequate code skeleton for basic CRUD operations in views, greatly accelerating the development process by providing the developers with a basic blueprint of a fully functional system that can be refined and tailored to specific needs \cite{rails_generators}.
 
 \subsection{Frameworks}\label{sec:frameworks}
 
@@ -47,11 +52,17 @@ As defined by Robert D. Cameron and M. Robert Ito in \cite{CI84},
  ``A metaprogramming system is a programming facility (subprogramming system or language) whose basic data objects include the programs and program fragments of some particular programming language, known as the target language of the system. Such systems are designed to facilitate the writing of metaprograms, that is, programs about programs. Metaprograms take as input programs and fragments in the target language, perform various operations on them, and possibly, generate modified target-language programs as output.''
 \end{quote}
 
-The advantages of metaprogramming have been described many times in software reuse literature. The translation of high-level descriptions into low-level implementations (by means of application generators) allows a developer to focus on specification based on tested standards rather than implementation, making tasks like system maintenance and evolution much easier and affordable \cite{Bas87,Cle88}. However, the focus of this studies is directed to the code level rather than the underlying domain concepts.
+The advantages of metaprogramming have been described many times in software reuse literature. The translation of high-level descriptions into low-level implementations (by means of application generators) allows a developer to focus on specification based on tested standards rather than implementation, making tasks like system maintenance and evolution much easier and affordable \cite{Bas87, Cle88}. However, the focus of this studies is directed to the code level rather than the underlying domain concepts.
+
+\subsection{Aspect-Oriented Programming}\label{sec:aspect_oriented_programming}
+
+Aspect-Oriented Programming is a programming paradigm that isolates secondary or auxiliary behaviours from the implementation of the main business logic. It has been proposed as a viable implementation of modular crosscutting concerns. Since crosscutting concerns cannot be properly modularized within object-oriented programming, they are expressed as aspects and are composed, or woven, with traditionally encapsulated functionality referred to as components \cite{KM05, Ste06}. This paradigm has been gaining some momentum particularly because even conceptually simple crosscutting concerns, such as tracing during debugging and synchronization, lead to tangling, in which code statements addressing the crosscutting concern become interlaced with those addressing other concerns within the application \cite{LC03}.
+
+Many AOP implementations work by automatically injecting new code into existing classes, effectively adding new functionalities that promote extensive code reuse \cite{Ste06, LC03}.
 
 \subsection{Ruby}\label{sec:ruby}
 
-Ruby is a dynamic, pure object-oriented programming language. It developed by Japanese programmer Yukihiro Matsumoto and it was first released to public in 1995. In its author words, Ruby was created to be a ``a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write'' \cite{ruby}.
+Ruby is a dynamic, purely object-oriented programming language. It was created by Japanese programmer Yukihiro Matsumoto and it was first released to public in 1995. In its author words, Ruby was created to be a ``a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write'' \cite{ruby}.
 
 The Ruby language was designed with a meta-architecture in mind: it allows for changes to class definitions in run-time, constantly adapting to change. It does so by providing open, active class definitions. A common part of the development process when writing a Ruby program is to extend the language itself by writing higher level abstractions --- effectively extending the core language classes (such as \verb!String! and \verb!Float!) with custom methods \cite{metaprogramming_ruby}.
 
@@ -61,7 +72,77 @@ Despite all of the advances in the aforementioned areas, most (if not all) the c
 
 As such, an end-user is not expected to have kind of knowledge about programming, design patterns and system architectures, or about a system of this type comes to be. However, the end-user is the most knowledgeable part of the development chain, in regards to how the system should behave.
 
-An Adaptive Object-Model architecture is a system architecture that represents classes, attributes, relationships, and behavior as \textit{metadata}. The system definition is based on instances of model abstractions rather than classes. This allows the modification of these model abstractions in run-time to reflect changes in the domain, effectively modifying the system behavior. As a direct consequence, the system instantly adapts to these changes, making it adaptable to change, without the need for recompiling or redeploying \cite{YBJ01}.
+\subsection{Adaptive Object-Models Architecture}\label{sec:aom_architecture}
 
-\subsubsection{Architecture}\label{sec:aom:architecture}
+An Adaptive Object-Model architecture is a system architecture that represents classes, attributes, relationships, and behavior as \emph{metadata}. The system definition is based on instances of model abstractions rather than classes. This allows the modification of these model abstractions in run-time to reflect changes in the domain, effectively modifying the system behavior. As a direct consequence, the system instantly adapts to these changes, making it adaptable to change, without the need for recompiling or redeploying \cite{YBJ01}. This architectural pattern is based on the Meta Object Facility (MOF), which main purpose is to provide a metadata management and implementation framework. The basic architecture is divided into four tiers, each one compliant with the higher level: \cite{mof}
 
+\begin{itemize}
+  \item M0: Data storage
+  \item M1: Knowledge level --- system model definition
+  \item M2 (invariant): Meta-model --- provides an infrastructure to model the M1 level
+  \item M3 (invariant): Meta-model definition (self-compliant, present if the architecture is based on MOF)
+\end{itemize}
+
+This kind of architecture relies on a series of design patterns: the \textsc{Type-Object} and \textsc{Property} patterns form the basic building blocks whereupon the AOM architecture settles. Despite being extremely simple, they create the fundamental infrastructure able to decouple the model definition from the code-level implementation.
+
+\subsubsection{\textsc{Type-Object} Pattern}\label{sec:type-entity_pattern}
+
+Object-oriented languages usually structure a program as a set of classes that define the structure and behavior of objects, usually organizing them as a separate class for each object type, which means that any structural change to the model requires code-level modifications. However, variable systems are usually faced with the problem of having a class that will be subclassed by an arbitrary number of specializations. The key to solving this problem is to detach the object definition from the code level and instead define it using meta-data --- generalizing objects and describing their variation as parameters. \textsc{Type-Object} works by splitting a class in two: the meta-class for the object to be created --- EntityType, and an instance of that class --- Type. Fig. \ref{fig:type-object_pattern} shows the UML model for this design pattern.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=75mm]{type_object.pdf}
+  \caption{\textsc{Type-Object} pattern}
+  \label{fig:type-object_pattern}
+\end{figure}
+
+\subsubsection{\textsc{Property} Pattern}\label{sec:property_pattern}
+
+Similar to the problem solved by the \textsc{Type-Object}, the \textsc{Property} pattern addresses the analogous issues of having the need to change the attributes (sometimes called \emph{members}) of a class. The anticipation of these structural changes leads to the \textsc{Property} pattern, where an attribute is split in two classes: the meta-class for the object to be created --- PropertyType, and an instance of that attribute --- Property. Fig. \ref{fig:property_pattern} represents the UML model for the \textsc{Property} design pattern.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=80mm]{property}
+  \caption{\textsc{Property} pattern}
+  \label{fig:property_pattern}
+\end{figure}
+
+\subsubsection{\textsc{Type-Square} Pattern}\label{sec:type-square_pattern}
+
+Usually a class is modeled with a number of different attributes, representing their real world counterparts. So, in order to make a run-time modifiable class, an user must be able to modify both its \emph{definition} and \emph{attributes}. The answer to this issue is to use both \textsc{Type-Object} and \textsc{Property} patterns at the same time, creating what is know as the \textsc{Type-Square} pattern --- which forms the basis of any AOM architecture \cite{YJ02}. Figure \ref{fig:type_square} shows the UML model for this pattern.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=90mm]{type_square}
+  \caption{\textsc{Type-Square} pattern}
+  \label{fig:type_square}
+\end{figure}
+
+\subsubsection{Relationships Between Entities}\label{sec:relationships_between_entities}
+
+\cite{YJ02} describes the relationships between AOM classes by using the \textsc{Accountability} pattern \cite{fowler, hay}.
+
+Most OOP languages, however, describe object attributes as either primitive values or references to other objects. Some languages, such as Ruby and Smalltalk, treat everything as an object and do not make any difference between references and primitive values. These concepts can be used to extend the \textsc{Property} pattern, and make it aware of relationships between entities, using attributes such as cardinality, navigability or role. \cite{aom_research_roadmap}. The revised \textsc{Property} pattern is depicted in Figure \ref{fig:property_revised}:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=100mm]{property_revised}
+  \caption{Revised \textsc{Property} pattern}
+  \label{fig:property_revised}
+\end{figure}
+
+\section{Adaptability On The Web}\label{sec:web_adaptability}
+
+Up until now, there has been very little work regarding adaptive systems on the web. There are a plethora of websites which offer varying degrees of customization, such as repositioning content on the webpage, or adding new content (usually small applications known as widgets), or changing the overall look of the application (more commonly known as \emph{skinning} or \emph{theming}) \cite{igoogle, pageflakes, protopage, webwag}.
+
+Another approach taken to adaptability is to \emph{automatically} adapt to each individual user. This is accomplished by mining information relative to where the user comes from and its past actions in order to cater to the perceived results the user expected \cite{GGGR09}. As stated by \cite{NC}, 
+
+\begin{quote}
+  ``Adaptive software uses available information about changes in its environment to improve its behavior.''
+\end{quote}
+
+However, these websites do not allow their end users to modify the underlying \emph{model} of the system, only the overall \emph{look \& feel} and, to some extent, what information is displayed on the page --- which rely on the developers to be readily available.
+
+As such these are not true \emph{adaptive systems} as per the definition gave by Joseph Yoder in \cite{YJ02}.
+
+Nevertheless, these websites possess valuable information regarding the most commonly used user-interface mechanisms. Drag-and-drop is used extensively to reorganize information and perform basic tasks such as adding and removing basic container blocks.
