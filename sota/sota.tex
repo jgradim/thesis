@@ -56,7 +56,9 @@ The advantages of metaprogramming have been described many times in software reu
 
 \subsection{Aspect-Oriented Programming}\label{sec:aspect_oriented_programming}
 
-Aspect-Oriented Programming is a programming paradigm that isolates secondary or auxiliary behaviours from the implementation of the main business logic. It has been proposed as a viable implementation of modular crosscutting concerns. Since crosscutting concerns cannot be properly modularized within object-oriented programming, they are expressed as aspects and are composed, or woven, with traditionally encapsulated functionality referred to as components \cite{KM05, Ste06}. Many AOP implementations work by automatically injecting new code into existing classes, effectively adding new functionalities that promote extensive code reuse \cite{Ste06}.
+Aspect-Oriented Programming is a programming paradigm that isolates secondary or auxiliary behaviours from the implementation of the main business logic. It has been proposed as a viable implementation of modular crosscutting concerns. Since crosscutting concerns cannot be properly modularized within object-oriented programming, they are expressed as aspects and are composed, or woven, with traditionally encapsulated functionality referred to as components \cite{KM05, Ste06}. This paradigm has been gaining some momentum particularly because even conceptually simple crosscutting concerns, such as tracing during debugging and synchronization, lead to tangling, in which code statements addressing the crosscutting concern become interlaced with those addressing other concerns within the application \cite{LC03}.
+
+Many AOP implementations work by automatically injecting new code into existing classes, effectively adding new functionalities that promote extensive code reuse \cite{Ste06, LC03}.
 
 \subsection{Ruby}\label{sec:ruby}
 
