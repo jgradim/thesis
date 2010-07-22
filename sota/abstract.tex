@@ -1,8 +1,12 @@
 \chapter*{Abstract}
 
-One particular point of interest is to allow the end-users to modify the system definition --- which implies these modifications have to be performed without any programming or system redeploying.
+Most software systems exist in an ever-changing environment. The difficulty to capture capture the requirements and craft the system to mirror these requirements often spells higher costs and development times. Moreover, these systems are not static in nature and often need to be modified to reflect changes in the environment and stakeholders' expectations.
 
-An Adaptive Object-Model architecture is a system architecture that represents classes, attributes, relationships, and behavior as \emph{metadata}.
+An answer to these problems is to create information systems that are flexible enough to introduce model-level changes as quickly and cheaply as possible. One particular point of interest is to allow the end-users to modify the system definition --- which implies these modifications have to be performed without any programming knowledge or system redeploying. This can be achieved by using a meta-architecture design pattern known as Adaptive Object-Modeling (or AOM).
+
+An Adaptive Object-Model architecture is a system architecture that represents classes, attributes, relationships, and behavior as \emph{metadata}, where the system definition is based on instances of model abstractions rather than classes: this allows for the easy modification of the domain model in runtime, discarding the need for redeploying.
+
+This report is a review of the state of the art in adaptable systems. It starts by exposing the main techniques and methodologies for creating highly-variable software, analyzing the scope and objectives of each one. A problem-solving approach to this issue is then proposed, along with its respective scheduling which will be performed at Tecla Colorida, a Portuguese web development company responsible for the creation of \emph{escolinhas.pt}, an expanding Ruby on Rails application. Finally, an analysis is performed on the aforementioned related work and future options are narrowed down according to other research's results.
 
 \chapter*{Resumo}
 
