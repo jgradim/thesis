@@ -24,6 +24,8 @@ This stage will be concerned with studying what the most effective GUI patterns 
 
 Will all the acquired knowledge from stages \ref{sec:oghma_and_design_patterns} and \ref{sec:mining_of_web_patterns}, the implementation can now take place, alongside the final stages of mining of web patterns for AOMs. This stage will encompass the creation of a Ruby module for communicating with the Oghma framework, in order to use it as a back end for the system architecture. After this interface is complete, the initial GUIs will be created. These user interfaces will be static and prototypical in nature, in order to act as a blueprint from where the dynamic interfaces will be built. Finally, at the end of this stage, a proof-of-concept application will be created in order to validate the work developed during the past months.
 
+Ruby was chosen mainly because of two factors: the familiarity with the language and the fact that the \textit{escolinhas.pt} platform is entirely written in Ruby, which will provide a much more seamless integration with the platform. The Oghma framework was chosen because it is the only one of its kind, as it was developed to be a reference framework for the construction of AOM systems. 
+
 \subsection{Testing}\label{sec:testing}
 
 A test-driven development (TDD) methodology will be used, in order to guarantee less bugs and a more consistent code base. This kind of development assumes failing tests are written \emph{before} the actual implementation --- defining a desired improvement or new function, producing code to pass that test and finally refactoring the new code to acceptable standards. This short cycle is repeated over and over again for every new feature (or group of features, if justifiable) to be implemented.
