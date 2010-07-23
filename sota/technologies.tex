@@ -6,9 +6,13 @@ C\# (C-Sharp) is a multi-paradigm, strongly-typed programming language developed
 
 \section{Oghma}\label{sec:oghma}
 
-% Oghma is the fruit of doctoral dissertation
+Oghma is meant to be a reference framework for the development of AOM systems, developed in C\#. It allows the rapid creation of highly variable, dynamic systems. It is currently being developed in the context of the doctoral thesis of Hugo Sereno Ferreira. It is a very complete framework able to create, manage and persist AOM systems, from backend to GUI generation.
 
-Oghma is meant to be a reference framework for the development of AOM systems. It allows the rapid creation of highly variable, dynamic systems. It is being developed in the context of the doctoral thesis of Hugo Sereno Ferreira.
+Oghma is thus a concrete implementation of a framework based on the reference architecture to develop AOM-based systems established in \cite{ferreira_phd_2010}, that balances several design and engineering forces. It supports the creation of models resembling MOF \cite{mof} and UML, and aims at covering the entire cycle of system creation and evolution. As an AOM, it allows the introduction of changes to the system during runtime, thus providing a particular kind of confined end-user development.
+
+Furthermore, the framework leverages the infrastructure used to support system evolution to provide additional features, such as auditing over the system’s usage, and time-traveling to an arbitrary point along its evolution (i.e. to set the system in a past state).
+
+Oghma includes a set of interchangeable components designed to have an high degree of flexibility, as it was designed to support several types of persistency engines --- be it in memory or a DBMS.
 
 %\cite{oghma}
 
