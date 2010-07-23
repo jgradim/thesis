@@ -52,11 +52,11 @@ As defined by Robert D. Cameron and M. Robert Ito in~\cite{CI84},
  ``A metaprogramming system is a programming facility (subprogramming system or language) whose basic data objects include the programs and program fragments of some particular programming language, known as the target language of the system. Such systems are designed to facilitate the writing of metaprograms, that is, programs about programs. Metaprograms take as input programs and fragments in the target language, perform various operations on them, and possibly, generate modified target-language programs as output.''
 \end{quote}
 
-The advantages of metaprogramming have been described many times in software reuse literature. The translation of high-level descriptions into low-level implementations (by means of application generators) allows a developer to focus on specification based on tested standards rather than implementation, making tasks like system maintenance and evolution much easier and affordable~\cite{Bas87, Cle88}. However, the focus of this studies is directed to the code level rather than the underlying domain concepts.
+To put it simply, metaprogramming is code that generates code. The advantages of this paradigm have been described many times in software reuse literature. The translation of high-level descriptions into low-level implementations (by means of application generators) allows a developer to focus on specification based on tested standards rather than implementation, making tasks like system maintenance and evolution much easier and affordable~\cite{Bas87, Cle88}. However, the focus of these methodologies is directed to the code level rather than the underlying domain concepts.
 
 \subsection{Aspect-Oriented Programming}\label{sec:aspect_oriented_programming}
 
-Aspect-Oriented Programming is a programming paradigm that isolates secondary or auxiliary behaviours from the implementation of the main business logic. It has been proposed as a viable implementation of modular crosscutting concerns. Since crosscutting concerns cannot be properly modularized within object-oriented programming, they are expressed as aspects and are composed, or woven, with traditionally encapsulated functionality referred to as components~\cite{KM05, Ste06}. This paradigm has been gaining some momentum particularly because even conceptually simple crosscutting concerns, such as tracing during debugging and synchronization, lead to tangling, in which code statements addressing the crosscutting concern become interlaced with those addressing other concerns within the application~\cite{LC03}.
+Aspect-Oriented Programming is a programming paradigm that isolates secondary or auxiliary behaviours from the implementation of the main business logic. It has been proposed as a viable implementation of modular crosscutting concerns. Since crosscutting concerns cannot be properly modularized within object-oriented programming, they are expressed as aspects and are composed, or woven, with traditionally encapsulated functionality referred to as components~\cite{KM05, Ste06}. This paradigm has been gaining some momentum particularly because even conceptually simple crosscutting concerns such as tracing during debugging and synchronization, lead to tangling, in which code statements addressing the crosscutting concern become interlaced with those addressing other concerns within the application~\cite{LC03}.
 
 Many AOP implementations work by automatically injecting new code into existing classes (a process which is commonly called \emph{decorating} a class), effectively adding new functionalities that promote extensive code reuse~\cite{Ste06, LC03, metaclass_programming_in_python}.
 
@@ -65,6 +65,48 @@ Many AOP implementations work by automatically injecting new code into existing 
 Ruby is a dynamic, purely object-oriented programming language. It was created by Japanese programmer Yukihiro Matsumoto and it was first released to public in 1995. In its author words, Ruby was created to be a ``a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write''~\cite{ruby}.
 
 The Ruby language was designed with a meta-architecture in mind: it allows for changes to class definitions in run-time, constantly adapting to change. It does so by providing open, active class definitions. A common part of the development process when writing a Ruby program is to extend the language itself by writing higher level abstractions --- effectively extending the core language classes (such as \verb!String! and \verb!Float!) with custom methods~\cite{metaprogramming_ruby}.
+
+Ruby uses metaprogramming techniques extensively --- in fact, metaprogramming is an integral part of the language constructs. Take the example from Figure~\ref{fig:ruby_class_metaprogramming}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{9cm}
+    \begin{verbatim}
+      class Person
+        attr_accessor :name, :age
+      end
+    \end{verbatim}
+  \end{minipage}
+  \caption{Metaprogramming in Ruby classes}
+  \label{fig:ruby_class_metaprogramming}
+\end{figure}
+
+The use of the \verb!attr_accessor! declaration is actually a shortcut method for a \emph{getter} and \emph{setter} for the \verb!name! and \verb!age! attributes of the \verb!Person! class. It does so by automatically creating the necessary methods inside a \verb!class_eval! context --- effectively modifying the class definition by evaluating code in runtime. Figure~\ref{fig:ruby_class_metaprogramming_after} represents the code generated internally by the Ruby interpreter when interpreting Figure~\ref{fig:ruby_class_metaprogramming}:
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{7cm}
+    \begin{verbatim}
+      class Person
+        def name=(val)
+          @name = val
+        end
+        def name
+          @name
+        end
+        
+        def age=(val)
+          @age = val
+        end
+        def age
+          @age
+        end
+      end
+    \end{verbatim}
+  \end{minipage}
+  \caption{Code generated by Ruby metaprogramming constructs}
+  \label{fig:ruby_class_metaprogramming_after}
+\end{figure}
 
 \subsection{Adaptive Object-Models}\label{sec:aom}
 
