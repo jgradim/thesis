@@ -58,7 +58,7 @@ The advantages of metaprogramming have been described many times in software reu
 
 Aspect-Oriented Programming is a programming paradigm that isolates secondary or auxiliary behaviours from the implementation of the main business logic. It has been proposed as a viable implementation of modular crosscutting concerns. Since crosscutting concerns cannot be properly modularized within object-oriented programming, they are expressed as aspects and are composed, or woven, with traditionally encapsulated functionality referred to as components \cite{KM05, Ste06}. This paradigm has been gaining some momentum particularly because even conceptually simple crosscutting concerns, such as tracing during debugging and synchronization, lead to tangling, in which code statements addressing the crosscutting concern become interlaced with those addressing other concerns within the application \cite{LC03}.
 
-Many AOP implementations work by automatically injecting new code into existing classes, effectively adding new functionalities that promote extensive code reuse \cite{Ste06, LC03}.
+Many AOP implementations work by automatically injecting new code into existing classes (a process which is commonly called \emph{decorating} a class), effectively adding new functionalities that promote extensive code reuse \cite{Ste06, LC03, metaclass_programming_in_python}.
 
 \subsection{Ruby}\label{sec:ruby}
 
@@ -122,7 +122,9 @@ Usually a class is modeled with a number of different attributes, representing t
 
 \cite{YJ02} describes the relationships between AOM classes by using the \textsc{Accountability} pattern \cite{fowler, hay}.
 
-Most OOP languages, however, describe object attributes as either primitive values or references to other objects. Some languages, such as Ruby and Smalltalk, treat everything as an object and do not make any difference between references and primitive values. These concepts can be used to extend the \textsc{Property} pattern, and make it aware of relationships between entities, using attributes such as cardinality, navigability or role. \cite{aom_research_roadmap}. The revised \textsc{Property} pattern is depicted in Figure \ref{fig:property_revised}:
+Most OOP languages, however, describe object attributes as either primitive values or references to other objects. Some languages, such as Ruby and Smalltalk, treat everything as an object and do not make any difference between references and primitive values. These concepts can be used to extend the \textsc{Property} pattern, and make it aware of relationships between entities, using attributes such as cardinality, navigability or role \cite{aom_research_roadmap}.
+
+The revised \textsc{Property} pattern is depicted in Figure \ref{fig:property_revised}:
 
 \begin{figure}[H]
   \centering
