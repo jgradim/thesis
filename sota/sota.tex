@@ -64,7 +64,7 @@ Many AOP implementations work by automatically injecting new code into existing 
 
 Ruby is a dynamic, purely object-oriented programming language. It was created by Japanese programmer Yukihiro Matsumoto and it was first released to public in 1995. In its author words, Ruby was created to be a ``a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write''~\cite{ruby}.
 
-The Ruby language was designed with a meta-architecture in mind: it allows for changes to class definitions in run-time, constantly adapting to change. It does so by providing open, active class definitions. A common part of the development process when writing a Ruby program is to extend the language itself by writing higher level abstractions --- effectively extending the core language classes (such as \verb!String! and \verb!Float!) with custom methods~\cite{metaprogramming_ruby}.
+The Ruby language was designed with a meta-architecture in mind: it allows for changes to class definitions in runtime, constantly adapting to change. It does so by providing open, active class definitions. A common part of the development process when writing a Ruby program is to extend the language itself by writing higher level abstractions --- effectively extending the core language classes (such as \verb!String! and \verb!Float!) with custom methods~\cite{metaprogramming_ruby}.
 
 Ruby uses metaprogramming techniques extensively --- in fact, metaprogramming is an integral part of the language constructs. Take the example from Figure~\ref{fig:ruby_class_metaprogramming}
 
@@ -116,7 +116,7 @@ As such, an end-user is not expected to have kind of knowledge about programming
 
 \subsection{Adaptive Object-Models Architecture}\label{sec:aom_architecture}
 
-An Adaptive Object-Model architecture is a system architecture that represents classes, attributes, relationships, and behavior as \emph{metadata}. The system definition is based on instances of model abstractions rather than classes. This allows the modification of these model abstractions in run-time to reflect changes in the domain, effectively modifying the system behavior. As a direct consequence, the system instantly adapts to these changes, making it adaptable to change, without the need for recompiling or redeploying~\cite{YBJ01}. This architectural pattern is based on the Meta Object Facility (MOF), which main purpose is to provide a metadata management and implementation framework. The basic architecture is divided into four tiers, each one compliant with the higher level:~\cite{mof}
+An Adaptive Object-Model architecture is a system architecture that represents classes, attributes, relationships, and behavior as \emph{metadata}. The system definition is based on instances of model abstractions rather than classes. This allows the modification of these model abstractions in runtime to reflect changes in the domain, effectively modifying the system behavior. As a direct consequence, the system instantly adapts to these changes, making it adaptable to change, without the need for recompiling or redeploying~\cite{YBJ01}. This architectural pattern is based on the Meta Object Facility (MOF), which main purpose is to provide a metadata management and implementation framework. The basic architecture is divided into four tiers, each one compliant with the higher level:~\cite{mof}
 
 \begin{itemize}
   \item M0: Data storage
@@ -151,7 +151,7 @@ Similar to the problem solved by the \textsc{Type-Object}, the \textsc{Property}
 
 \subsubsection{\textsc{Type-Square} Pattern}\label{sec:type-square_pattern}
 
-Usually a class is modeled with a number of different attributes, representing their real world counterparts. So, in order to make a run-time modifiable class, an user must be able to modify both its \emph{definition} and \emph{attributes}. The answer to this issue is to use both \textsc{Type-Object} and \textsc{Property} patterns at the same time, creating what is know as the \textsc{Type-Square} pattern --- which forms the basis of any AOM architecture~\cite{YJ02}. Figure \ref{fig:type_square} shows the UML model for this pattern.
+Usually a class is modeled with a number of different attributes, representing their real world counterparts. So, in order to make a runtime modifiable class, an user must be able to modify both its \emph{definition} and \emph{attributes}. The answer to this issue is to use both \textsc{Type-Object} and \textsc{Property} patterns at the same time, creating what is know as the \textsc{Type-Square} pattern --- which forms the basis of any AOM architecture~\cite{YJ02}. Figure \ref{fig:type_square} shows the UML model for this pattern.
 
 \begin{figure}[H]
   \centering
@@ -197,4 +197,4 @@ However, these websites do not allow their end users to modify the underlying \e
 
 As such, these are not true \emph{adaptive systems} as per the definition gave by Joseph Yoder in~\cite{YJ02}.
 
-Nevertheless, these websites possess valuable information regarding the most commonly used user-interface mechanisms. Drag-and-drop is used extensively to reorganize information and perform basic tasks such as adding and removing basic container blocks.
+Nevertheless, these websites possess valuable information regarding the most commonly used user-interface mechanisms. Drag-and-drop is used extensively to reorganize information and perform basic tasks such as adding and removing basic container blocks. These mechanisms and interaction paradigms can be used to modify any kind of system from an end-user perspective, be it a AOM system or not.
