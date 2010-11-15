@@ -1,9 +1,17 @@
 require 'set'
 
+# AccountabilityTypes are treated as symbols, no dedicated class required
 class Accountability
+  
+  #
+  class InvalidAccountability; end;
+
   attr_reader :child, :parent, :accountability_type
   
   def initialize(params)
+  
+    # can accountability be created?
+    throw Accountability::InvalidAccountability if not validates(params)
   
     @child = params[:child]
     @parent = params[:parent]
@@ -11,6 +19,12 @@ class Accountability
     
     @parent.add_child(self)
     @child.add_parent(self)
+  end
+  
+  def validates(params)
+    return false if params[:parent] == params[:child]
+    return false if params[:parent].parents_include(params[:child], params[:accountability_type])
+    true
   end
   
   def to_s
@@ -27,6 +41,7 @@ class User
     @child_accountabilities = Set.new
   end
   
+  #
   def add_child(child)
     @child_accountabilities.add(child)
   end
@@ -35,12 +50,20 @@ class User
     @parent_accountabilities.add(parent)
   end
   
-  def parents
-    @parent_accountabilities.to_a
+  #
+  def parents(t = nil)
+    return @parent_accountabilities.to_a if t.nil?
+    return @parent_accountabilities.to_a.select { |a| a.accountability_type == t } if not t.nil?
   end
   
-  def children
-    @child_accountabilities.to_a
+  def children(t = nil)
+    return @child_accountabilities.to_a if t.nil?
+    return @child_accountabilities.to_a.select { |a| a.accountability_type == t } if not t.nil?
+  end
+  
+  def parents_include(user, type)
+    puts "@user.parents_include is not implemented!"
+    false
   end
   
   def to_s
