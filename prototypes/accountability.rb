@@ -1,88 +1,92 @@
 require 'set'
 
-# AccountabilityTypes are treated as symbols, no dedicated class required
+#
 class Accountability
-  
-  #
-  class InvalidAccountability; end;
 
-  attr_reader :child, :parent, :accountability_type
+  class Invalid; end;
+
+  attr_accessor :parent, :child, :type
   
-  def initialize(params)
+  def initialize(parent, child, type)
   
-    # can accountability be created?
-    throw Accountability::InvalidAccountability if not validates(params)
+    throw Accountability::Invalid if not validates(parent, child, type)
   
-    @child = params[:child]
-    @parent = params[:parent]
-    @accountability_type = params[:accountability_type]
-    
-    @parent.add_child(self)
-    @child.add_parent(self)
+    @parent = parent
+    parent.add_child_accountability(self)
+    @child = child
+    child.add_parent_accountability(self)
+    @type = type
   end
   
-  def validates(params)
-    return false if params[:parent] == params[:child]
-    return false if params[:parent].parents_include(params[:child], params[:accountability_type])
+  def validates(parent, child, type)
+    return false if parent == child
+    return false if parent.ancestors_include(child, type)
     true
   end
-  
-  def to_s
-    "#{parent.name} -> #{accountability_type.to_s} -> #{child.name}"
-  end
+
 end
 
-class User
-  attr_reader :name, :parent_accountabilities, :child_accountabilities
-  
+#
+class Party
+
+  attr_accessor :parent_accountabilities, :child_accountabilities, :name
+
   def initialize(name)
-    @name = name
     @parent_accountabilities = Set.new
     @child_accountabilities = Set.new
+    @name = name
   end
   
   #
-  def add_child(child)
-    @child_accountabilities.add(child)
+  def parents(type = nil)
+    return @parent_accountabilities.map(&:parent) if type == nil
+    return @parent_accountabilities.select{ |a| a.type ==  type }.map(&:parent)
   end
   
-  def add_parent(parent)
-    @parent_accountabilities.add(parent)
+  def children(type = nil)
+    return @child_accountabilities.map(&:child) if type == nil
+    return @child_accountabilities.select{ |a| a.type ==  type }.map(&:child)
   end
   
   #
-  def parents(t = nil)
-    return @parent_accountabilities.to_a if t.nil?
-    return @parent_accountabilities.to_a.select { |a| a.accountability_type == t } if not t.nil?
+  def add_child_accountability(accountability)
+    @child_accountabilities.add(accountability)
   end
   
-  def children(t = nil)
-    return @child_accountabilities.to_a if t.nil?
-    return @child_accountabilities.to_a.select { |a| a.accountability_type == t } if not t.nil?
+  def add_parent_accountability(accountability)
+    @parent_accountabilities.add(accountability)
   end
   
-  def parents_include(user, type)
-    puts "@user.parents_include is not implemented!"
+  #
+  def ancestors_include(sample, type)
+    parents(type).each do |p|
+      return true if p == sample
+      return true if p.ancestors_include(sample, type)
+    end
     false
   end
-  
-  def to_s
-    <<-EOV
-    #{self.name}
-    \tparents: #{self.parents.map(&:to_s)}
-    \tchildren: #{self.children.map(&:to_s)}
-    EOV
-  end
-  
+
 end
 
-# testing
-pa = User.new 'Teacher A'
-sa = User.new 'Student A'
+mark = Party.new('Mark')
+tom = Party.new('Tom')
+st_marys = Party.new("St. Mary's")
 
-aptos = Accountability.new :parent => pa, :child => sa, :accountability_type => :teacher
-astop = Accountability.new :child => pa, :parent => sa, :accountability_type => :student
+Accountability.new(st_marys, mark, :appointment)
+Accountability.new(st_marys, tom, :appointment)
 
-puts pa.to_s
-puts sa.to_s
+Accountability.new(tom, mark, :supervision)
 
+# tests
+puts st_marys.children.include?(mark)
+puts mark.parents.include?(st_marys)
+
+puts mark.parents.include?(st_marys)
+puts mark.parents(:appointment).include?(st_marys)
+puts mark.parents.size == 2
+puts mark.parents(:appointment).size == 1
+puts mark.parents(:supervision).size == 1
+puts mark.parents(:supervision).include?(tom)
+
+# cycle checking tests - will throw an exception
+Accountability.new(mark, tom, :supervision)
