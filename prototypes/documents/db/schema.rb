@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(:version => 20101116152640) do
   end
 
   create_table "versions", :force => true do |t|
-    t.integer  "object_id"
-    t.string   "object_type"
+    t.integer  "version"
+    t.integer  "obj_id"
+    t.string   "obj_type"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"

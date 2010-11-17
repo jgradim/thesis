@@ -1,8 +1,9 @@
 class CreateVersions < ActiveRecord::Migration
   def self.up
     create_table :versions do |t|
-      t.integer :object_id
-      t.string  :object_type
+      t.integer :version
+      t.integer :obj_id
+      t.string  :obj_type
       t.text    :content
 
       t.timestamps

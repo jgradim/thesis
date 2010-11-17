@@ -358,3 +358,556 @@ Migrating to CreateVersions (20101116152640)
   [4;36;1mBlock Load (1.0ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
   [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
   [4;36;1mBlock Load (1.4ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;36;1mDocument Load (1.4ms)[0m   [0;1mSELECT * FROM "documents" LIMIT 1[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" LIMIT 1[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" LIMIT 1[0m
+  [4;35;1mDocument Load (0.7ms)[0m   [0mSELECT * FROM "documents" LIMIT 1[0m
+  [4;36;1mBlock Load (0.6ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM "documents" LIMIT 1[0m
+  [4;36;1mBlock Load (1.3ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM "documents" LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" LIMIT 1[0m
+  [4;36;1mDocument Load (0.6ms)[0m   [0;1mSELECT * FROM "documents" LIMIT 1[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" LIMIT 1[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (1.3ms)[0m   [0;1mSELECT * FROM "documents" LIMIT 1[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (106.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (83.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "documents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "blocks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "position" integer, "document_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "versions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "version" integer, "object_id" integer, "object_type" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("blocks")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("documents")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("versions")[0m
+  [4;36;1mDocument Create (0.4ms)[0m   [0;1mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('title', '2010-11-17 17:30:56', '2010-11-17 17:30:56')[0m
+  [4;35;1mVersion Create (0.1ms)[0m   [0mINSERT INTO "versions" ("object_id", "object_type", "content", "created_at", "updated_at") VALUES(2, 'Document', NULL, '2010-11-17 17:30:56', '2010-11-17 17:30:56')[0m
+  [4;36;1mVersion Load (0.7ms)[0m   [0;1mSELECT * FROM "versions" [0m
+  [4;35;1mDocument Create (0.2ms)[0m   [0mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('title', '2010-11-17 17:31:43', '2010-11-17 17:31:43')[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mVersion Create (0.0ms)[0m   [0;1mSQLite3::SQLException: unrecognized token: "'o:Document:@attributes{	"idi"
+titleI"
+title:ET"created_atI"2010-11-17 17:31:43;T"updated_atI"2010-11-17 17:31:43;T:@attributes_cache{": INSERT INTO "versions" ("version", "object_id", "object_type", "content", "created_at", "updated_at") VALUES(NULL, 1, 'Document', 'o:Document:@attributes{	"idi"
+titleI"
+title:ET"created_atI"2010-11-17 17:31:43;T"updated_atI"2010-11-17 17:31:43;T:@attributes_cache{ :@blockso:3ActiveRecord::Associations::HasManyAssociation:@reflectiono:4ActiveRecord::Reflection::AssociationReflection:@macro:has_many:
+@name:blocks:@options{:
+orderI"position;F:extend[ :@active_recordcDocument:@collectionT:@class_nameI"
+Block;F:@klassc
+Block:@quoted_table_nameI""blocks";F:@primary_key_nameI"document_id;F:@owner@ :@target[ :@loadedT:@finder_sqlI""blocks".document_id = 1;F:@counter_sql@', '2010-11-17 17:31:43', '2010-11-17 17:31:43')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mVersion Load (0.4ms)[0m   [0;1mSELECT * FROM "versions" [0m
+  [4;35;1mVersion Load (0.4ms)[0m   [0mSELECT * FROM "versions" LIMIT 1[0m
+  [4;36;1mVersion Load (0.4ms)[0m   [0;1mSELECT * FROM "versions" ORDER BY versions.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (140.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (81.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "documents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "blocks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "position" integer, "document_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "versions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "version" integer, "obj_id" integer, "obj_type" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("blocks")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("documents")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("versions")[0m
+  [4;35;1mDocument Create (0.2ms)[0m   [0mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('title', '2010-11-17 17:33:01', '2010-11-17 17:33:01')[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mVersion Create (0.0ms)[0m   [0;1mSQLite3::SQLException: unrecognized token: "'o:Document:@attributes{	"idi"
+titleI"
+title:ET"created_atI"2010-11-17 17:33:01;T"updated_atI"2010-11-17 17:33:01;T:@attributes_cache{": INSERT INTO "versions" ("version", "obj_id", "obj_type", "content", "created_at", "updated_at") VALUES(NULL, 1, 'Document', 'o:Document:@attributes{	"idi"
+titleI"
+title:ET"created_atI"2010-11-17 17:33:01;T"updated_atI"2010-11-17 17:33:01;T:@attributes_cache{ :@blockso:3ActiveRecord::Associations::HasManyAssociation:@reflectiono:4ActiveRecord::Reflection::AssociationReflection:@macro:has_many:
+@name:blocks:@options{:
+orderI"position;F:extend[ :@active_recordcDocument:@collectionT:@class_nameI"
+Block;F:@klassc
+Block:@quoted_table_nameI""blocks";F:@primary_key_nameI"document_id;F:@owner@ :@target[ :@loadedT:@finder_sqlI""blocks".document_id = 1;F:@counter_sql@', '2010-11-17 17:33:01', '2010-11-17 17:33:01')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (165.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (93.6ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "documents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "blocks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "position" integer, "document_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "versions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "version" integer, "obj_id" integer, "obj_type" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("blocks")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("documents")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("versions")[0m
+  [4;36;1mDocument Create (1.1ms)[0m   [0;1mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('title', '2010-11-17 17:35:07', '2010-11-17 17:35:07')[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mVersion Create (0.0ms)[0m   [0mSQLite3::SQLException: unrecognized token: "'o:Document:@attributes{	"idi"
+titleI"
+title:ET"created_atI"2010-11-17 17:35:07;T"updated_atI"2010-11-17 17:35:07;T:@attributes_cache{": INSERT INTO "versions" ("version", "obj_id", "obj_type", "content", "created_at", "updated_at") VALUES(NULL, 1, 'Document', 'o:Document:@attributes{	"idi"
+titleI"
+title:ET"created_atI"2010-11-17 17:35:07;T"updated_atI"2010-11-17 17:35:07;T:@attributes_cache{ :@blockso:3ActiveRecord::Associations::HasManyAssociation:@reflectiono:4ActiveRecord::Reflection::AssociationReflection:@macro:has_many:
+@name:blocks:@options{:
+orderI"position;F:extend[ :@active_recordcDocument:@collectionT:@class_nameI"
+Block;F:@klassc
+Block:@quoted_table_nameI""blocks";F:@primary_key_nameI"document_id;F:@owner@ :@target[ :@loadedT:@finder_sqlI""blocks".document_id = 1;F:@counter_sql@', '2010-11-17 17:35:07', '2010-11-17 17:35:07')[0m
+  [4;36;1mDocument Create (0.2ms)[0m   [0;1mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('title', '2010-11-17 17:35:49', '2010-11-17 17:35:49')[0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.3ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.3ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (135.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (100.3ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "documents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "blocks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "position" integer, "document_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "versions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "version" integer, "obj_id" integer, "obj_type" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("blocks")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("documents")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("versions")[0m
+  [4;36;1mDocument Create (0.3ms)[0m   [0;1mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('title', '2010-11-17 17:37:19', '2010-11-17 17:37:19')[0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (204.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (75.3ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "documents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "blocks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "position" integer, "document_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "versions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "version" integer, "obj_id" integer, "obj_type" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("blocks")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("documents")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("versions")[0m
+  [4;36;1mDocument Create (0.8ms)[0m   [0;1mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('title', '2010-11-17 17:40:12', '2010-11-17 17:40:12')[0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM "versions" WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" LIMIT 1[0m
+  [4;35;1mDocument Load (0.3ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.3ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mVersion Load (0.3ms)[0m   [0mSELECT * FROM "versions" WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" LIMIT 1[0m
+  [4;35;1mDocument Load (0.3ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.3ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mVersion Load (0.3ms)[0m   [0mSELECT * FROM "versions" WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" LIMIT 1[0m
+  [4;35;1mDocument Load (0.3ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.3ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mVersion Load (0.3ms)[0m   [0mSELECT * FROM "versions" WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" LIMIT 1[0m
+  [4;35;1mVersion Load (0.3ms)[0m   [0mSELECT * FROM "versions" WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mVersion Load (0.3ms)[0m   [0;1mSELECT * FROM "versions" [0m
+  [4;35;1mDocument Create (0.2ms)[0m   [0mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('title', '2010-11-17 17:41:30', '2010-11-17 17:41:30')[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 2) ORDER BY position[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM "versions" WHERE (obj_id = 2 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mVersion Create (0.0ms)[0m   [0mSQLite3::SQLException: unrecognized token: "'o:Document:@attributes{	"idi"
+titleI"
+title:ET"created_atI"2010-11-17 17:41:30;T"updated_atI"2010-11-17 17:41:30;T:@attributes_cache{": INSERT INTO "versions" ("version", "obj_id", "obj_type", "content", "created_at", "updated_at") VALUES(NULL, 2, 'Document', 'o:Document:@attributes{	"idi"
+titleI"
+title:ET"created_atI"2010-11-17 17:41:30;T"updated_atI"2010-11-17 17:41:30;T:@attributes_cache{ :@blockso:3ActiveRecord::Associations::HasManyAssociation:@reflectiono:4ActiveRecord::Reflection::AssociationReflection:@macro:has_many:
+@name:blocks:@options{:
+orderI"position;F:extend[ :@active_recordcDocument:@collectionT:@class_nameI"
+Block;F:@klassc
+Block:@quoted_table_nameI""blocks";F:@primary_key_nameI"document_id;F:@owner@ :@target[ :@loadedT:@finder_sqlI""blocks".document_id = 2;F:@counter_sql@', '2010-11-17 17:41:30', '2010-11-17 17:41:30')[0m
+  [4;36;1mDocument Create (0.3ms)[0m   [0;1mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('title', '2010-11-17 18:45:01', '2010-11-17 18:45:01')[0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 2) ORDER BY position[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM "versions" WHERE (obj_id = 2 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mDocument Create (0.5ms)[0m   [0;1mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('title', '2010-11-17 18:50:17', '2010-11-17 18:50:17')[0m
+  [4;35;1mDocument Load (0.3ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 3) [0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 3) ORDER BY position[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM "versions" WHERE (obj_id = 3 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mVersion Create (0.0ms)[0m   [0;1mSQLite3::SQLException: unrecognized token: "'o:Document:@attributes{	"idi"
+titleI"
+title:ET"created_atI"2010-11-17 18:50:17;T"updated_atI"2010-11-17 18:50:17;T:@attributes_cache{": INSERT INTO "versions" ("version", "obj_id", "obj_type", "content", "created_at", "updated_at") VALUES(NULL, 3, 'Document', 'o:Document:@attributes{	"idi"
+titleI"
+title:ET"created_atI"2010-11-17 18:50:17;T"updated_atI"2010-11-17 18:50:17;T:@attributes_cache{ :@blockso:3ActiveRecord::Associations::HasManyAssociation:@reflectiono:4ActiveRecord::Reflection::AssociationReflection:@macro:has_many:
+@name:blocks:@options{:
+orderI"position;F:extend[ :@active_recordcDocument:@collectionT:@class_nameI"
+Block;F:@klassc
+Block:@quoted_table_nameI""blocks";F:@primary_key_nameI"document_id;F:@owner@ :@target[ :@loadedT:@finder_sqlI""blocks".document_id = 3;F:@counter_sql@', '2010-11-17 18:50:17', '2010-11-17 18:50:17')[0m
+  [4;35;1mDocument Create (0.2ms)[0m   [0mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('title', '2010-11-17 18:58:57', '2010-11-17 18:58:57')[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 3) [0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 3) ORDER BY position[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM "versions" WHERE (obj_id = 3 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mVersion Create (0.0ms)[0m   [0mSQLite3::SQLException: unrecognized token: "'o:Document:@attributes{	"idi"
+titleI"
+title:ET"created_atI"2010-11-17 18:58:57;T"updated_atI"2010-11-17 18:58:57;T:@attributes_cache{": INSERT INTO "versions" ("version", "obj_id", "obj_type", "content", "created_at", "updated_at") VALUES(NULL, 3, 'Document', 'o:Document:@attributes{	"idi"
+titleI"
+title:ET"created_atI"2010-11-17 18:58:57;T"updated_atI"2010-11-17 18:58:57;T:@attributes_cache{ :@blockso:3ActiveRecord::Associations::HasManyAssociation:@reflectiono:4ActiveRecord::Reflection::AssociationReflection:@macro:has_many:
+@name:blocks:@options{:
+orderI"position;F:extend[ :@active_recordcDocument:@collectionT:@class_nameI"
+Block;F:@klassc
+Block:@quoted_table_nameI""blocks";F:@primary_key_nameI"document_id;F:@owner@ :@target[ :@loadedT:@finder_sqlI""blocks".document_id = 3;F:@counter_sql@', '2010-11-17 18:58:57', '2010-11-17 18:58:57')[0m
+  [4;36;1mDocument Create (0.2ms)[0m   [0;1mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('title', '2010-11-17 18:59:22', '2010-11-17 18:59:22')[0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 3) [0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 3) ORDER BY position[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM "versions" WHERE (obj_id = 3 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mVersion Create (0.0ms)[0m   [0;1mSQLite3::SQLException: unrecognized token: "'o:Document:@attributes{	"idi"
+titleI"
+title:ET"created_atI"2010-11-17 18:59:22;T"updated_atI"2010-11-17 18:59:22;T:@attributes_cache{": INSERT INTO "versions" ("version", "obj_id", "obj_type", "content", "created_at", "updated_at") VALUES(NULL, 3, 'Document', 'o:Document:@attributes{	"idi"
+titleI"
+title:ET"created_atI"2010-11-17 18:59:22;T"updated_atI"2010-11-17 18:59:22;T:@attributes_cache{ :@blockso:3ActiveRecord::Associations::HasManyAssociation:@reflectiono:4ActiveRecord::Reflection::AssociationReflection:@macro:has_many:
+@name:blocks:@options{:
+orderI"position;F:extend[ :@active_recordcDocument:@collectionT:@class_nameI"
+Block;F:@klassc
+Block:@quoted_table_nameI""blocks";F:@primary_key_nameI"document_id;F:@owner@ :@target[ :@loadedT:@finder_sqlI""blocks".document_id = 3;F:@counter_sql@', '2010-11-17 18:59:22', '2010-11-17 18:59:22')[0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM "documents" [0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mBlock Load (0.3ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 2) ORDER BY position[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mBlock Load (0.3ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 2) ORDER BY position[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mBlock Load (0.3ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 2) ORDER BY position[0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mBlock Load (0.3ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 2) ORDER BY position[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mBlock Load (0.3ms)[0m   [0;1mSELECT "blocks".* FROM "blocks" WHERE ("blocks".document_id = 2) ORDER BY position[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (156.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (204.1ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;36;1mSQL (288.0ms)[0m   [0;1mCREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (43.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;36;1mSQL (99.6ms)[0m   [0;1mCREATE TABLE `blocks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `position` int(11), `document_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;36;1mSQL (99.7ms)[0m   [0;1mCREATE TABLE `versions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `version` int(11), `obj_id` int(11), `obj_type` varchar(255), `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `blocks`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `blocks`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `documents`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `documents`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `versions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `versions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mDocument Create (0.4ms)[0m   [0mINSERT INTO `documents` (`title`, `created_at`, `updated_at`) VALUES('title', '2010-11-17 19:08:30', '2010-11-17 19:08:30')[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM `documents` WHERE (`documents`.`id` = 1) [0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mVersion Load (0.5ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mSQL (47.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mDocument Create (0.2ms)[0m   [0mINSERT INTO `documents` (`title`, `created_at`, `updated_at`) VALUES('title', '2010-11-17 19:09:06', '2010-11-17 19:09:06')[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` WHERE (`documents`.`id` = 2) [0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 2) ORDER BY position[0m
+  [4;36;1mVersion Load (0.2ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 2 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mSQL (45.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mDocument Create (0.4ms)[0m   [0;1mINSERT INTO `documents` (`title`, `created_at`, `updated_at`) VALUES('title', '2010-11-17 19:12:44', '2010-11-17 19:12:44')[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM `documents` WHERE (`documents`.`id` = 3) [0m
+  [4;36;1mBlock Load (0.4ms)[0m   [0;1mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 3) ORDER BY position[0m
+  [4;35;1mVersion Load (0.4ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 3 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mSQL (51.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM `documents` [0m
+  [4;36;1mDocument Load (0.3ms)[0m   [0;1mSELECT * FROM `documents` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mDocument Create (0.2ms)[0m   [0;1mINSERT INTO `documents` (`title`, `created_at`, `updated_at`) VALUES('title', '2010-11-17 19:13:06', '2010-11-17 19:13:06')[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` WHERE (`documents`.`id` = 4) [0m
+  [4;36;1mBlock Load (0.4ms)[0m   [0;1mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 4) ORDER BY position[0m
+  [4;35;1mVersion Load (0.3ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 4 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mSQL (54.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mDocument Load (0.6ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM `documents` [0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.6ms)[0m   [0;1mSELECT * FROM `documents` WHERE (`documents`.`id` = 4) [0m
+  [4;35;1mBlock Load (0.4ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 4) ORDER BY position[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` WHERE (`documents`.`id` = 4) [0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 4) ORDER BY position[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` WHERE (`documents`.`id` = 4) [0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 4) ORDER BY position[0m
+  [4;36;1mBlock Load (0.7ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 4) ORDER BY position[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mDocument Create (0.4ms)[0m   [0;1mINSERT INTO `documents` (`title`, `created_at`, `updated_at`) VALUES('title', '2010-11-17 19:17:50', '2010-11-17 19:17:50')[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM `documents` WHERE (`documents`.`id` = 5) [0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 5) ORDER BY position[0m
+  [4;35;1mVersion Load (0.4ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 5 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mVersion Create (0.4ms)[0m   [0;1mINSERT INTO `versions` (`version`, `obj_id`, `obj_type`, `content`, `created_at`, `updated_at`) VALUES(NULL, 5, 'Document', '--- !ruby/object:Document \nattributes: \n id: 5\n title: title\n created_at: 2010-11-17 19:17:50 Z\n updated_at: 2010-11-17 19:17:50 Z\nattributes_cache: {}\n\nblocks: []\n\n', '2010-11-17 19:17:50', '2010-11-17 19:17:50')[0m
+  [4;35;1mSQL (92.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mVersion Load (0.5ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 5 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 5) ORDER BY position[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM `blocks` WHERE (document_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mBlock Create (0.4ms)[0m   [0;1mINSERT INTO `blocks` (`content`, `position`, `document_id`, `created_at`, `updated_at`) VALUES('--- !ruby/object:DocumentItem::Paragraph \ncontent: \"par\\xC3\\xA1grafo!\"\n', 1, 5, '2010-11-17 19:18:41', '2010-11-17 19:18:41')[0m
+  [4;35;1mDocument Load (0.3ms)[0m   [0mSELECT * FROM `documents` WHERE (`documents`.`id` = 5) [0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` WHERE (`documents`.`id` = 5) [0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 5) ORDER BY position[0m
+  [4;36;1mVersion Load (0.5ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 5 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mVersion Create (0.2ms)[0m   [0mINSERT INTO `versions` (`version`, `obj_id`, `obj_type`, `content`, `created_at`, `updated_at`) VALUES(NULL, 5, 'Document', '--- !ruby/object:Document \nattributes: \n id: 5\n title: title\n created_at: 2010-11-17 19:17:50 Z\n updated_at: 2010-11-17 19:17:50 Z\nattributes_cache: {}\n\nblocks: \n- !ruby/object:Block \n attributes: \n id: 1\n content: |\n --- !ruby/object:DocumentItem::Paragraph \n content: \"par\\xC3\\xA1grafo!\"\n\n position: 1\n document_id: 5\n created_at: 2010-11-17 19:18:41 Z\n updated_at: 2010-11-17 19:18:41 Z\n attributes_cache: {}\n\n', '2010-11-17 19:18:41', '2010-11-17 19:18:41')[0m
+  [4;36;1mSQL (51.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.6ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 5) ORDER BY position[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mVersion Load (0.7ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 5 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mVersion Load (0.2ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 5 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mVersion Load (0.2ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 5 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.6ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mVersion Load (0.2ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 5 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 5) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 5) ORDER BY position[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+Migrating to CreateBlocks (20101116152401)
+Migrating to CreateVersions (20101116152640)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `blocks`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `blocks`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `documents`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `documents`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `versions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `versions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+Migrating to CreateBlocks (20101116152401)
+Migrating to CreateVersions (20101116152640)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `blocks`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `blocks`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `documents`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `documents`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `versions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `versions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (129.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (193.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;36;1mSQL (109.9ms)[0m   [0;1mCREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;36;1mSQL (98.8ms)[0m   [0;1mCREATE TABLE `blocks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `position` int(11), `document_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;36;1mSQL (99.7ms)[0m   [0;1mCREATE TABLE `versions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `version` int(11), `obj_id` int(11), `obj_type` varchar(255), `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `blocks`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `blocks`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `documents`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `documents`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `versions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `versions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (117.9ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (236.2ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;36;1mSQL (87.7ms)[0m   [0;1mCREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;36;1mSQL (99.4ms)[0m   [0;1mCREATE TABLE `blocks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `position` int(11), `document_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;36;1mSQL (99.4ms)[0m   [0;1mCREATE TABLE `versions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `version` int(11), `obj_id` int(11), `obj_type` varchar(255), `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `blocks`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `blocks`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `documents`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `documents`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `versions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `versions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mDocument Create (0.4ms)[0m   [0mINSERT INTO `documents` (`title`, `created_at`, `updated_at`) VALUES('title', '2010-11-17 19:36:52', '2010-11-17 19:36:52')[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM `documents` WHERE (`documents`.`id` = 1) [0m
+  [4;35;1mBlock Load (0.4ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mVersion Load (0.5ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mVersion Create (0.4ms)[0m   [0mINSERT INTO `versions` (`version`, `obj_id`, `obj_type`, `content`, `created_at`, `updated_at`) VALUES(1, 1, 'Document', '--- !ruby/object:Document \nattributes: \n id: 1\n title: title\n created_at: 2010-11-17 19:36:52 Z\n updated_at: 2010-11-17 19:36:52 Z\nattributes_cache: {}\n\nblocks: []\n\n', '2010-11-17 19:36:52', '2010-11-17 19:36:52')[0m
+  [4;36;1mSQL (53.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mVersion Load (0.5ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mVersion Load (0.2ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mVersion Load (0.2ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mVersion Load (0.2ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mVersion Load (0.4ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mBlock Load (0.6ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
