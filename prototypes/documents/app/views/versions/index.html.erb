@@ -1,0 +1,22 @@
+<h1>Listing versions</h1>
+
+<table>
+  <tr>
+    <th>Object</th>
+    <th>Object type</th>
+  </tr>
+
+<% @versions.each do |version| %>
+  <tr>
+    <td><%=h version.object_id %></td>
+    <td><%=h version.object_type %></td>
+    <td><%= link_to 'Show', version %></td>
+    <td><%= link_to 'Edit', edit_version_path(version) %></td>
+    <td><%= link_to 'Destroy', version, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New version', new_version_path %>

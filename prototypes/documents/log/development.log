@@ -1,0 +1,360 @@
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (110.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (61.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "documents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "blocks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "position" integer, "document_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "versions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "object_id" integer, "object_type" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("blocks")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("documents")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("versions")[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mDocument Create (0.3ms)[0m   [0mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES(NULL, '2010-11-16 17:06:59', '2010-11-16 17:06:59')[0m
+  [4;36;1mDocument Create (0.3ms)[0m   [0;1mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('Test Document', '2010-11-16 18:57:41', '2010-11-16 18:57:41')[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 2) ORDER BY position[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM "blocks" WHERE (document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mBlock Create (0.1ms)[0m   [0;1mINSERT INTO "blocks" ("content", "position", "document_id", "created_at", "updated_at") VALUES('--- !ruby/object:DocumentItem::Paragraph 
+content: "isto \xC3\xA9 um paragrafo do bloco 1"
+', 1, 1, '2010-11-16 19:01:18', '2010-11-16 19:01:18')[0m
+  [4;35;1mBlock Load (0.6ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT * FROM "blocks" WHERE (document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mBlock Create (0.1ms)[0m   [0mINSERT INTO "blocks" ("content", "position", "document_id", "created_at", "updated_at") VALUES('--- !ruby/object:DocumentItem::Paragraph 
+content: "isto \xC3\xA9 um paragrafo do bloco 2"
+', 2, 1, '2010-11-16 19:04:02', '2010-11-16 19:04:02')[0m
+  [4;36;1mBlock Load (0.6ms)[0m   [0;1mSELECT * FROM "blocks" WHERE (document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mBlock Create (0.4ms)[0m   [0mINSERT INTO "blocks" ("content", "position", "document_id", "created_at", "updated_at") VALUES('--- !ruby/object:DocumentItem::Paragraph 
+content: "isto \xC3\xA9 um paragrafo do bloco 3"
+', 3, 1, '2010-11-16 19:04:49', '2010-11-16 19:04:49')[0m
+  [4;36;1mDocument Load (0.6ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.7ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.7ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.6ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.6ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.7ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;35;1mBlock Load (0.3ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.7ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT * FROM "blocks" WHERE (document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mBlock Create (0.1ms)[0m   [0;1mINSERT INTO "blocks" ("content", "position", "document_id", "created_at", "updated_at") VALUES('--- !ruby/object:DocumentItem::Paragraph 
+content: coco
+', 4, 1, '2010-11-16 19:08:47', '2010-11-16 19:08:47')[0m
+  [4;35;1mDocument Load (0.7ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mDocument Load (0.3ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.4ms)[0m   [0;1mSELECT * FROM "blocks" WHERE (document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mBlock Create (0.4ms)[0m   [0mINSERT INTO "blocks" ("content", "position", "document_id", "created_at", "updated_at") VALUES('o:DocumentItem::Paragraph:@contentI"	coco:ET', 5, 1, '2010-11-16 19:09:12', '2010-11-16 19:09:12')[0m
+  [4;36;1mDocument Load (0.6ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.6ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.7ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.6ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.7ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (118.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (94.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "documents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "blocks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "position" integer, "document_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "versions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "object_id" integer, "object_type" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("blocks")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("documents")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("versions")[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" [0m
+  [4;35;1mDocument Create (0.8ms)[0m   [0mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('title', '2010-11-17 12:31:59', '2010-11-17 12:31:59')[0m
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM "blocks" WHERE (document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mBlock Create (0.1ms)[0m   [0;1mINSERT INTO "blocks" ("content", "position", "document_id", "created_at", "updated_at") VALUES(NULL, 1, 1, '2010-11-17 12:32:16', '2010-11-17 12:32:16')[0m
+  [4;35;1mBlock Load (0.8ms)[0m   [0mSELECT * FROM "blocks" WHERE (document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mBlock Create (0.4ms)[0m   [0;1mINSERT INTO "blocks" ("content", "position", "document_id", "created_at", "updated_at") VALUES(NULL, 2, 1, '2010-11-17 12:32:23', '2010-11-17 12:32:23')[0m
+  [4;35;1mBlock Load (0.8ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mBlock Load (0.8ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mDocument Load (0.3ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mDocument Load (0.3ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.8ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mBlock Load (0.9ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.7ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.6ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.6ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.7ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.7ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mBlock Update (0.5ms)[0m   [0mUPDATE "blocks" SET "content" = '--- !ruby/object:DocumentItem::Paragraph 
+content: "par\xC3\xA1grafo!"
+', "updated_at" = '2010-11-17 12:45:42' WHERE "id" = 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (844.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (532.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "documents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "blocks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "position" integer, "document_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "versions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "object_id" integer, "object_type" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("blocks")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("documents")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("versions")[0m
+  [4;36;1mDocument Create (0.2ms)[0m   [0;1mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('doc', '2010-11-17 12:48:17', '2010-11-17 12:48:17')[0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM "documents" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (143.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (92.6ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "documents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "blocks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "position" integer, "document_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "versions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "object_id" integer, "object_type" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("blocks")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("documents")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("versions")[0m
+  [4;36;1mDocument Load (0.3ms)[0m   [0;1mSELECT * FROM "documents" [0m
+  [4;35;1mDocument Create (0.5ms)[0m   [0mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('doc', '2010-11-17 13:01:22', '2010-11-17 13:01:22')[0m
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM "blocks" WHERE (document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mBlock Create (0.1ms)[0m   [0;1mINSERT INTO "blocks" ("content", "position", "document_id", "created_at", "updated_at") VALUES(NULL, 1, 1, '2010-11-17 13:01:36', '2010-11-17 13:01:36')[0m
+  [4;35;1mBlock Update (0.5ms)[0m   [0mUPDATE "blocks" SET "content" = '--- !ruby/object:DocumentItem::Paragraph 
+content: "par\xC3\xA1grafo!"
+', "updated_at" = '2010-11-17 13:05:42' WHERE "id" = 1[0m
+  [4;36;1mDocument Load (0.3ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" WHERE (document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mBlock Create (0.1ms)[0m   [0mINSERT INTO "blocks" ("content", "position", "document_id", "created_at", "updated_at") VALUES('--- !ruby/object:DocumentItem::Image {}
+
+', 2, 1, '2010-11-17 14:43:30', '2010-11-17 14:43:30')[0m
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.9ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mDocument Load (0.3ms)[0m   [0mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.3ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.3ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;35;1mDocument Load (0.3ms)[0m   [0mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mDocument Load (0.3ms)[0m   [0mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.3ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.4ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM "documents" ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.4ms)[0m   [0mSELECT * FROM "blocks" WHERE ("blocks".document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (138.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (82.3ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "documents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "blocks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "position" integer, "document_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "versions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "object_id" integer, "object_type" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("blocks")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("documents")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("versions")[0m
+  [4;36;1mDocument Create (0.5ms)[0m   [0;1mINSERT INTO "documents" ("title", "created_at", "updated_at") VALUES('title', '2010-11-17 14:53:10', '2010-11-17 14:53:10')[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" LIMIT 1[0m
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM "documents" LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM "blocks" WHERE (document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mBlock Create (0.2ms)[0m   [0;1mINSERT INTO "blocks" ("content", "position", "document_id", "created_at", "updated_at") VALUES('o:DocumentItem::Paragraph:@contentI"parágrafo!:ET', 1, 1, '2010-11-17 14:53:43', '2010-11-17 14:53:43')[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" LIMIT 1[0m
+  [4;36;1mBlock Load (0.9ms)[0m   [0;1mSELECT * FROM "blocks" LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" LIMIT 1[0m
+  [4;35;1mBlock Load (0.4ms)[0m   [0mSELECT * FROM "blocks" LIMIT 1[0m
+  [4;36;1mBlock Load (1.0ms)[0m   [0;1mSELECT * FROM "blocks" LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" LIMIT 1[0m
+  [4;35;1mBlock Load (0.4ms)[0m   [0mSELECT * FROM "blocks" LIMIT 1[0m
+  [4;36;1mBlock Load (0.4ms)[0m   [0;1mSELECT * FROM "blocks" LIMIT 1[0m
+  [4;35;1mDocument Load (0.4ms)[0m   [0mSELECT * FROM "documents" LIMIT 1[0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT * FROM "blocks" WHERE (document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mBlock Create (0.2ms)[0m   [0mINSERT INTO "blocks" ("content", "position", "document_id", "created_at", "updated_at") VALUES('o:DocumentItem::Paragraph:@contentI"parágrafo!:ET', 2, 1, '2010-11-17 15:09:02', '2010-11-17 15:09:02')[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (1.0ms)[0m   [0mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.3ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (1.0ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (1.4ms)[0m   [0;1mSELECT * FROM "blocks" ORDER BY blocks.id DESC LIMIT 1[0m

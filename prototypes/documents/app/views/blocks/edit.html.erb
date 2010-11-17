@@ -1,0 +1,16 @@
+<h1>Editing block</h1>
+
+<% form_for(@block) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @block %> |
+<%= link_to 'Back', blocks_path %>

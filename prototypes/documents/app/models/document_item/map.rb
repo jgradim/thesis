@@ -1,0 +1,2 @@
+class DocumentItem::Map
+end

@@ -1,0 +1,2 @@
+class DocumentItem::Marker
+end
