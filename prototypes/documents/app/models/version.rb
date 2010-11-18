@@ -1,7 +1,17 @@
 class Version < ActiveRecord::Base
 
+  class HashObject
+    def initialize(hash)
+      @hash = hash
+    end
+    
+    def method_missing(meth, *args, &block)
+      @hash[meth]
+    end
+  end
+
   def object
-    YAML.load(self.content)
+    JSON.load(self.content)
   end
 
 end

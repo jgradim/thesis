@@ -911,3 +911,233 @@ Migrating to CreateVersions (20101116152640)
   [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
   [4;36;1mVersion Load (0.4ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
   [4;35;1mBlock Load (0.6ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (17.0ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mBlock Load (0.3ms)[0m   [0;1mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mBlock Load (0.0ms)[0m   [0;1mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.3ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.3ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (13.5ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.9ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mBlock Load (0.7ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mBlock Load (0.3ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;35;1mDocument Load (0.6ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mDocument Create (0.6ms)[0m   [0;1mINSERT INTO `documents` (`title`, `created_at`, `updated_at`) VALUES('DOCUMENT!', '2010-11-18 13:06:35', '2010-11-18 13:06:35')[0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM `documents` WHERE (`documents`.`id` = 2) [0m
+  [4;36;1mBlock Load (0.4ms)[0m   [0;1mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 2) ORDER BY position[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 2 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mVersion Create (0.1ms)[0m   [0;1mINSERT INTO `versions` (`version`, `obj_id`, `obj_type`, `content`, `created_at`, `updated_at`) VALUES(1, 2, 'Document', '--- !ruby/object:Document \nattributes: \n id: 2\n title: DOCUMENT!\n created_at: 2010-11-18 13:06:35 Z\n updated_at: 2010-11-18 13:06:35 Z\nattributes_cache: {}\n\nblocks: []\n\n', '2010-11-18 13:06:35', '2010-11-18 13:06:35')[0m
+  [4;35;1mSQL (58.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mDocument Load (0.6ms)[0m   [0;1mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (document_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mBlock Create (0.4ms)[0m   [0mINSERT INTO `blocks` (`content`, `position`, `document_id`, `created_at`, `updated_at`) VALUES('--- !ruby/object:DocumentItem::Paragraph \ncontent: PAR!\n', 1, 2, '2010-11-18 13:07:03', '2010-11-18 13:07:03')[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM `documents` WHERE (`documents`.`id` = 2) [0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM `documents` WHERE (`documents`.`id` = 2) [0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT `blocks`.* FROM `blocks` WHERE (`blocks`.document_id = 2) ORDER BY position[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 2 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mVersion Create (0.1ms)[0m   [0;1mINSERT INTO `versions` (`version`, `obj_id`, `obj_type`, `content`, `created_at`, `updated_at`) VALUES(2, 2, 'Document', '--- !ruby/object:Document \nattributes: \n id: 2\n title: DOCUMENT!\n created_at: 2010-11-18 13:06:35 Z\n updated_at: 2010-11-18 13:06:35 Z\nattributes_cache: {}\n\nblocks: \n- !ruby/object:Block \n attributes: \n id: 1\n content: |\n --- !ruby/object:DocumentItem::Paragraph \n content: PAR!\n\n position: 1\n document_id: 2\n created_at: 2010-11-18 13:07:03 Z\n updated_at: 2010-11-18 13:07:03 Z\n attributes_cache: {}\n\n', '2010-11-18 13:07:03', '2010-11-18 13:07:03')[0m
+  [4;35;1mSQL (59.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 2 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.7ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 2) ORDER BY position[0m
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mDocument Load (0.3ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 2) ORDER BY position[0m
+  [4;35;1mDocument Load (0.3ms)[0m   [0mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;36;1mBlock Load (0.2ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 2) ORDER BY position[0m
+  [4;36;1mDocument Load (17.0ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.8ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM `documents` ORDER BY documents.id DESC LIMIT 1[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 2) ORDER BY position[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+Migrating to CreateBlocks (20101116152401)
+Migrating to CreateVersions (20101116152640)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `blocks`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `blocks`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `documents`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `documents`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `versions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `versions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+Migrating to CreateBlocks (20101116152401)
+Migrating to CreateVersions (20101116152640)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `blocks`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `blocks`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `documents`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `documents`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `versions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `versions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (110.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (237.2ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;36;1mSQL (107.1ms)[0m   [0;1mCREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;36;1mSQL (112.8ms)[0m   [0;1mCREATE TABLE `blocks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `position` int(11), `document_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;36;1mSQL (95.8ms)[0m   [0;1mCREATE TABLE `versions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `version` int(11), `obj_id` int(11), `obj_type` varchar(255), `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (33.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `blocks`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `blocks`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `blocks`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW FIELDS FROM `documents`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `documents`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `documents`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mdescribe `versions`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `versions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (112.2ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (236.3ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDocuments (20101116152343)
+  [4;36;1mSQL (99.0ms)[0m   [0;1mCREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152343')[0m
+Migrating to CreateBlocks (20101116152401)
+  [4;36;1mSQL (99.5ms)[0m   [0;1mCREATE TABLE `blocks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `position` int(11), `document_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152401')[0m
+Migrating to CreateVersions (20101116152640)
+  [4;36;1mSQL (101.3ms)[0m   [0;1mCREATE TABLE `versions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `version` int(11), `obj_id` int(11), `obj_type` varchar(255), `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101116152640')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `blocks`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mdescribe `blocks`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `blocks`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW FIELDS FROM `documents`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mdescribe `documents`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `documents`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mdescribe `versions`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `versions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `documents`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mDocument Create (0.2ms)[0m   [0;1mINSERT INTO `documents` (`title`, `created_at`, `updated_at`) VALUES('DOCUMENT!', '2010-11-18 15:25:20', '2010-11-18 15:25:20')[0m
+  [4;35;1mBlock Load (0.3ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mVersion Load (0.2ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mVersion Create (0.1ms)[0m   [0;1mINSERT INTO `versions` (`version`, `obj_id`, `obj_type`, `content`, `created_at`, `updated_at`) VALUES(1, 1, 'Document', '{\"document\":{\"created_at\":\"2010-11-18T15:25:20Z\",\"id\":1,\"title\":\"DOCUMENT!\",\"updated_at\":\"2010-11-18T15:25:20Z\",\"blocks\":[]}}', '2010-11-18 15:25:20', '2010-11-18 15:25:20')[0m
+  [4;35;1mSQL (64.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `blocks`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mBlock Load (0.5ms)[0m   [0mSELECT * FROM `blocks` WHERE (document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mBlock Create (0.2ms)[0m   [0;1mINSERT INTO `blocks` (`content`, `position`, `document_id`, `created_at`, `updated_at`) VALUES('--- !ruby/object:DocumentItem::Paragraph \ncontent: PAR 1!\n', 1, 1, '2010-11-18 15:26:31', '2010-11-18 15:26:31')[0m
+  [4;35;1mDocument Load (0.9ms)[0m   [0mSELECT * FROM `documents` WHERE (`documents`.`id` = 1) [0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mVersion Create (0.1ms)[0m   [0;1mINSERT INTO `versions` (`version`, `obj_id`, `obj_type`, `content`, `created_at`, `updated_at`) VALUES(2, 1, 'Document', '{\"document\":{\"created_at\":\"2010-11-18T15:25:20Z\",\"id\":1,\"title\":\"DOCUMENT!\",\"updated_at\":\"2010-11-18T15:25:20Z\",\"blocks\":[{\"content\":\"--- !ruby/object:DocumentItem::Paragraph \\ncontent: PAR 1!\\n\",\"created_at\":\"2010-11-18T15:26:31Z\",\"document_id\":1,\"id\":1,\"position\":1,\"updated_at\":\"2010-11-18T15:26:31Z\"}]}}', '2010-11-18 15:26:31', '2010-11-18 15:26:31')[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mBlock Load (0.6ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mBlock Create (0.3ms)[0m   [0mINSERT INTO `blocks` (`content`, `position`, `document_id`, `created_at`, `updated_at`) VALUES('--- !ruby/object:DocumentItem::Paragraph \ncontent: PAR 2!\n', 2, 1, '2010-11-18 15:26:53', '2010-11-18 15:26:53')[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` WHERE (`documents`.`id` = 1) [0m
+  [4;35;1mBlock Load (0.4ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;36;1mVersion Load (0.5ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Create (0.4ms)[0m   [0mINSERT INTO `versions` (`version`, `obj_id`, `obj_type`, `content`, `created_at`, `updated_at`) VALUES(3, 1, 'Document', '{\"document\":{\"created_at\":\"2010-11-18T15:25:20Z\",\"id\":1,\"title\":\"DOCUMENT!\",\"updated_at\":\"2010-11-18T15:25:20Z\",\"blocks\":[{\"content\":\"--- !ruby/object:DocumentItem::Paragraph \\ncontent: PAR 1!\\n\",\"created_at\":\"2010-11-18T15:26:31Z\",\"document_id\":1,\"id\":1,\"position\":1,\"updated_at\":\"2010-11-18T15:26:31Z\"},{\"content\":\"--- !ruby/object:DocumentItem::Paragraph \\ncontent: PAR 2!\\n\",\"created_at\":\"2010-11-18T15:26:53Z\",\"document_id\":1,\"id\":2,\"position\":2,\"updated_at\":\"2010-11-18T15:26:53Z\"}]}}', '2010-11-18 15:26:53', '2010-11-18 15:26:53')[0m
+  [4;36;1mSQL (41.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mBlock Load (0.6ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mBlock Update (0.6ms)[0m   [0;1mUPDATE `blocks` SET `content` = '--- !ruby/object:DocumentItem::Paragraph \ncontent: PAR 1, REDUX!\n', `updated_at` = '2010-11-18 15:28:03' WHERE `id` = 1[0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM `documents` WHERE (`documents`.`id` = 1) [0m
+  [4;36;1mBlock Load (0.5ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position[0m
+  [4;35;1mVersion Load (0.5ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mVersion Create (0.3ms)[0m   [0;1mINSERT INTO `versions` (`version`, `obj_id`, `obj_type`, `content`, `created_at`, `updated_at`) VALUES(4, 1, 'Document', '{\"document\":{\"created_at\":\"2010-11-18T15:25:20Z\",\"id\":1,\"title\":\"DOCUMENT!\",\"updated_at\":\"2010-11-18T15:25:20Z\",\"blocks\":[{\"content\":\"--- !ruby/object:DocumentItem::Paragraph \\ncontent: PAR 1, REDUX!\\n\",\"created_at\":\"2010-11-18T15:26:31Z\",\"document_id\":1,\"id\":1,\"position\":1,\"updated_at\":\"2010-11-18T15:28:03Z\"},{\"content\":\"--- !ruby/object:DocumentItem::Paragraph \\ncontent: PAR 2!\\n\",\"created_at\":\"2010-11-18T15:26:53Z\",\"document_id\":1,\"id\":2,\"position\":2,\"updated_at\":\"2010-11-18T15:26:53Z\"}]}}', '2010-11-18 15:28:03', '2010-11-18 15:28:03')[0m
+  [4;35;1mSQL (63.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mDocument Load (0.3ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.8ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mVersion Load (0.2ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.9ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
