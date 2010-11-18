@@ -9,3 +9,4 @@ sota/*.pdf
 sota/*.toc
 sota/dia/*~
 
+**/log/*.log

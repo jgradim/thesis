@@ -1141,3 +1141,264 @@ Migrating to CreateVersions (20101116152640)
   [4;35;1mVersion Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
   [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
   [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.2ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mVersion Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mVersion Load (0.3ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version ASC[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mBlock Load (0.3ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mBlock Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `blocks`[0m
+  [4;36;1mDocument Load (0.3ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.3ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.3ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.6ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.2ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mBlock Load (0.0ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mBlock Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `blocks`[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mBlock Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `blocks`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mBlock Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `blocks`[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mBlock Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `blocks`[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mBlock Load (0.1ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mBlock Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `blocks`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mBlock Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `blocks`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mBlock Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blocks`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mBlock Load (0.1ms)[0m   [0;1mSELECT * FROM `blocks` WHERE (`blocks`.document_id = 1) ORDER BY position LIMIT 1[0m
+  [4;35;1mBlock Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `blocks`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.8ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.2ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.2ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (0.3ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.2ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.3ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.2ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mVersion Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mDocument Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `documents`[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mDocument Load (0.1ms)[0m   [0;1mSELECT * FROM `documents` LIMIT 1[0m
+  [4;35;1mDocument Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mDocument Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `documents`[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mVersion Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `versions`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mDocument Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `documents`[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mVersion Columns (0.3ms)[0m   [0;1mSHOW FIELDS FROM `versions`[0m
+  [4;35;1mDocument Load (0.3ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mVersion Load (0.5ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mDocument Load (0.2ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mVersion Load (0.1ms)[0m   [0;1mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mDocument Load (0.1ms)[0m   [0mSELECT * FROM `documents` LIMIT 1[0m
+  [4;36;1mDocument Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `documents`[0m
+  [4;35;1mVersion Load (0.1ms)[0m   [0mSELECT * FROM `versions` WHERE (obj_id = 1 AND obj_type = 'Document') ORDER BY version DESC LIMIT 1[0m
+  [4;36;1mVersion Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `versions`[0m
