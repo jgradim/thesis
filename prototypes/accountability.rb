@@ -68,16 +68,45 @@ class Party
 
 end
 
+# benchmarks
+parties = []
+accountabilities = []
+
+puts "with 3 @parties per 9 @accountabilities:\n"
+
+1000000.times do
+
 mark = Party.new('Mark')
 tom = Party.new('Tom')
 st_marys = Party.new("St. Mary's")
 
-Accountability.new(st_marys, mark, :appointment)
-Accountability.new(st_marys, tom, :appointment)
+a1 = Accountability.new(st_marys, mark, :appointment)
+a2 = Accountability.new(st_marys, tom, :appointment)
+a3 = Accountability.new(tom, mark, :supervision)
+a4 = Accountability.new(tom, mark, :a)
+a5 = Accountability.new(tom, mark, :b)
+a6 = Accountability.new(tom, mark, :c)
+a7 = Accountability.new(tom, mark, :d)
+a8 = Accountability.new(tom, mark, :e)
+a9 = Accountability.new(tom, mark, :f)
 
-Accountability.new(tom, mark, :supervision)
+# keep objects in memory
+parties.push(mark, tom, st_marys)
+accountabilities.push(a1, a2, a3, a4, a5, a6, a7, a8, a9)
+
+total_objects = parties.size + accountabilities.size
+
+if total_objects % 10000 == 0
+  memory_usage = `ps -o rss= -p #{Process.pid}`.to_i # in kilobytes
+  puts "~#{total_objects} objects in memory = #{memory_usage} kb"
+end
+
+end
+
+puts total_objects
 
 # tests
+=begin
 puts st_marys.children.include?(mark)
 puts mark.parents.include?(st_marys)
 
@@ -90,3 +119,4 @@ puts mark.parents(:supervision).include?(tom)
 
 # cycle checking tests - will throw an exception
 Accountability.new(mark, tom, :supervision)
+=end
