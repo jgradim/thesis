@@ -7,3 +7,11 @@ development:
   user: root
   password: 
   encoding: utf8
+  
+production:
+  adapter: mysql
+  database: documents_prototype
+  host: localhost
+  user: root
+  password: 
+  encoding: utf8

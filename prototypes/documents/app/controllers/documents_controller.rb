@@ -13,12 +13,16 @@ class DocumentsController < ApplicationController
   # GET /documents/1
   # GET /documents/1.xml
   def show
-    @document = Document.find(params[:id])
+    @document = Document.find(params[:id], :include => :blocks)
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @document }
     end
+  end
+  
+  def version
+    @document = Document.find(params[:id]).version(params[:number])
   end
 
   # GET /documents/new

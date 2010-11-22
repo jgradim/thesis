@@ -8,6 +8,10 @@ class Document < ActiveRecord::Base
       :order => 'version ASC')
   end
   
+  def version(number)
+    Version.find(:first, :conditions => ['obj_id = ? AND obj_type = ? AND version = ?', self.id, self.class.to_s, number])
+  end
+  
   def head
     Version.find(:first,
       :conditions => ['obj_id = ? AND obj_type = ?', self.id, self.class.to_s],

@@ -4,8 +4,13 @@ class Block < ActiveRecord::Base
   acts_as_list :scope => :document
   
   #alias_method :yamled_content, :content # <= does not work, tries to alias Block.content instead of @block.content
-  def item
-    YAML.load(content)
+  def item 
+    i = YAML.load(content)
+    if i.class.is_a?(String)
+      i.class.constantize
+      return YAML.load(content)
+    end
+    i
   end
   def item=(item)
     self.content = item

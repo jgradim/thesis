@@ -3,7 +3,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :blocks
 
-  map.resources :documents
+  map.resources :documents, :member => { :version => :get }
+  
+  map.document_version '/documents/:id/version/:number', :controller => :documents, :action => :version
 
   # The priority is based upon order of creation: first created -> highest priority.
 

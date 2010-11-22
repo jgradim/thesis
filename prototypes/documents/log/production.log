@@ -1,0 +1,28 @@
+
+
+Processing DocumentsController#version (for 127.0.0.1 at 2010-11-22 16:49:17) [GET]
+  Parameters: {"id"=>"1", "number"=>"4"}
+Rendering template within layouts/documents
+Rendering documents/version
+Completed in 8ms (View: 5, DB: 1) | 200 OK [http://localhost/documents/1/version/4]
+
+
+Processing DocumentsController#version (for 127.0.0.1 at 2010-11-22 16:49:21) [GET]
+  Parameters: {"id"=>"1", "number"=>"4"}
+Rendering template within layouts/documents
+Rendering documents/version
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/documents/1/version/4]
+
+
+Processing DocumentsController#version (for 127.0.0.1 at 2010-11-22 16:49:28) [GET]
+  Parameters: {"id"=>"1", "number"=>"5"}
+Rendering template within layouts/documents
+Rendering documents/version
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/documents/1/version/5]
+
+
+Processing DocumentsController#version (for 127.0.0.1 at 2010-11-22 16:49:30) [GET]
+  Parameters: {"id"=>"1", "number"=>"4"}
+Rendering template within layouts/documents
+Rendering documents/version
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/documents/1/version/4]

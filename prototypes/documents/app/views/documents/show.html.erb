@@ -3,6 +3,10 @@
   <%=h @document.title %>
 </p>
 
+<% @document.blocks.each do |block| -%>
+  <%= render block.item %>  
+<% end -%>
+
 
 <%= link_to 'Edit', edit_document_path(@document) %> |
 <%= link_to 'Back', documents_path %>
