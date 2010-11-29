@@ -7,6 +7,6 @@
   <%= render block.item %>  
 <% end -%>
 
-
 <%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', documents_path %>
+<%= link_to 'Back', documents_path %> |
+<%= link_to 'Versions', document_version_path(:number => @document.head.version) %>
