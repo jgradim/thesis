@@ -1,0 +1,12 @@
+<ul>
+  <li>Lat: <%= map.lat %></li>
+  <li>Lng: <%= map.lng %></li>
+  <li>Markers: 
+  <% map.markers.each do |marker| -%>
+    <ul>
+      <li>Lat: <%= marker.lat %></li>
+      <li>Lng: <%= marker.lng %></li>
+    </ul>
+  <% end -%>
+  </li>
+</ul>
