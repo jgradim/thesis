@@ -1,4 +1,4 @@
-class DocumentItem::Image
+class DocumentItem::Image < DocumentItem
 
   attr_accessor :content
   

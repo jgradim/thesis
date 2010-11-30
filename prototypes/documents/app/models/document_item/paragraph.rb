@@ -1,9 +1,5 @@
-class DocumentItem::Paragraph
+class DocumentItem::Paragraph < DocumentItem
   
   attr_accessor :content
-  
-  def initialize(content)
-    @content = content
-  end
   
 end
