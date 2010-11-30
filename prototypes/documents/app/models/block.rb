@@ -17,10 +17,10 @@ class Block < ActiveRecord::Base
   end
   
   # AR Callbacks
-  before_save :yaml_content
+  before_save :serialize_content
   after_save :save_document
   
-  def yaml_content
+  def serialize_content
     self.content = YAML.dump(self.content) rescue nil
   end
   
