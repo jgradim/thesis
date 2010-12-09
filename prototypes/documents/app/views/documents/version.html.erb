@@ -1,11 +1,12 @@
-<p>
-  <b>Title:</b>
-  <%=h @document.object.document.title %>
-</p>
-
-<% @document.object.document.blocks.each do |block| %>
-  <%= render YAML.load(block.content) %>
-<% end %>
-
+<%= link_to 'Document', document_path(params[:id])  %>
 <%= link_to "Version #{params[:number].to_i-1}", document_version_path(:number => params[:number].to_i-1) %>
 <%= link_to "Version #{params[:number].to_i+1}", document_version_path(:number => params[:number].to_i+1) %>
+
+<p>
+  <b>Title:</b>
+  <%=h @version.object.document.title %>
+</p>
+
+<% @version.object.document.blocks.each do |block| %>
+  <%= render YAML.load(block.content) %>
+<% end %>

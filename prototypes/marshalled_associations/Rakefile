@@ -1,0 +1,13 @@
+# coding: utf-8
+require 'rubygems'
+require 'rake'
+require 'echoe'
+
+Echoe.new('marshalled_associations', '0.0.1') do |p|
+  p.description     = "Dummy description"
+  p.url             = "http://github.com/jgradim/marshalled_associations"
+  p.author          = "João Gradim"
+  p.email           = "joao.gradim@gmail.com"
+  p.ignore_pattern  = ["tmp/*", "script/*"]
+  p.development_dependencies = []
+end

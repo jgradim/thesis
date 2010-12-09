@@ -57,16 +57,23 @@ class BlocksController < ApplicationController
   # PUT /blocks/1.xml
   def update
     @block = Block.find(params[:id])
+    
+    item = params[:block][:type].classify.constantize.new(params[:block][:params])
 
-    respond_to do |format|
-      if @block.update_attributes(params[:block])
-        format.html { redirect_to(@block, :notice => 'Block was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @block.errors, :status => :unprocessable_entity }
-      end
-    end
+    @block.item = item
+    @block.save
+    
+    redirect_to @block.document
+
+    #respond_to do |format|
+    #  if @block.update_attributes(params[:block])
+    #    format.html { redirect_to(@block, :notice => 'Block was successfully updated.') }
+    #    format.xml  { head :ok }
+    #  else
+    #    format.html { render :action => "edit" }
+    #    format.xml  { render :xml => @block.errors, :status => :unprocessable_entity }
+    #  end
+    #end
   end
 
   # DELETE /blocks/1

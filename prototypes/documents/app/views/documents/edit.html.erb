@@ -7,10 +7,13 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </p>
+  
   <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>
+
+<%= render :partial => 'blocks/edit', :collection => @document.blocks %>
 
 <%= link_to 'Show', @document %> |
 <%= link_to 'Back', documents_path %>

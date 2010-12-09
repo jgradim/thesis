@@ -1,0 +1,5 @@
+<% form_for edit do |f| -%>
+  <%= hidden_field_tag 'block[type]', edit.item.class.to_s.tableize %>
+  <%= render :partial => "#{edit.item.class.to_s.tableize}/edit", :object => edit.item %>
+  <%= f.submit 'edit' %>
+<% end -%>

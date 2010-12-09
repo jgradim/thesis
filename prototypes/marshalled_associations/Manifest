@@ -1,0 +1,5 @@
+Manifest
+Rakefile
+lib/callable_hash.rb
+lib/class_level_inheritable_attributes.rb
+marshalled_associations.gemspec

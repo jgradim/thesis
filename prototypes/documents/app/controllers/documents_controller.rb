@@ -22,7 +22,7 @@ class DocumentsController < ApplicationController
   end
   
   def version
-    @document = Document.find(params[:id]).version(params[:number])
+    @version = Document.find(params[:id]).version(params[:number])
   end
 
   # GET /documents/new
