@@ -34,7 +34,7 @@ class Block < ActiveRecord::Base
   end
   
   def save_document
-    self.document.save!
+    self.document.reload.save!
   end
   
 end
