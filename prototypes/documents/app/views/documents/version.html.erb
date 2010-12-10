@@ -8,5 +8,6 @@
 </p>
 
 <% @version.object.document.blocks.each do |block| %>
-  <%= render YAML.load(block.content) %>
+  <% obj = YAML.load(block.content); %>
+  <%= render :partial => "#{obj.class.to_s.tableize}/version", :object => obj %>
 <% end %>
