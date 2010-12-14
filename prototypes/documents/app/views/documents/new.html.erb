@@ -12,4 +12,6 @@
   </p>
 <% end %>
 
+<%= render :partial => 'blocks/new_block', :object => Block.new(:item => DocumentItem::Paragraph.new) %>
+
 <%= link_to 'Back', documents_path %>
