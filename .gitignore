@@ -8,3 +8,14 @@ sota/*.out
 sota/*.pdf
 sota/*.toc
 sota/dia/*~
+thesis/*.aux
+thesis/*.bbl
+thesis/*.blg
+thesis/*.lof
+thesis/*.log
+thesis/*.lot
+thesis/*.out
+thesis/*.pdf
+thesis/*.toc
+thesis/dia/*~
+prototypes/documents/log/*.log
