@@ -9,6 +9,7 @@ sota/*.pdf
 sota/*.toc
 sota/dia/*~
 thesis/*.aux
+thesis/**/*.aux
 thesis/*.bbl
 thesis/*.blg
 thesis/*.lof
