@@ -8,6 +8,6 @@ all:
 	pdflatex $(TARGET).tex
 
 clean:
-	rm -f *.aux *.bbl *.blg *.lof *.log *.lot *.out *.toc
+	rm -f *.aux **/*.aux *.bbl *.blg *.lof *.log *.lot *.out *.toc
 
 rebuild: clean all
