@@ -10,19 +10,15 @@ The main concerns of this thesis are how these architectural and design patterns
 
 The application of architectural patterns is outside the scope of this project, mainly because the project which will serve as a base to the case studies herein described is tied to the Ruby on Rails framework and its implementation of the MVC architecture for software systems. Trying to tackle the problem by changing the underlying architecture would mean that the application would mostly have to be rebuilt from scratch, with the team having to stop development to rewrite the application and learning a whole new set of skills, which is simply not feasible.
 
-FIXME: Also, financial issues with having the whole team (it's a small team) training instead of developing and enhancing the existing product. Also, the system is too complex to simply change the underlying architecture. % Many companies are tied to obsolete software for the same reasons
+\textbf{FIXME: Also, financial issues with having the whole team (it's a small team) training instead of developing and enhancing the existing product. Also, the system is too complex to simply change the underlying architecture. Example: many companies are tied to obsolete software for the same reasons}
 
 \section{Design Patterns}\label{sec:design_patterns}
 
-As the modification of the underlying architecture has been discarded for the reasons stated in \ref{sec:architectural_patterns}, the next step is to modify only \emph{parts} of the application design, focusing on a number of different areas --- also known as hotspots --- chosen for their unique requirements in terms of variability.
-
-%In order to identify the most adequate areas to focus in, a study of the design of the whole system is necessary --- 
+As the modification of the underlying architecture has been discarded for the reasons stated in \ref{sec:architectural_patterns}, the next step is to modify only \emph{parts} of the application design, focusing on a number of different areas --- also known as hotspots --- chosen for their unique requirements in terms of variability. Having chosen these areas, it is important to define which AOM-related design patterns should be applied to solve their problems, and why.
 
 \section{Case-study Areas}\label{sec:case-study_areas}
 
-For this study, three hotspots within the application were chosen:
-
-NOTE: ? Should the proposed solutions be described below? ?
+In order to identify the most adequate areas to focus in, a study of the design of the whole system was necessary --- this allowed singling the areas that had naturally occuring highly-variable natures. For this study, three hotspots within the application were chosen:
 
 \begin{itemize}
   \item \textbf{Roles:} in escolinhas.pt, a user is associated with a number of different roles. These roles allow to users to perform many different tasks and to have access to a number of distinct sections of the platform --- they are used as the credencials for the ACL used. These roles are implemented using a variant of the \textsc{Organization Hiercharchy} as described by Martin Fowler in \cite{fowler_organization_hierarchy}. This implementation leads to a restrictive design, making the task of creating new rules or roles somewhat complicated. \\
@@ -32,5 +28,6 @@ NOTE: ? Should the proposed solutions be described below? ?
   \item \textbf{Document Editor:} the document editor present in escolinhas.pt (Fig.~\ref{fig:escolinhas_pt_doc_editor}) is one of the most used parts of the platform. It produces documents which, in their simplest form, have a title and a series of blocks that serve as a placeholder for many different types of content (text, images, drawing, maps, etc). These documents are able to maintain a history of the modifications, in order to audit changes to its content, and to be able to publish a specific version of the document to the platform. While the editor was built with expansibility in mind, the process to create a new type of block is not as streamlined as one may wish. On top of that, the versioning system implemented is very tightly coupled with the \textsc{ActiveRecord} provided by the Ruby on Rails framework, which makes the logic for versioning unnecessarily complicated. This makes the document editor an interesting area for this kind of study. \\
 \end{itemize}
 
-Which AOM-related design patterns should be applied to solve certain problems, and why.
+
+\textbf{NOTE: Should the proposed solutions be described above?}
 
