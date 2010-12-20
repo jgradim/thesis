@@ -162,7 +162,14 @@ Usually a class is modeled with a number of different attributes, representing t
 
 \subsubsection{Relationships Between Entities}\label{sec:relationships_between_entities}
 
-\cite{YJ02} describes the relationships between AOM classes by using the \textsc{Accountability} pattern~\cite{fowler, hay}.
+\cite{YJ02} describes the relationships between AOM classes by using the \textsc{Accountability} pattern~\cite{fowler, hay}. The \textsc{Accountability} pattern is used when there is a need to express multiple types of relationships between \emph{parties} (regardless of what their types may be), all of which carry a different meaning\cite{fowler_accountability}. This pattern is shown on Figure~\ref{fig:accountability}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=100mm]{accountability}
+  \caption{\textsc{Accountability} pattern}
+  \label{fig:accountability}
+\end{figure}
 
 Most OOP languages, however, describe object attributes as either primitive values or references to other objects. Some languages, such as Ruby and Smalltalk, treat everything as an object and do not make any difference between references and primitive values. These concepts can be used to extend the \textsc{Property} pattern, and make it aware of relationships between entities, using attributes such as cardinality, navigability or role~\cite{aom_research_roadmap}.
 
