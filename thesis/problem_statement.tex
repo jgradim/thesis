@@ -18,7 +18,7 @@ As the modification of the underlying architecture has been discarded for the re
 
 \section{Case-study Areas}\label{sec:case-study_areas}
 
-In order to identify the most adequate areas to focus in, a study of the design of the whole system was necessary --- this allowed singling the areas that had naturally occuring highly-variable natures. For this study, three hotspots within the application were chosen:
+In order to identify the most adequate areas to focus in, a study of the design of the whole system was necessary --- this allowed singling the areas that had naturally occuring highly-variable requirements. For this study, three hotspots within the application were chosen:
 
 \begin{itemize}
   \item \textbf{Roles:} in escolinhas.pt, a user is associated with a number of different roles. These roles allow to users to perform many different tasks and to have access to a number of distinct sections of the platform --- they are used as the credencials for the ACL used. These roles are implemented using a variant of the \textsc{Organization Hiercharchy} as described by Martin Fowler in \cite{fowler_organization_hierarchy}. This implementation leads to a restrictive design, making the task of creating new rules or roles somewhat complicated. \\
