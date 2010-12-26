@@ -1,0 +1,7 @@
+task :figures do
+  `ls dia/*.dia`.split.each do |f|
+    puts "dia #{f} -e figures/#{File.basename(f).gsub(/\.\w+$/,'')}.eps -t eps-pango"
+    `dia #{f} -e figures/#{File.basename(f).gsub(/\.\w+$/,'')}.eps -t eps-pango`
+  end
+  `sh makepdfs.sh`
+end
