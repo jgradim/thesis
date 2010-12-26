@@ -11,9 +11,18 @@ The current design for the escolinhas.pt social network is dynamic in nature, an
 
 \subsection{Variability Requirements}\label{sec:fa_social_network_variability_requirements}
 
-This model, however useful, offers a very small degree of variability. Due to the closed nature of the platform, there is a need to provide mechanisms able to fine-tune these connections in order to cater to each school specific needs. These mechanisms need to be available at the system administrator level, in order to easily manipulate these connections without the need to pollute the application's codebase with hard-coded rules and without the need for redeployement.
+This model, however useful, offers a very small degree of variability. Due to the closed nature of the platform, there is a need to provide mechanisms able to fine-tune these connections in order to cater to each school specific needs. These mechanisms need to be available at the system administrator level, in order to easily manipulate these links without the need to pollute the application's codebase with hard-coded rules and without the need for redeployement.
 
 \subsection{Candidate Patterns}\label{sec:fa_social_network_candidate_patterns}
+
+Ideally, the user network would be described with a simple, self-referencing model, as shown in figure~\ref{fig:ideal_social_network_users}. This allows to create static relationships between any two users that can be edited as needed.
+
+\begin{figure}[H]
+  \centering
+  %\includegraphics[width=65mm]{social_network_conceptual.pdf}
+  \caption{Conceptual User Network Model}
+  \label{fig:social_network_conceptual}
+\end{figure}
 
 \subsection{Chosen Patterns \& Rationale}\label{sec:fa_social_network_chosen_patterns_rationale}
 
@@ -21,7 +30,7 @@ A variant of the \textsc{Accountability} design pattern was chosen (shown in Fig
 
 \begin{figure}[H]
   \centering
-  %\includegraphics[width=65mm]{social_network_current.pdf}
+  %\includegraphics[width=65mm]{social_network_conceptual.pdf}
   \caption{Conceptual User Network Model}
   \label{fig:social_network_conceptual}
 \end{figure}
