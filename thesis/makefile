@@ -1,7 +1,6 @@
 TARGET=thesis
 
 all:
-	rake figures
 	pdflatex $(TARGET).tex
 	bibtex $(TARGET)
 	pdflatex $(TARGET).tex
