@@ -44,18 +44,20 @@ A variant of the \textsc{Accountability} design pattern was chosen (shown in Fig
 \textbf{FIXME:} Explain the implementation and the different types of accountabilities created, and why
 
 \begin{itemize}
-  \item \textbf{group\_professor:}
-  \item \textbf{professor:}
-  \item \textbf{group\_student:}
-  \item \textbf{school\_professor:}
-  \item \textbf{school\_student:}
+  \item \textbf{group\_professor:} establishes a connection between a \emph{Group} and a \emph{Professor}, meaning that the user is one of the teacher of \emph{Group}
+  \item \textbf{professor:} establishes a connection between two \emph{Users} --- a \emph{Professor} and a \emph{Student} --- creating a teacher-student relationship between them through whichever \emph{Group} they are related to
+  \item \textbf{group\_student:} establishes a connection between a \emph{Group} and a \emph{Student}, meaning that the user is part of the \emph{Group} and taught by the \textbf{group\_professors} associated with the aforementioned \emph{Group}
+  \item \textbf{school\_professor:} establishes a connection between a \emph{School} and a \emph{Professor}
+  \item \textbf{school\_student:} establishes a connection between a \emph{School} and a \emph{Student}
   \item \textbf{parent:} establishes a parenthood relationship between two users
-  \item \textbf{school\_coordinator:}
-  \item \textbf{colleague:}
-  \item \textbf{student:}
-  \item \textbf{school\_parent:}
-  \item \textbf{friend:}
+  \item \textbf{school\_coordinator:} dictates an \emph{User} is a coordinator (also known as an administrator) of a certain \emph{School}
+  \item \textbf{colleague:} establishes a connection between two \emph{Users} --- either a \emph{Coordinator} or a \emph{Professor} --- through a \emph{School} they both work in
+  \item \textbf{student:} establishes a relationship between a \emph{Coordinator} and a \emph{Student} through a \emph{School}
+  \item \textbf{school\_parent:} establishes a relationship between a \emph{Coordinator} and a \emph{Parent} through a \emph{School}
+  \item \textbf{friend:} establishes a connection between any two \emph{Users} of the system --- whichever their roles may be --- to indicate a friendship relation exists between them
 \end{itemize}
+
+\textbf{NOTE: some of the accountability types need some explanation: for example, why the :student and :school\_parent accountability types? because a coordinator has everyone from the school in his/hers contacts; not really sure where to put this reasoning --- if directly on the accountability type description or in a separate paragraph}
 
 \subsection{Impact Analysis}\label{sec:fa_social_network_impact_analysis}
 
