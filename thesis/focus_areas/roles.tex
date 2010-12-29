@@ -9,6 +9,8 @@
 
 \subsection{Variability Requirements}\label{sec:fa_roles_variability_requirements}
 
+Authorization is one of the most sensitive areas of any closed software system: it ensures everyone does only what it should in order to guarantee everything works as expected. In a constantly evolving system, user roles have a strong tendency (\textbf{reference?}) to shift --- either because of new features or a new type of user is required in the system to perform specific tasks. In the context of \emph{escolinhas.pt} this problem ties itself with the ACL used: because of the diversity of roles (Fig.~\ref{fig:user_roles_current}) existent in the application and the three different usage plans, a lot of different rules are applied to determine if a user can or can not perform certain actions; allied to the growing number of features of the platform, this means that the authorization scheme has to be as flexible as possible to ensure minimal overhead when determining new types of permission sets.
+
 \subsection{Candidate Patterns}\label{sec:fa_roles_candidate_patterns}
 
 \subsection{Chosen Patterns \& Rationale}\label{sec:fa_roles_chosen_patterns_rationale}
