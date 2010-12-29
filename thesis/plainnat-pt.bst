@@ -1,5 +1,6 @@
-%% File: `plainnat.bst'
+%% File: `plainnat-pt.bst'
 %% A modification of `plain.bst' for use with natbib package 
+%% Portuguese translation by jcf (2009)
 %%
 %% Copyright 1993-2007 Patrick W Daly
 %% Max-Planck-Institut f\"ur Sonnensystemforschung
@@ -485,8 +486,8 @@ FUNCTION {format.edition}
 { edition empty$
     { "" }
     { output.state mid.sentence =
-        { edition "l" change.case$ " edition" * }
-        { edition "t" change.case$ " edition" * }
+        { edition "l" change.case$ " edi\c{c}\~{a}o" * }
+        { edition "t" change.case$ " edi\c{c}\~{a}o" * }
       if$
     }
   if$
@@ -518,8 +519,8 @@ FUNCTION {format.pages}
 { pages empty$
     { "" }
     { pages multi.page.check
-        { "pages" pages n.dashify tie.or.space.connect }
-        { "page" pages tie.or.space.connect }
+        { "p\'{a}ginas" pages n.dashify tie.or.space.connect }
+        { "p\'{a}gina" pages tie.or.space.connect }
       if$
     }
   if$
@@ -578,7 +579,7 @@ FUNCTION {format.chapter.pages}
 { chapter empty$
     'format.pages
     { type empty$
-        { "chapter" }
+        { "cap\'{\i}tulo" }
         { type "l" change.case$ }
       if$
       chapter tie.or.space.connect
@@ -622,7 +623,7 @@ FUNCTION {format.thesis.type}
 
 FUNCTION {format.tr.number}
 { type empty$
-    { "Technical Report" }
+    { "Relat\'{o}rio t\'{e}cnico" }
     'type
   if$
   number empty$
@@ -914,7 +915,7 @@ FUNCTION {mastersthesis}
   new.block
   format.title "title" output.check
   new.block
-  "Master's thesis" format.thesis.type output.nonnull
+  "tese de mestrado" format.thesis.type output.nonnull
   school "school" output.check
   address output
   format.date "year" output.check
@@ -948,7 +949,7 @@ FUNCTION {phdthesis}
   new.block
   format.btitle "title" output.check
   new.block
-  "PhD thesis" format.thesis.type output.nonnull
+  "tese de doutoramento" format.thesis.type output.nonnull
   school "school" output.check
   address output
   format.date "year" output.check
@@ -1012,29 +1013,29 @@ FUNCTION {unpublished}
 FUNCTION {default.type} { misc }
 
 
-MACRO {jan} {"January"}
+MACRO {jan} {"Janeiro"}
 
-MACRO {feb} {"February"}
+MACRO {feb} {"Fevereiro"}
 
-MACRO {mar} {"March"}
+MACRO {mar} {"Mar\c{c}o"}
 
-MACRO {apr} {"April"}
+MACRO {apr} {"Abril"}
 
-MACRO {may} {"May"}
+MACRO {may} {"Maio"}
 
-MACRO {jun} {"June"}
+MACRO {jun} {"Junho"}
 
-MACRO {jul} {"July"}
+MACRO {jul} {"Julho"}
 
-MACRO {aug} {"August"}
+MACRO {aug} {"Agosto"}
 
-MACRO {sep} {"September"}
+MACRO {sep} {"Setembro"}
 
-MACRO {oct} {"October"}
+MACRO {oct} {"Outubro"}
 
-MACRO {nov} {"November"}
+MACRO {nov} {"Novembro"}
 
-MACRO {dec} {"December"}
+MACRO {dec} {"Dezembro"}
 
 
 

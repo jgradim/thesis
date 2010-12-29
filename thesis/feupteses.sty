@@ -11,8 +11,8 @@
   
 \NeedsTeXFormat{LaTeX2e}
 \def \filename {feupteses.sty}
-\def \filedate {2009/01/21}
-\def \fileversion {0.9c}
+\def \filedate {2009/09/04}
+\def \fileversion {0.9f}
 \ProvidesPackage {feupteses}[\filedate\space\fileversion\space]
 \typeout {Document Style `FEUP Teses' \fileversion\space <\filedate>}
 
@@ -35,6 +35,11 @@
 \newif\if@alpharefs
 \@alpharefsfalse
 \DeclareOption{alpharefs}{\@alpharefstrue}
+
+% Option for print on paper
+\newif\if@print
+\@printfalse
+\DeclareOption{print}{\@printtrue}
 
 \ProcessOptions\relax
 
@@ -162,14 +167,16 @@ with the `report' document style}{}}{}
   \par%
   \center{\noindent\large #1: #2 #3}}}
 
+%if provisional add a watermark
+
 \if@provisional
-   \if@portugues
-      \def\@provisionaltext{Vers\~{a}o Provis\'{o}ria}
+  \usepackage[firstpage]{draftwatermark}
+  \SetWatermarkFontSize{72pt}
+  \if@portugues
+     \SetWatermarkText{Para Aprecia\c{c}\~{a}o por J\'{u}ri}
    \else
-      \def\@provisionaltext{Provisional Version}
+     \SetWatermarkText{For Jury Evaluation}
    \fi
-\else
-   \def\@provisionaltext{\@empty}
 \fi
 
 % Copyrights
@@ -195,8 +202,8 @@ with the `report' document style}{}}{}
 {\def\baselinestretch{1.2}\Huge\bf \@title \par}
 \vskip 10mm%
 {\Large\bf \@author}%
-\vskip 10mm%
-{\Large\textsc \@provisionaltext}
+%\vskip 10mm%
+%{\Large\textsc \@provisionaltext}
 \vfill%
 {\large \@degree}%
 \vskip 2mm
@@ -317,6 +324,22 @@ with the `report' document style}{}}{}
 
 %\RequirePackage[pdftex,pdfpagelabels,bookmarks,hyperindex,hyperfigures,backref,pagebackref]{hyperref}
 \RequirePackage[pdftex,pdfpagelabels,bookmarks,hyperindex,hyperfigures]{hyperref}
+
+\if@print
+
+\hypersetup{%
+   plainpages=false, 
+   pdfpagelayout=SinglePage,
+   bookmarksopen=false,
+   bookmarksnumbered=true,
+   breaklinks=true,
+   linktocpage,
+   colorlinks=false,
+   pdfborder=0 0 0
+}
+
+\else
+
 \hypersetup{%
    plainpages=false, 
    pdfpagelayout=SinglePage,
@@ -330,6 +353,8 @@ with the `report' document style}{}}{}
    citecolor=blue,
    anchorcolor=green
 }
+
+\fi
 
 \newcommand{\StartPrelim}{\cleardoublepage\pagenumbering{roman}\setcounter{page}{1}\pagestyle{fancy}}
 \newcommand{\StartBody}{\cleardoublepage\pagenumbering{arabic}\setcounter{page}{1}}
@@ -349,7 +374,7 @@ with the `report' document style}{}}{}
 \newcommand{\PrintBib}[1]{%
   \renewcommand{\bibname}{Refer\^{e}ncias}%
   \if@numericrefs%
-    \bibliographystyle{unsrt}%
+    \bibliographystyle{unsrt-pt}%
   \else%
     \if@alpharefs%
       \bibliographystyle{alpha-pt}%
@@ -357,14 +382,16 @@ with the `report' document style}{}}{}
       \bibliographystyle{plainnat-pt}%
     \fi%
   \fi%
+  \cleardoublepage%
+  \phantomsection%
   \addcontentsline{toc}{chapter}{Refer\^{e}ncias}%
   \bibliography{#1}}
 
 \newcommand{\PrintIndex}{%
- \cleardoublepage%
- \phantomsection%
- \renewcommand{\indexname}{\'{I}ndice Remissivo}%
-  \addcontentsline{toc}{chapter}{\'{I}ndice Remissivo}% 
+  \cleardoublepage%
+  \phantomsection
+  \renewcommand{\indexname}{\'{I}ndice Remissivo}%
+  \addcontentsline{toc}{chapter}{\'{I}ndice Remissivo}%
   \printindex}
 
 \else
@@ -385,13 +412,15 @@ with the `report' document style}{}}{}
       \bibliographystyle{plainnat}%
     \fi%
   \fi%
+  \cleardoublepage%
+  \phantomsection%
   \addcontentsline{toc}{chapter}{References}%
   \bibliography{#1}}
 
 \newcommand{\PrintIndex}{%
   \cleardoublepage%
   \phantomsection%
-  \addcontentsline{toc}{chapter}{Index}% 
+  \addcontentsline{toc}{chapter}{Index}%
   \printindex}
 
 \fi
