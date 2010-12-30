@@ -13,7 +13,9 @@ Authorization is one of the most sensitive areas of any closed software system: 
 
 \subsection{Candidate Patterns}\label{sec:fa_roles_candidate_patterns}
 
-%The most obvious solution would be to tie a ``traditional'' \textsc{Access Control List} (as described in \cite{}) to the roles actually in use: this would
+An obvious solution would be to tie a ``traditional'' \textsc{Access Control List} (as described in \cite{}) to the roles actually in use: this would allow to fine-tune each one of the users permissions and authorization sets while maintaining the codebase clean --- however, the logic surrounding authorization schemas and user roles is built around the \emph{CanCan} Ruby gem \cite{cancan}, which authorizes an user based on his or her roles, while keeping the necessary logic to a minimum. As such, the implementation of a full-fledged ACL could be considered as ``over-engineering'', as already perfectly capable authorization system is being used.
+
+\textbf{FIXME: As such, we only need to enhance the roles system used}
 
 \subsection{Chosen Patterns \& Rationale}\label{sec:fa_roles_chosen_patterns_rationale}
 
