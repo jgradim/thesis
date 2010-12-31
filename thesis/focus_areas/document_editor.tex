@@ -2,7 +2,7 @@
 
 \subsection{Variability Requirements}\label{sec:fa_documents_variability_requirements}
 
-The document editor present in \emph{escolinhas.pt} is one of the core components of the system and one of the main selling points of the platform.
+The document editor present in \emph{escolinhas.pt} is one of the core components of the system and one of the used features of the platform. This being the case, and due to the constantly evolving nature (\textbf{FIXME: it's not the nature that constantly evolves, but the product}), it is also one of the most modified parts of the system. As it can be seen in Fig.~\ref{fig:documents_current}, this structure has to grow both in size and complexity every time a new type of block content is introduced --- represented by the gray entities in Fig.~\ref{fig:documents_current}. This means that whenever a new type of content is introduced in the system, which happens somewhat frequently --- from three types of blocks (\emph{Paragraphs}, \emph{Drawings} and \emph{ImageDocuments/Photos}) in September 2009 to seven in April/May 2010 --- it is necessary to setup a new \textsc{ActiveRecord} class (along with all the logic for versioning) and a new \textsc{Controller} to accept the requests necessary to create, edit or delete any of these entities. Despite working as intented, this workflow is not adequate to the constant evolution and prototyping the document editor is subjected to.
 
 \begin{figure}[H]
   \centering
@@ -30,7 +30,7 @@ patterns used
 \begin{itemize}
   \item \textsc{Memento} - used for versioning
   \item \textsc{Property} (simplified variant) - used for decoupling the type of the block item from the database schema
-  \item pattern 3
+  \item \textbf{INVESTIGATE: pattern 3} - the fact that a \emph{Publication} points to a specific \emph{Version} of a \emph{Document} may be a pattern --- it works as a \emph{tag} in a VCS (version control system) system such as git or SVN.
 \end{itemize}
 
 The variant of the \textsc{Property} pattern implemented is simplified to the highly dynamic nature of the Ruby language --- which means that, for this particular problem, it is able to build new types of objects or even create new class definitions in runtime.
