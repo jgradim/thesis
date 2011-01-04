@@ -15,7 +15,13 @@ The document editor present in \emph{escolinhas.pt} is one of the core component
 
 \subsection{Chosen Patterns \& Rationale}\label{sec:fa_documents_chosen_patterns_rationale}
 
-The pattern used is a composite design pattern \cite{riehle_composite_patterns}, where various smaller design patterns work in tandem to create a more complex pattern.
+The pattern used is a composite design pattern as described in \cite{riehle_composite_patterns}, where various smaller design patterns work in tandem to create a more complex pattern:
+
+\begin{itemize}
+  \item \textsc{Memento} - used for versioning
+  \item \textsc{Property} (simplified variant) - used for decoupling a \emph{Block content} from the database schema
+  \item \textbf{INVESTIGATE: pattern 3} - the fact that a \emph{Publication} points to a specific \emph{Version} of a \emph{Document} may be a pattern --- it works as a \emph{tag} in a VCS (version control system) system such as git or SVN.
+\end{itemize}
 
 \begin{figure}[H]
   \centering
@@ -24,16 +30,7 @@ The pattern used is a composite design pattern \cite{riehle_composite_patterns},
   \label{fig:documents_conceptual}
 \end{figure}
 
-\textbf{FIXME}
-
-patterns used
-\begin{itemize}
-  \item \textsc{Memento} - used for versioning
-  \item \textsc{Property} (simplified variant) - used for decoupling the type of the block item from the database schema
-  \item \textbf{INVESTIGATE: pattern 3} - the fact that a \emph{Publication} points to a specific \emph{Version} of a \emph{Document} may be a pattern --- it works as a \emph{tag} in a VCS (version control system) system such as git or SVN.
-\end{itemize}
-
-The variant of the \textsc{Property} pattern implemented is simplified to the highly dynamic nature of the Ruby language --- which means that, for this particular problem, it is able to build new types of objects or even create new class definitions in runtime.
+The variant of the \textsc{Property} pattern implemented is simplified due to the highly dynamic nature of the Ruby language --- which means that, for this particular problem, it is able to build new types of objects or even create new class definitions in runtime, which allows discarding the \textsc{Property} -- \textsc{PropertyType} pair (see \ref{sec:property_pattern}) in favour of a single entity, \emph{content}, which.
 
 \subsection{Implementation}\label{sec:fa_documents_implementation}
 
@@ -45,13 +42,24 @@ There is nothing really remarkable about \emph{Blocks}, \emph{Documents} of even
 
 However, a \emph{Version} is a bit more complex than a simple AR object, in the sense that it contains a full representation of another AR object at a given point in time --- in this case, a \emph{Document}. This is achieved by serializing a \emph{Document} and all its associations (\emph{Blocks}) in the JSON format, which preserves all the necessary information needed to rebuild a specific \emph{Document} at whichever time that \emph{Version} refers to --- which means that a \emph{Version} effectively implements the \textsc{Memento} design pattern to keep a history of each \emph{Document}.
 
-Finally, a \emph{Block} content possess special properties that, together with AR, create a dynamic and variable foundation for the development of different types of content. As a \emph{Block} is simply a generic container for an arbitrary type of content, a \emph{Block} content can't be constrained to a single class or object type. The solution is to serialize the content inside the \emph{content} attribute of a \emph{Block}. This way, a \emph{Block} content is simply a string that represents a serialized object --- which can be de-serialized, accessed and modified at runtime. This means that, whichever a \emph{Block} content may be, the content itself is responsible for its representation and life cycle.
+Finally, a \emph{Block} content possesses special properties that, together with AR, create a dynamic and variable foundation for the development of different types of content. As a \emph{Block} is simply a generic container for an arbitrary type of content, a \emph{Block} content can't be constrained to a single class or object type. The solution is to serialize the content inside the \emph{content} attribute of a \emph{Block}. This way, a \emph{Block} content is simply a string that represents a serialized object --- which can be de-serialized, accessed and modified at runtime. This means that, whichever a \emph{Block} content may be, the content itself is responsible for its representation and life cycle.
 
-In order to further simplify and streamline the development, a \emph{DocumentItem} (super)class was created. This class serves as a staple for further specialization through inheritance, and handles cross-cutting concerns such as object initialization, default values and validations for each of these attribute's values. (\textbf{NOTA: aqui quero dizer que os problemas são transversais a todas as subclasses, e não sei se cross-cutting será o termo mais apropriado})
+In order to further simplify and streamline the development, a \emph{DocumentItem} (super)class was created. This class serves as a staple for further specialization through inheritance, and handles cross-cutting concerns such as object initialization, default values and validations for each of these attribute's values. The need for a specific controller for each one of the different Block items has also been discarded in favour of a single controller, responsible for handling the user input regarding the modification of blocks and their content.
 
 \subsection{Impact Analysis}\label{sec:fa_documents_impact_analysis}
 
+The refactoring of the Document Editor infrastructure had two major points of impact: performance, and variability.
 
+
+\subsubsection{Performance}
+
+With the current foundation for the editor the number of queries grows linearly with the number of blocks that constitute a document, as it is necessary to perform a query for each one the items related to each one of the blocks. The usage of eager loading is limited due to the polymorphic nature of the blocks and each respective content, which is unknown \emph{a priori}.
+
+The introduction of this model causes the number of queries necessary to display a \emph{Document} to be constant, as only the Blocks and the Document itself are AR objects.
+
+\subsubsection{Variability}
+
+With the introduction of this model, the work necessary to create new types of blocks has been greatly reduced. This allows for much shorter prototyping and testing iteration times --- no database schemas or migrations to worry about, allowing the developers to focus on the details of the model rather than implementation details --- which ultimately leads to a higher degree of variability.
 
 
 
