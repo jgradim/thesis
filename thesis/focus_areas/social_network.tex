@@ -76,13 +76,13 @@ A variant of the \textsc{Accountability} design pattern was chosen (shown in Fig
 % \end{tabular}
 %\end{table}
 
-\textbf{NOTE: some of the accountability types need some explanation: for example, why the :student and :school\_parent accountability types? because a coordinator has everyone from the school in his/hers contacts; not really sure where to put this reasoning --- if directly on the accountability type description or in a separate paragraph}
+The aforementioned AccountabilityTypes are representative of every type of interpersonal relationship existent in the escolinhas.pt platform. At first sight, some of the AccountabilityTypes created may seem redundant, such as student and school\_parent: they exist because the school coordinator needs to be able to contact everyone who is part of the school. One could argue these connections could easily be inferred through the relations between the coordinator and his or her school, and the relations existent between the school and its students, and finally use the existent parenthood relationships. However, as described in \ref{sec:fa_social_network_variability_requirements}, one of the major design flaws (regarding variability), was the completely dynamic nature of the contacts network. Thus, the choice to implement apparently redundant AccountabilityTypes tied itself with the necessity to have full controll over the existent social relationships.
 
 \subsection{Impact Analysis}\label{sec:fa_social_network_impact_analysis}
 
-\textbf{FIXME: phrasing sucks}
+The usage of this design pattern not only solved some of the existing variability and performance problems, but introduced a new possibility: the ability to create relationships between any two entities in the system. This leads to a very flexible network, capable of being modified at the M0 (data) level (see \ref{sec:aom_architecture}), which is a pre-requisite for end-user level variability.
 
-The usage of this design pattern not only solved some of the existing variability and performance problems, but introduced a new possibility: it is now possible to create relationships between any two entities in the system. This leads to a very flexible network, capable of being modified at the M0 (data) level (\textbf{maybe include a reference to \ref{sec:aom_architecture}?}), which is a pre-requisite for end-user level variability.
+
 
 
 
