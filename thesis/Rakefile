@@ -5,3 +5,8 @@ task :figures do
   end
   `sh makepdfs.sh`
 end
+
+task :dropbox do
+  filename = "thesis.#{Time.new.strftime('%Y-%m-%d_%H.%M')}.pdf"
+  `cp thesis.pdf /home/jgradim/Dropbox/tese_gradim/#{filename}`
+end
