@@ -33,3 +33,9 @@ As the implementation of an ACL was discarded in \ref{sec:fa_roles_candidate_pat
 The refactoring of the roles infrastructure was of very low impact, as codebase and database schema are regarded. The hierarchy of Role classes was flattened, keeping it at only two levels: a generic, non-instantiable class \emph{Role}, and all of its currently existent subclasses: \emph{Editor, Parent, Student, Professor, Coordinator} and \emph{Administrator}. Then, the existent rules were adapted to fit this new hierarchy. The last steps pertains to the modification of the current data to fit the new role organization --- it entails analysing each user current roles and performing the adequate substitutions from the previous roles schema. 
 
 \subsection{Impact Analysis}\label{sec:fa_roles_impact_analysis}
+
+The only relevant point of impact is related to variability. Albeit a low-impact modification, the refactoring of the Roles hierarchy allows for a much quicker role engineering process. This is because a Role now corresponds to a single set of rules, without any hindrance resulting from the previous rule hierarchy.
+
+
+
+
