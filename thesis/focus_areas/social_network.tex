@@ -41,7 +41,7 @@ A variant of the \textsc{Accountability} design pattern was chosen (shown in Fig
   \label{fig:social_network_conceptual}
 \end{figure}
 
-The following AccountabilityTypes were created:
+A series of different AccountabilityTypes were created, in order to cater to a multitude of relationship types:
 
 \begin{itemize}
   \item \textbf{group\_professor:} establishes a connection between a \emph{Group} and a \emph{Professor}, meaning that the user is one of the teacher of \emph{Group}
@@ -76,7 +76,7 @@ The following AccountabilityTypes were created:
 % \end{tabular}
 %\end{table}
 
-The aforementioned AccountabilityTypes are representative of every type of interpersonal relationship existent in the escolinhas.pt platform. At first sight, some of the AccountabilityTypes created may seem redundant, such as student and school\_parent: they exist because the school coordinator needs to be able to contact everyone who is part of the school. One could argue these connections could easily be inferred through the relations between the coordinator and his or her school, and the relations existent between the school and its students, and finally use the existent parenthood relationships. However, as described in \ref{sec:fa_social_network_variability_requirements}, one of the major design flaws (regarding variability), was the completely dynamic nature of the contacts network. Thus, the choice to implement apparently redundant AccountabilityTypes tied itself with the necessity to have full controll over the existent social relationships.
+Some of the aforementioned AccountabilityTypes are representative of every type of interpersonal relationship existent in the escolinhas.pt platform. At first sight, some of the AccountabilityTypes created may seem redundant, such as student and school\_parent: they exist because the school coordinator needs to be able to contact everyone who is part of the school. One could argue these connections could easily be inferred through the relations between the coordinator and his or her school, and the relations existent between the school and its students, and finally use the existent parenthood relationships. However, as described in \ref{sec:fa_social_network_variability_requirements}, one of the major design flaws (regarding variability), was the completely dynamic nature of the contacts network. Thus, the choice to implement apparently redundant AccountabilityTypes tied itself with the necessity to have full controll over the existent social relationships. The remainder of the AccountabilityTypes are used to store and facilitate access to membership-like relationships, by stating a certain user is part of a school or group at a given school year.
 
 \subsection{Impact Analysis}\label{sec:fa_social_network_impact_analysis}
 
