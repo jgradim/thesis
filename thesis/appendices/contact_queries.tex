@@ -1,0 +1,28 @@
+\begin{lstlisting}[language=ruby, float=htb, label=src:contact_queries, caption=Code used to extract and analyse the queries performed to fetch and identify all contacts before an user.]
+ task :query_averages do
+   avg = File.open('contact_queries.log').readlines.map{ |x| x.split.map(&:to_i) }.group_by(&:first).map{ |k,v| [k, v.inject(0){ |sum,c| sum += c.last }/v.size] }.sort_by(&:first)
+   File.open('query_averages.log', 'w+'){ |f| avg.each{ |x| f.puts "#{x.first}\t#{x.last}" } }
+ end
+ 
+ task :contact_queries => :environment do
+   #users = User.find(:all, :order => 'RAND()', :limit => 1000)
+   puts "get users"
+   users = User.find(:all, :order => 'RAND()', :limit => 10000, :include => :roles)
+   f = File.open('contact_queries.log', 'w+')
+   puts "open file"
+   users.each_with_index do |u,i|
+     puts i
+     begin
+       before = `wc -l log/development.log`.match(/\d+/)[0].to_i
+       contacts = u.contacts                 # perform queries,
+       contacts.map{ |c| c.identify_to(u) }  # log to file
+       after = `wc -l log/development.log`.match(/\d+/)[0].to_i
+       f.puts "#{contacts.size}\t#{after-before}"
+       f.flush
+     rescue; nil; end
+   end
+   
+   rake 'query_averages'
+   puts "output written to 'contact_queries.log' and 'query_averages.log'"
+ end
+\end{lstlisting}
