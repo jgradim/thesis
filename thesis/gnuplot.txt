@@ -1,5 +1,0 @@
-gnuplot> set terminal postscript enhanced color lw 2
-gnuplot> set output "plot.eps"
-gnuplot> plot ...
-
-$ ps2pdf plot.eps
