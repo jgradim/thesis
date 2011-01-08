@@ -55,7 +55,16 @@ The refactoring of the Document Editor infrastructure had two major points of im
 
 With the current foundation for the editor the number of queries grows linearly with the number of blocks that constitute a document, as it is necessary to perform a query for each one the items related to each one of the blocks. The usage of eager loading is limited due to the polymorphic nature of the blocks and each respective content, which is unknown \emph{a priori}.
 
-The introduction of this model causes the number of queries necessary to display a \emph{Document} to be constant, as only the Blocks and the Document itself are AR objects.
+From an universe of 3990 documents currently residing in the system (representative of all the documents present in the system as of November 23rd, 2010), the graph present in Fig.~\ref{fig:queries_per_blocks_in_document} shows a linear growth in the number of queries necessary to render a Document: the number of queries necessary are directly proportional to the number of blocks in a document with a 1:1 ratio. Just like in \ref{sec:fa_social_network_impact_analysis}, this represents a serious performance issue: as the most used feature in the \emph{escolinhas.pt} platform, a sustainable growth is very difficult to achieve if the database load increases linearly with the number of existent Documents.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=145mm]{document_queries}
+  \caption{Number of queries performed per number of Blocks in a single Document}
+  \label{fig:queries_per_blocks_in_document}
+\end{figure}
+
+The introduction of the model described in \ref{sec:fa_documents_chosen_patterns_rationale} makes the number of queries necessary to display a \emph{Document} to be constant (only 2 queries are performed), as only the Blocks and the Document itself are AR objects --- as the item that constitutes a Block is an integral part of a Block, no queries are necessary to fetch it.
 
 \subsubsection{Variability}
 
