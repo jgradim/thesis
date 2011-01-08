@@ -84,13 +84,13 @@ The usage of this design pattern not only solved some of the existing variabilit
 
 A second objective pertaining to the application of this pattern was to improve the performance related to contact list creation and the identification of these before the user. This task is currently extremely expensive, with an edge case of 5724 queries needed to fetch and identify 715 contacts. A user with only 18 contacts generates 154 queries. This means that an average of 8 queries are performed for each one of the contacts, meaning the cost of this operation is linear ($O(n)$) in nature, as depicted in Fig.~\ref{fig:queries_per_contacts}. 
 
-The graph in Fig.~\ref{fig:queries_per_contacts} represents the average number of queries performed per number of contacts a user has, and it was sampled from a population of 10000 random users of the platform. One interesting fact arising from this analysis is that the cost growth of the function is not completely linear: due to the dynamic nature of the network, some users may have a sparser network --- e.g. less groups associated with, but more users associated with each group the user is part of --- which can explain the unexpected decrease in the number of queries around the 200-mark. However, in practice, this cost is linear enough that one can infer that the number of queries performed is approximately 8 times the number of contacts, which represents a very serious performance issue for one of the most used features of the platform.
+The graph in Fig.~\ref{fig:queries_per_contacts} represents the average number of queries performed per number of contacts a user has, and it was sampled from a population of 10000 random users of the platform. One interesting fact arising from this analysis is that the cost growth of the function is not completely linear: due to the dynamic nature of the network, some users may have a sparser network --- e.g. less groups associated with, but more users associated with each group the user is part of --- which can explain the unexpected decrease in the number of queries around the 200-mark and the irregularities in users with less than 100 contacts. However, in practice, this cost is linear enough that one can infer that the number of queries performed is approximately 8 times the number of contacts, which represents a very serious performance issue for one of the most used features of the platform.
 
 %The data used to build the chart can be found in \nameref{sec:appendix_a}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=145mm]{queries_per_contacts}
+  \includegraphics[width=155mm]{queries_per_contacts}
   \caption{Number of queries performed per number of contacts}
   \label{fig:queries_per_contacts}
 \end{figure}
