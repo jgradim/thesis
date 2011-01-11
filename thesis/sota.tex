@@ -169,6 +169,15 @@ As AOM architectures are concerned, this pattern is used to perform user-defined
 
 \subsubsection{\textsc{Interpreter} Pattern}\label{sec:interpreter_pattern}
 
+The \textsc{Interpreter} pattern is used when a recurring problem within a platform arises. When this is the case, it might be fruitful to define a simple language to solve these types of problems \cite{gang_of_four}. Regarding AOMs, this pattern, in conjunction with the \textsc{Strategy} pattern described in \ref{sec:strategy_pattern}, is used to allow users to express complex restrictions on the values of properties present in the system. \textbf{ESCREVER AQUI QUALQUER COISA PARA INTRODUZIR A FIGURE} Fig.~\ref{fig:interpreter_pattern}
+
+\begin{figure}[H]
+  \centering
+  %\includegraphics[width=100mm]{interpreter}
+  \caption{\textsc{Interpreter} pattern, as applied to an AOM architecture}
+  \label{fig:interpreter_pattern}
+\end{figure}
+
 \subsubsection{Relationships Between Entities}\label{sec:relationships_between_entities}
 
 \cite{YJ02} describes the relationships between AOM classes by using the \textsc{Accountability} pattern~\cite{fowler, hay}. The \textsc{Accountability} pattern is used when there is a need to express multiple types of relationships between \emph{parties} (regardless of what their types may be), all of which carry a different meaning\cite{fowler_accountability}. This pattern is shown on Figure~\ref{fig:accountability}.
