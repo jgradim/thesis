@@ -13,6 +13,14 @@ The document editor present in \emph{escolinhas.pt} is one of the core component
 
 \subsection{Candidate Patterns}\label{sec:fa_documents_candidate_patterns}
 
+% block types
+One of the major causes of slow and irksome development of new types of \emph{Blocks}, is, as stated in the previous section, the sheer amount of code duplication involved. This involves painstakingly copying the Model, the Controller and all the Views from a previous existing Block type, and then modifying the required parts. This approach is brittle and extremely prone to errors. However, if a more general and abstract analysis is performed, a block type is nothing more than a very complex variable. So, the problem can now be approached to as finding the best way to create new types of variables, on demand, and with as little work involved as possible --- and the current research on AOM architectures has already solved this problem, by means of the \textsc{Type-Object} and \textsc{Property} (and, consequently, the \textsc{Type-Square}) patterns.
+
+% versioning
+
+% validations
+One important part of the document editor is the validation of user input. As it is the only focus area which deals directly with free-form user input, the validation of the values need to be taken into account. The \textsc{Strategy} and \textsc{Interpreter} pattern (described in \ref{sec:strategy_pattern} and \ref{sec:interpreter_pattern}, respectively), these two patterns would be adequate to write and perform all of the validations required by the block content logic. However, these two patterns are mainly directed to when a system needs to have end-user level variability. In this particular case, the definition and creation of new types of \emph{Blocks} is a task for the development team. As such, the usage of these patterns is unnecessary as far as validations are regarded. In order to simplify development and validations themselves, Ruby will act as both the \emph{language} and \emph{execution} engine for the validations. This is done by using a custom, extensible DSL built atop of the language itself.
+
 \subsection{Chosen Patterns \& Rationale}\label{sec:fa_documents_chosen_patterns_rationale}
 
 The pattern used is a composite design pattern as described in \cite{riehle_composite_patterns}, where various smaller design patterns work in tandem to create a more complex pattern:
@@ -50,14 +58,13 @@ In order to further simplify and streamline the development, a \emph{DocumentIte
 
 The refactoring of the Document Editor infrastructure had two major points of impact: performance, and variability.
 
-
 \subsubsection{Performance}
 
 With the current foundation for the editor, the number of queries grows linearly with the number of blocks that constitute a document, as it is necessary to perform a query for each one the items related to each one of the blocks. The usage of eager loading is limited due to the polymorphic nature of the blocks and each respective content, which is unknown \emph{a priori}.
 
 From an universe of 3990 documents currently residing in the system (representative of all the documents present in the system as of November 23rd, 2010), the graph present in Fig.~\ref{fig:queries_per_blocks_in_document} shows a linear growth in the number of queries necessary to render a Document: the number of queries necessary are directly proportional to the number of blocks in a document with a 1:1 ratio. Just like in \ref{sec:fa_social_network_impact_analysis}, this represents a serious performance issue: as the most used feature in the \emph{escolinhas.pt} platform, a sustainable growth is very difficult to achieve if the database load increases linearly with the number of existent Blocks in Documents.
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \includegraphics[width=145mm]{graphs/document_queries}
   \caption{Average number of queries performed per number of Blocks in a single Document}
