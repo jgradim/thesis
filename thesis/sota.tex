@@ -121,7 +121,7 @@ An Adaptive Object-Model architecture is a system architecture that represents c
 
 This kind of architecture relies on a series of design patterns: the \textsc{Type-Object} and \textsc{Property} patterns form the basic building blocks whereupon the AOM architecture settles. Despite being extremely simple, they create the fundamental infrastructure able to decouple the model definition from the code-level implementation.
 
-\subsubsection{\textsc{Type-Object} Pattern}\label{sec:type-entity_pattern}
+\subsubsection{\textsc{Type-Object} Pattern}\label{sec:type-object_pattern}
 
 Object-oriented languages usually structure a program as a set of classes that define the structure and behavior of objects, usually organizing them as a separate class for each object type, which means that any structural change to the model requires code-level modifications. However, variable systems are usually faced with the problem of having a class that will be subclassed by an arbitrary number of specializations. The key to solving this problem is to detach the object definition from the code level and instead define it using meta-data --- generalizing objects and describing their variation as parameters. \textsc{Type-Object} works by splitting a class in two: the meta-class for the object to be created --- EntityType, and an instance of that class --- Type. Fig. \ref{fig:type-object_pattern} shows the UML model for this design pattern.
 
@@ -176,6 +176,17 @@ The \textsc{Interpreter} pattern is used when a recurring problem within a platf
   \includegraphics[width=140mm]{interpreter}
   \caption{\textsc{Interpreter} pattern, as applied to an AOM architecture}
   \label{fig:interpreter_pattern}
+\end{figure}
+
+\subsubsection{\textsc{System Memento} Pattern}\label{sec:system_memento_pattern}
+
+The \textsc{System Memento} Pattern is used when one wishes to preserve the different states a system has achieved upon its evolution. The usage of this pattern allows the decoupling of the state from the objects themselves and promotes reusability as the same versioning mechanism can be applied to any entity present in the system. This pattern usually states that an entity in a system (henceforth referred to as a \emph{Thing}) is a composition of \emph{States} (as shown on Fig.~\ref{fig:system_memento}), which, when timestamped, work as evolutionary line for each of the \emph{Things} it is related with. Finally, a \emph{Version} is a collection of all of the \emph{States} in a system, effectively creating a snapshot of the whole system at a given point in time.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=70mm]{system_memento}
+  \caption{\textsc{System Memento} pattern}
+  \label{fig:system_memento}
 \end{figure}
 
 \subsubsection{Relationships Between Entities}\label{sec:relationships_between_entities}
