@@ -230,6 +230,17 @@ The revised \textsc{Property} pattern is depicted in Figure \ref{fig:property_re
   \label{fig:property_revised}
 \end{figure}
 
+\subsection{Pattern Composition}\label{sec:aom_pattern_composition}
+
+By themselves, the design patterns described before do not make up an AOM architecture. Mixing up patterns does not provide any concrete implementation of this kind of architectures, nor it points to what a framework for AOM would look like --- which means that the usual architecture of an AOM is usually the result of composing one or more of the aforementioned patterns in conjunction with other object-oriented patterns. The result of this conjunction can be seen in Fig.~\ref{fig:aom_pattern_composition}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=160mm]{aom_pattern_composition}
+  \caption{AOM core architecture and design, adapted from \cite{YBJ01}}
+  \label{fig:aom_pattern_composition}
+\end{figure}
+
 \subsection{AOM GUI Generation}\label{sec:aom_gui_generation}
 
 A system is only as powerful as the interaction with that system allows you to manipulate it --- meaning that a poor interface (be it a GUI or an API or any other kind of interface) does not afford a full-fledged use of the system in question.
