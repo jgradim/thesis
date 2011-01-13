@@ -64,6 +64,8 @@ Ruby is a dynamic, purely object-oriented programming language. It was created b
 
 The Ruby language was designed with a meta-architecture in mind: it allows for changes to class definitions in runtime, constantly adapting to change. It does so by providing open, active class definitions. A common part of the development process when writing a Ruby program is to extend the language itself by writing higher level abstractions --- effectively extending the core language classes (such as \verb!String! and \verb!Float!) with custom methods~\cite{metaprogramming_ruby}.
 
+\subsection{Ruby Metaprogramming}\label{sec:ruby_metaprogramming}
+
 Ruby uses metaprogramming techniques extensively --- in fact, metaprogramming is an integral part of the language constructs. Take the example from Listing~\ref{fig:ruby_class_metaprogramming}
 
 \begin{lstlisting}[language=ruby, float=htb, label=fig:ruby_class_metaprogramming, caption=Metaprogramming in Ruby classes.]
@@ -92,7 +94,7 @@ The use of the \verb!attr_accessor! declaration is actually a shortcut method fo
  end
 \end{lstlisting}
 
-\section{Ruby On Rails}\label{sec:ror}
+\subsection{Ruby On Rails}\label{sec:ror}
 
 Ruby on Rails is a full-stack Web framework, initially developed by David Heinemeier Hansson in 2003, based on the MVC design pattern. As stated by~\cite{rubyonrails}:
 
