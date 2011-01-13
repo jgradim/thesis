@@ -102,6 +102,23 @@ Ruby on Rails is a full-stack Web framework, initially developed by David Heinem
 
 In regards to code generation, the Ruby on Rails framework includes a series of mechanisms for system artifacts generation, be it Models, Controllers or even Views. It does so by analyzing the underlying relational database model and deriving the model specifications from the column's type and name. However, RoR does not generate a static model definition, as it deduces the necessary information whenever the system is loaded. Instead, it uses these informations to create an adequate code skeleton for basic CRUD operations in views, greatly accelerating the development process by providing the developers with a basic blueprint of a fully functional system that can be refined and tailored to specific needs~\cite{rails_generators}.
 
+\section{Design Patterns}\label{sec:design_patterns}
+
+As stated by the architect Christopher Alexander in \cite{christopher_alexander_a_pattern_language}:
+
+\begin{quote}
+  ``Each pattern describes a problem which occurs over and over again in our environment, and then describes the core of the solution to that problem, in such a way that you can use this solution a million times over, without ever doing it the same way twice''
+\end{quote}
+
+Despite applying the term \emph{design pattern} to architectural problems, it is possible to transpose these ideas to object-oriented design. As such, a design pattern is, to put it simply, a common solution to a recurring problem. \cite{gang_of_four} then defines the four essential components of a design pattern:
+
+\begin{itemize}
+  \item The \textbf{Name}, which captures the essence of a design pattern and describes it in as few words as possible (one or two, usually); \\
+  \item The \textbf{Problem}, which describes the conditions necessary to apply the pattern, by explaining the problem and its context; \\
+  \item The \textbf{Solution}, which describes the elements that make up the design, their relationships, responsibilities, and collaborations, while keeping it as general as possible, so that its application is possible within multiple contexts: \\
+  \item The \textbf{Consequences}, which denotes the results and trade-offs pertaining to the application of the pattern, allowing the evaluation of alternative designs and understanding the costs and benefits of applying the pattern. \\
+\end{itemize}
+
 \section{Adaptive Object-Models}\label{sec:aom}
 
 Despite all of the advances in the aforementioned areas, most (if not all) the currently used techniques and methodologies still require a programmer or a domain expert in order to modify a system definition and model. A specific type of architecture is required for the end-user to be able to modify part or the entirety of a system to fit the underlying model to their own needs.
