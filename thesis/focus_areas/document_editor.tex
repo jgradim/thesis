@@ -1,6 +1,6 @@
-\section{Documents}\label{sec:fa_documents}
+\subsection{Documents}\label{sec:fa_documents}
 
-\subsection{Variability Requirements}\label{sec:fa_documents_variability_requirements}
+\subsubsection{Variability Requirements}\label{sec:fa_documents_variability_requirements}
 
 The document editor present in \emph{escolinhas.pt} is one of the core components of the system and one of the used features of the platform. This being the case, and due to the constantly evolving nature (\textbf{FIXME: it's not the nature that constantly evolves, but the product}), it is also one of the most modified parts of the system. As it can be seen in Fig.~\ref{fig:documents_current}, this structure has to grow both in size and complexity every time a new type of block content is introduced --- represented by the gray entities in Fig.~\ref{fig:documents_current}. This means that whenever a new type of content is introduced in the system, which happens somewhat frequently --- from three types of blocks (\emph{Paragraphs}, \emph{Drawings} and \emph{ImageDocuments/Photos}) in September 2009 to seven in April/May 2010 --- it is necessary to setup a new \textsc{ActiveRecord} class (along with all the logic for versioning) and a new \textsc{Controller} to accept the requests necessary to create, edit or delete any of these entities. Despite working as intended, this workflow is not adequate to the constant evolution and prototyping the document editor is subjected to.
 
@@ -11,7 +11,7 @@ The document editor present in \emph{escolinhas.pt} is one of the core component
   \label{fig:documents_current}
 \end{figure}
 
-\subsection{Candidate Patterns}\label{sec:fa_documents_candidate_patterns}
+\subsubsection{Candidate Patterns}\label{sec:fa_documents_candidate_patterns}
 
 % block types
 One of the major causes of slow and irksome development of new types of \emph{Blocks}, is, as stated in the previous section, the sheer amount of code duplication involved. This involves painstakingly copying the Model, the Controller and all the Views from a previous existing Block type, and then modifying the required parts. This approach is brittle and extremely prone to errors. However, if a more general and abstract analysis is performed, a block type is nothing more than a very complex variable. As such, the problem can now be approached to as finding the best way to create new types of variables, on demand, and with as little work involved as possible --- and the current research on AOM architectures has already solved this problem, by means of the \textsc{Type-Object} and \textsc{Property} (and, consequently, the \textsc{Type-Square}, described in \ref{sec:type-object_pattern}, \ref{sec:property_pattern} and \ref{sec:type-square_pattern}, respectively) patterns.
@@ -22,7 +22,7 @@ The research on versioning and maintaining a temporal history for objects is ext
 % validations
 One important part of the document editor is the validation of user input. As it is the only focus area which deals directly with free-form user input, the validation of the values need to be taken into account. The \textsc{Strategy} and \textsc{Interpreter} pattern (described in \ref{sec:strategy_pattern} and \ref{sec:interpreter_pattern}, respectively), are two patterns that would be adequate to write and perform all of the validations required by the \emph{Block} item logic. However, these two patterns are mainly directed to when a system needs to have end-user level variability. In this particular case, the definition and creation of new types of \emph{Blocks} is a task for the development team. As such, the usage of these patterns is unnecessary as far as validations are regarded. In order to simplify development and validations themselves, Ruby will act as both the \emph{language} and \emph{execution} engine for the validations. This is done by using a custom, extensible DSL built atop of the language itself; thus, the \textsc{Strategy} and \textsc{Interpreter} pattern are effectively ``absorbed'' by the host language (Ruby) atop of which the platform is built.
 
-\subsection{Chosen Patterns \& Rationale}\label{sec:fa_documents_chosen_patterns_rationale}
+\subsubsection{Chosen Patterns \& Rationale}\label{sec:fa_documents_chosen_patterns_rationale}
 
 The solution devised for the \emph{Documents} infrastructure is, as required by all the necessities stated in \ref{sec:fa_documents_variability_requirements} and \ref{sec:fa_documents_candidate_patterns}, the simplest structure possible --- as seen in Fig.~\ref{fig:documents_conceptual} --- that makes everything work as before and makes the data transition tasks as simple and seamless as possible. This is due to the metaprogramming facilities of the Ruby language and the excellent support present in the serialization and \textsc{ActiveRecord} tools provided by RoR.
 
@@ -42,7 +42,7 @@ The pattern used is a \emph{composite} design pattern as described in \cite{rieh
 
 The variant of the \textsc{Property} pattern implemented is simplified due to the highly dynamic nature of the Ruby language --- which means that, for this particular problem, it is able to build new types of objects or even create new class definitions in runtime, which allows discarding the \textsc{Property}--\textsc{PropertyType} pair (see \ref{sec:property_pattern}) in favour of a single entity, \emph{item}, as shown on Fig.~\ref{fig:documents_conceptual}.
 
-\subsection{Implementation}\label{sec:fa_documents_implementation}
+\subsubsection{Implementation}\label{sec:fa_documents_implementation}
 
 The implementation of this composite pattern takes advantage of the highly dynamic nature of the Ruby language and the API provided by the \textsc{ActiveRecord} implementation of Rails.
 
@@ -56,11 +56,11 @@ Finally, a \emph{Block} item possesses special properties that, together with AR
 
 In order to further simplify and streamline the development, a \emph{DocumentItem} (super)class was created. This class serves as a staple for further specialization through inheritance, and handles cross-cutting concerns such as object initialization, default values and validations for each of these attribute's values. The need for a specific controller for each one of the different Block items has also been discarded in favour of a single controller, responsible for handling the user input regarding the modification of blocks and their item contents.
 
-\subsection{Impact Analysis}\label{sec:fa_documents_impact_analysis}
+\subsubsection{Impact Analysis}\label{sec:fa_documents_impact_analysis}
 
 The refactoring of the Document Editor infrastructure had two major points of impact: performance, and variability.
 
-\subsubsection{Performance}
+% performance
 
 With the current foundation for the editor, the number of queries grows linearly with the number of blocks that constitute a document, as it is necessary to perform a query for each one the items related to each one of the blocks. The usage of eager loading is limited due to the polymorphic nature of the blocks and each respective content, which is unknown \emph{a priori}.
 
@@ -75,7 +75,7 @@ From an universe of 3990 documents currently residing in the system (representat
 
 The introduction of the model described in \ref{sec:fa_documents_chosen_patterns_rationale} makes the number of queries necessary to display a \emph{Document} to be constant (only 2 queries are performed), as only the Blocks and the Document itself are AR objects --- as the item that constitutes a Block is an integral part of a Block, no queries are necessary to fetch it.
 
-\subsubsection{Variability}
+% variability
 
 Using the aforementioned infrastructure for the document editor, the work necessary to create new types of blocks has been greatly reduced. This allows for much shorter prototyping and testing iteration times --- no database schemas or migrations to worry about, allowing the developers to focus on the details of the model rather than implementation details --- which ultimately leads to a higher degree of variability.
 
