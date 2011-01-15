@@ -205,7 +205,7 @@ By themselves, the design patterns described before do not make up an AOM archit
 
 \subsection{AOM GUI Generation}\label{sec:aom_gui_generation}
 
-A system is only as powerful as the interaction with that system allows you to manipulate it --- meaning that a poor interface (be it a GUI or an API or any other kind of interface) does not afford a full-fledged use of the system in question.
+A system is only as powerful as the interaction with that system allows you to manipulate it --- meaning that a poor interface (be it a GUI or an API or any other kind of interface) does not afford a full-fledged use of the system in question. As an example, this may happen when a software library has a number of functionalities implemented but the API exposed to manipulate does not use said implementations, rendering them useless and limiting its usage.
 
 Regarding AOM systems, as the system is interpreted and modified in runtime, the GUI must also be automatically built in runtime from the interpretation of the M1 level model. This implies a standardized approach to rendering entities and entity properties, in order to minimize code redundancy and provide a consistent look \& feel. The main problem identified by Welicki et al.\cite{WYW07} was the redundancy that arose from the need to render each type of property, leading to a higher degree of maintenance and potencial UI inconsistency. The solution devised was to create rendering objects responsible for rendering the user interface for each type of property within a given context, creating what is know as the \textsc{Property Renderer} pattern, which enforces a strong separation between domain entities and respective visualization.
 
