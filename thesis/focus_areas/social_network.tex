@@ -1,5 +1,7 @@
 \subsection{Social Network}\label{sec:fa_social_network}
 
+\subsubsection{Variability Requirements}\label{sec:fa_social_network_variability_requirements}
+
 The current design for the escolinhas.pt social network is based on the relationships formed through the connections between users and their schools, groups, and other users, as depicted in Fig.~\ref{fig:social_network_current}. The User's Roles play an important part in the definition of this network, as an user is only linked directly to other users; any other connection is mediated through their Roles, creating their association with Schools and Groups. This allows the construction of a network where all the connections can be inferred dynamically and where an user can be identified to another through these same connections: friends, classmates, parent--child, teacher--student, and so on. This network is used mainly in the internal messaging system (and, in a brief future, the instant messaging, or chat system) of \emph{escolinhas.pt}, which allows users to communicate with each other within the platform.
 
 \begin{figure}[H]
@@ -8,8 +10,6 @@ The current design for the escolinhas.pt social network is based on the relation
   \caption{Current User Network Model}
   \label{fig:social_network_current}
 \end{figure}
-
-\subsubsection{Variability Requirements}\label{sec:fa_social_network_variability_requirements}
 
 This model, however useful, offers a very small degree of variability. Due to the closed nature of the platform, there is a need to provide mechanisms able to fine-tune these connections in order to accommodate to each school specific needs --- some Schools may not want to appear in search results; there may be some Students or even Parents who need to have special communication privileges,. These mechanisms need to be available at the system administrator level, in order to easily manipulate these links without the need to pollute the application's codebase with hard-coded rules and without the need for redeployement.
 
@@ -94,7 +94,7 @@ The graph in Fig.~\ref{fig:contact_queries} represents the average number of que
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=155mm]{graphs/contact_queries}
+  \includegraphics[width=145mm]{graphs/contact_queries}
   \caption{Average number of queries performed per number of contacts}
   \label{fig:contact_queries}
 \end{figure}
