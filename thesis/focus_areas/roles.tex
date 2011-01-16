@@ -1,10 +1,12 @@
 \subsection{User Roles}\label{sec:fa_roles}
 
+Roles play a very important part in any application: by attaching them to users, they allow the application to authenticate and authorize users based on their roles. If an application has a strong tendency to evolve, so do its roles and authorization sets. This section describes the work involved in making the current system of roles used in \emph{escolinhas.pt} as adaptable as possible.
+
 \subsubsection{Variability Requirements}\label{sec:fa_roles_variability_requirements}
 
 Authorization is one of the most sensitive areas of any closed software system: it ensures everyone does only what it should in order to guarantee everything works as expected. In a constantly evolving system, the accesses granted by user roles have a tendency to shift and evolve alongside the application --- either because of new features or a new type of user is required in the system to perform specific tasks. In the context of \emph{escolinhas.pt} this problem ties itself with the ACL used: because of the diversity of roles (Fig.~\ref{fig:user_roles_current}) and the three different usage plans, a lot of different rules are applied to determine if a user can or can not perform certain actions; allied to the growing number of features of the platform, this means that the authorization scheme has to be as flexible as possible to ensure minimal overhead when determining new types of permission sets.
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \includegraphics[width=130mm]{user_roles_current}
   \caption{Current User Roles Model}
