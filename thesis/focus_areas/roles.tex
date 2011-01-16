@@ -36,10 +36,18 @@ The refactoring of the roles infrastructure was of very low impact, as codebase 
 
 \subsubsection{Impact Analysis}\label{sec:fa_roles_impact_analysis}
 
-The only relevant point of impact is related to variability. Albeit a low-impact modification, the refactoring of the Roles hierarchy allows for a much quicker role engineering process. This is because a Role now corresponds to a single set of rules, without any hindrance resulting from the previous rule hierarchy. The fact that a multitude of Roles can be associated with a single user allows for a much more wider range of authorizations schemes, as privileges originating from different Roles can be mixed to create unique privilege sets, adapting to a number of different needs.
+The main issues related to the current Roles schema and consequent authorization strategies are caused by the difficulty to capture the constantly evolving necessities of different types of users. As the platform evolves, so do its users and their associated roles. If a new feature is added to the application, it is necessary to define the privileges each user type has over it. The flattening of the Roles hierarchy allows the representation of this Roles as separate, independent objects, allowing the different contexts they refer to be kept separate and also simplify the system configuration.
 
-\ \\
-\textbf{FIXME: briefly explain how conflicting rules work}
+The usage of a \emph{matricial} ACL implementation, as discussed in \ref{sec:fa_roles_candidate_patterns} would simplify the configuration regarding the privileges of specific users --- allowing a system administrator to have full control over them. Ultimately, this means that the roles would play a very small part in authorization granting, serving only as pre-defined rule sets to be applied to new users.
+
+The usage of a \emph{declarative} ACL (\emph{CanCan}) in conjunction with the \textsc{Role Object} pattern, leads to some important consequences: despite losing the ability to \emph{easily} control the specific set of rules of each user\footnotemark and increasing the difficulty of maintaining constraints between roles, it allows the independent evolution of each \emph{Role}, while making the task of defining their key abstractions regarding each role's position within the platform much more simple and concise.
+
+\footnotetext{This ability  is not completely lost: if necessary, \emph{CanCan} can be used to define authorizations based on a User instance (a specific user)}
+
+%The only relevant point of impact is related to variability. Albeit a low-impact modification, the refactoring of the Roles hierarchy allows for a much quicker role engineering process. This is because a Role now corresponds to a single set of rules, without any hindrance resulting from the previous rule hierarchy. The fact that a multitude of Roles can be associated with a single user allows for a much more wider range of authorizations schemes, as privileges originating from different Roles can be mixed to create unique privilege sets, adapting to a number of different needs.
+
+%\ \\
+%\textbf{FIXME: briefly explain how conflicting rules work}
 
 
 
