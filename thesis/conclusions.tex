@@ -1,28 +1,21 @@
 \chapter{Conclusion}\label{chap:conclusion}
 
-The problem described in chapter \ref{chap:problem_statement} has been solved according to the solution presented in chapter \ref{chap:approach_results} and the results achieved from this approach have been presented in the same chapter. In this last chapter, Section \ref{sec:conclusions}, some last remarks will be made about this study, as well as a summary of the main achievements and results. In Section \ref{sec:further_developments} the further improvements to the project will be presented and in Section \ref{sec:future_works} the future works will be described.
+The problem described in chapter \ref{chap:problem_statement} has been solved according to the solution presented in chapter \ref{chap:approach_results} and the results achieved from this approach have been presented in the same chapter. In this last chapter, Section \ref{sec:conclusions}, some last remarks will be made about this study, as well as a summary of the main achievements and results. In Section \ref{sec:further_developments} the further improvements to the project will be presented.
 
 \section{Conclusions}\label{sec:conclusions}
 
-Despite being built with a MVC architecture, the Ruby On Rails framework is, using the right approach, capable of working with some architectural and design patterns not obviously connected with MVC and AR. The application of these patterns is capable of increasing the level of variability present in a common Rails application, and a harmonious integration with the Rails 2.3.x infrastructure --- especially the \textsc{ActiveRecord} engine --- is possible and works elegantly.
+Adaptive Object-Model architectures provide the best framework for building adaptable systems that are liable of modification by the end-users (which assumes no compilation or deployment processes). A lot of thought and research has gone into the best practices for the complete implementation of these types of systems, from model creation, maintenance and persistence to GUI generation.
 
-Although the majority of the work present in this dissertation in concerned with increasing the variability of software systems, it is possible to conclude that the application of the appropriate design patterns is able to increase not only the variability and configurability needs of a specific part of an application, but also its performance. However, this should not be taken as an universal truth, as it depends on a series of factors that may not be present in all implementations, such as a previous innapropriate design.
+Despite being built with a MVC architecture, the Ruby On Rails framework is, using the right approach, capable of working with some architectural and design patterns --- present in AOM architectures --- not obviously connected with MVC and AR. The application of these patterns is capable of increasing the level of variability present in a common Rails application, and a harmonious integration with the Rails 2.3.x infrastructure --- especially the \textsc{ActiveRecord} engine --- is possible and works elegantly.
 
-\section{Further Developments}\label{sec:further_developments}
+Although the majority of the work present in this dissertation in concerned with increasing the variability of software systems built on top of the Ruby on Rails framework, it is possible to conclude that the application of the appropriate design patterns is able to increase not only the variability and configurability needs of a specific part of an application, but also its performance. However, this should not be taken as an universal truth, as it depends on a series of factors that may not be present in all implementations, such as a previous innapropriate design.
 
-The main improvements and additions that can be made to the final work presented are divided into 2 groups:
+\section{Further Work}\label{sec:further_work}
 
-\begin{itemize}
- \item Implement everything!
- \item Keep the accountabilities in memory
-\end{itemize}
+The main improvements and additions that can be made to the final work presented are divided into 2 groups: implementation and optimizations.
 
-\section{Future Works}\label{sec:future_works}
+Regarding implementation, each one of the prototypes herein described are in \textit{pre-alpha} state: they provide working prototypes that, despite functional, are not yet ready for production. Further work is needed to integrate them within the platform so that these prototypes can be successfully put to good use.
 
-In this section it will be discussed the projects that can be derived from this study as well as the applications and domains that can be dealt using the same methodological approach.
-
- * Test integration of these pattern with Rails 3
-
-%Adaptive Object-Model architectures provide the best framework for building adaptable systems that are passable of modification by the end-users (which assumes no compilation or deployment processes). A lot of thought and research has gone into the best practices for the complete implementation of these types of systems, from model creation, maintenance and persistence to GUI generation.
+In regards to optimizations, perhaps one of the most important optimizations to be performed deals with the Social Network and the Accountabilities created: while it is a relatively inexpensive process, it must be taken into account that the task of fetching an user's contacts and identifying each one still requires 11 queries to the database. For a platform with an average of 1291 active users for the past four and half months (see Appendix~\ref{appendix:unique_visitors} for more details), this could pose as a problem if the number of active users suddenly begins to rise. One possible solution would be to keep all the accountabilities \emph{in memory}, in order to reduce the heavy usage of the database server. This could be achieved by using a \emph{memcached}\footnote{\url{http://www.memcached.org/}} server to create an \emph{in-memory} cache of the desired database contents.
 
 %There has been very few work regarding true adaptive systems on the web. However, a considerable amount of research has been made regarding the best mechanisms for end-user website customization, which can be used to create web applications based on AOM architectures. 
