@@ -44,7 +44,7 @@ The usage of a \emph{matricial} ACL implementation, as discussed in \ref{sec:fa_
 
 The usage of a \emph{declarative} ACL (\emph{CanCan}) in conjunction with the \textsc{Role Object} pattern, leads to some important consequences: despite losing the ability to \emph{easily} control the specific set of rules of each user\footnotemark and increasing the difficulty of maintaining constraints between roles, it allows the independent evolution of each \emph{Role}, while making the task of defining their key abstractions regarding each role's position within the platform much more simple and concise.
 
-\footnotetext{This ability  is not completely lost: if necessary, \emph{CanCan} can be used to define authorizations based on a User instance (a specific user)}
+\footnotetext{This ability  is not completely lost. If necessary, \emph{CanCan} can be used to define authorizations based on a User instance (a specific user)}
 
 %The only relevant point of impact is related to variability. Albeit a low-impact modification, the refactoring of the Roles hierarchy allows for a much quicker role engineering process. This is because a Role now corresponds to a single set of rules, without any hindrance resulting from the previous rule hierarchy. The fact that a multitude of Roles can be associated with a single user allows for a much more wider range of authorizations schemes, as privileges originating from different Roles can be mixed to create unique privilege sets, adapting to a number of different needs.
 
