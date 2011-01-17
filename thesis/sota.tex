@@ -18,7 +18,7 @@ The Software Product Lines (SPL) software development paradigm is promoted as me
 
 \section{Domain-Driven Design}\label{sec:ddd}
 
-Domain-Driven Design (henceforth referred to as DDD) is a philosophy and way of thinking, first described by Eric Evans in \cite{ddd_book}, aimed at accelerating software projects that have to deal with complicated domains,  with a two-fold premise \cite{ddd_website}:
+Domain-Driven Design (henceforth referred to as DDD) is a philosophy and way of thinking, first described by Eric Evans in~\cite{ddd_book}, aimed at accelerating software projects that have to deal with complicated domains,  with a two-fold premise~\cite{ddd_website}:
 
 \begin{itemize}
   \item For most software projects, the primary focus should be on the domain and domain logic; and
@@ -61,13 +61,13 @@ Many AOP implementations work by automatically injecting new code into existing 
 
 \section{Design Patterns}\label{sec:design_patterns}
 
-As stated by the architect Christopher Alexander in \cite{christopher_alexander_a_pattern_language}:
+As stated by the architect Christopher Alexander in~\cite{christopher_alexander_a_pattern_language}:
 
 \begin{quote}
   ``Each pattern describes a problem which occurs over and over again in our environment, and then describes the core of the solution to that problem, in such a way that you can use this solution a million times over, without ever doing it the same way twice''
 \end{quote}
 
-Despite applying the term \emph{design pattern} to architectural problems, it is possible to transpose these ideas to object-oriented design. As such, a design pattern is, to put it simply, a common solution to a recurring problem. \cite{gang_of_four} then defines the four essential components of a design pattern:
+Despite applying the term \emph{design pattern} to architectural problems, it is possible to transpose these ideas to object-oriented design. As such, a design pattern is, to put it simply, a common solution to a recurring problem.~\cite{gang_of_four} then defines the four essential components of a design pattern:
 
 \begin{itemize}
   \item The \textbf{Name}, which captures the essence of a design pattern and describes it in as few words as possible (one or two, usually); \\
@@ -109,7 +109,7 @@ Object-oriented languages usually structure a program as a set of classes that d
 \begin{figure}[H]
   \centering
   \includegraphics[width=75mm]{type_object.pdf}
-  \caption{\textsc{Type-Object} pattern, adapted from \cite{metadata_and_active_object_models}}
+  \caption{\textsc{Type-Object} pattern, adapted from~\cite{metadata_and_active_object_models}}
   \label{fig:type-object_pattern}
 \end{figure}
 
@@ -120,7 +120,7 @@ Similar to the problem solved by the \textsc{Type-Object}, the \textsc{Property}
 \begin{figure}[H]
   \centering
   \includegraphics[width=80mm]{property}
-  \caption{\textsc{Property} pattern, adapted from \cite{metadata_and_active_object_models}}
+  \caption{\textsc{Property} pattern, adapted from~\cite{metadata_and_active_object_models}}
   \label{fig:property_pattern}
 \end{figure}
 
@@ -131,7 +131,7 @@ Usually a class is modeled with a number of different attributes, representing t
 \begin{figure}[H]
   \centering
   \includegraphics[width=90mm]{type_square}
-  \caption{\textsc{Type-Square} pattern, adapted from \cite{YBJ01}}
+  \caption{\textsc{Type-Square} pattern, adapted from~\cite{YBJ01}}
   \label{fig:type_square}
 \end{figure}
 
@@ -144,18 +144,18 @@ As AOM architectures are concerned, this pattern is used to perform user-defined
 \begin{figure}[H]
   \centering
   \includegraphics[width=130mm]{strategy}
-  \caption{\textsc{Strategy} pattern, as applied to an AOM architecture, adapted from \cite{gang_of_four}}
+  \caption{\textsc{Strategy} pattern, as applied to an AOM architecture, adapted from~\cite{gang_of_four}}
   \label{fig:strategy_pattern}
 \end{figure}
 
 \subsubsection{\textsc{Interpreter} Pattern}\label{sec:interpreter_pattern}
 
-The \textsc{Interpreter} pattern commonly is used when a recurring problem within a platform arises. When this is the case, it might be fruitful to define a simple language to solve these types of problems \cite{gang_of_four}. Regarding AOMs, this pattern, coupled with \textsc{Strategy} (described in \ref{sec:strategy_pattern}), is used to allow users to express complex restrictions on the values of properties present in the system. Fig.~\ref{fig:interpreter_pattern} shows how this pattern is usually applied to AOM architectures, as described in \cite{ferreira_phd_2010}.
+The \textsc{Interpreter} pattern commonly is used when a recurring problem within a platform arises. When this is the case, it might be fruitful to define a simple language to solve these types of problems~\cite{gang_of_four}. Regarding AOMs, this pattern, coupled with \textsc{Strategy} (described in \ref{sec:strategy_pattern}), is used to allow users to express complex restrictions on the values of properties present in the system. Fig.~\ref{fig:interpreter_pattern} shows how this pattern is usually applied to AOM architectures, as described in~\cite{ferreira_phd_2010}.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=140mm]{interpreter}
-  \caption{\textsc{Interpreter} pattern, as applied to an AOM architecture, adapted from \cite{gang_of_four}}
+  \caption{\textsc{Interpreter} pattern, as applied to an AOM architecture, adapted from~\cite{gang_of_four}}
   \label{fig:interpreter_pattern}
 \end{figure}
 
@@ -166,7 +166,7 @@ The \textsc{System Memento} Pattern is used when one wishes to preserve the diff
 \begin{figure}[H]
   \centering
   \includegraphics[width=70mm]{system_memento}
-  \caption{\textsc{System Memento} pattern, adapted from \cite{patterns_data_and_metadata_evolution_in_aoms}}
+  \caption{\textsc{System Memento} pattern, adapted from~\cite{patterns_data_and_metadata_evolution_in_aoms}}
   \label{fig:system_memento}
 \end{figure}
 
@@ -177,7 +177,7 @@ Yoder \textit{et al.}\cite{YJ02} describes the relationships between AOM classes
 \begin{figure}[H]
   \centering
   \includegraphics[width=100mm]{accountability}
-  \caption{\textsc{Accountability} pattern, adapted from \cite{fowler_accountability}}
+  \caption{\textsc{Accountability} pattern, adapted from~\cite{fowler_accountability}}
   \label{fig:accountability}
 \end{figure}
 
@@ -188,7 +188,7 @@ The revised \textsc{Property} pattern is depicted in Figure \ref{fig:property_re
 \begin{figure}[H]
   \centering
   \includegraphics[width=100mm]{property_revised}
-  \caption{Revised \textsc{Property} pattern, adapted from \cite{aom_research_roadmap}}
+  \caption{Revised \textsc{Property} pattern, adapted from~\cite{aom_research_roadmap}}
   \label{fig:property_revised}
 \end{figure}
 
@@ -199,7 +199,7 @@ By themselves, the design patterns described before do not make up an AOM archit
 \begin{figure}[H]
   \centering
   \includegraphics[width=160mm]{aom_pattern_composition}
-  \caption{AOM core architecture and design, adapted from \cite{YBJ01}}
+  \caption{AOM core architecture and design, adapted from~\cite{YBJ01}}
   \label{fig:aom_pattern_composition}
 \end{figure}
 
@@ -213,11 +213,11 @@ However, the separate rendering of single properties is not enough to capture th
 
 \subsection{Oghma}\label{sec:oghma}
 
-Oghma is a reference framework for the development of AOM systems, developed in C\#. It allows the rapid creation of highly variable, dynamic systems. It is currently being developed in the context of the doctoral dissertation of Hugo Ferreira. It is a very complete framework able to create, manage and persist AOM systems, from backend to GUI generation, by making extensive use of metaprogramming and metamodeling techniques, by following the general guidelines of the \textsc{Naked Objects} architectural pattern \cite{naked_objects}.
+Oghma is a reference framework for the development of AOM systems, developed in C\#. It allows the rapid creation of highly variable, dynamic systems. It is currently being developed in the context of the doctoral dissertation of Hugo Ferreira. It is a very complete framework able to create, manage and persist AOM systems, from backend to GUI generation, by making extensive use of metaprogramming and metamodeling techniques, by following the general guidelines of the \textsc{Naked Objects} architectural pattern~\cite{naked_objects}.
 
 Oghma is thus a concrete implementation of a framework based on the reference architecture to develop AOM-based systems established in~\cite{ferreira_phd_2010}, that balances several design and engineering forces. It supports the creation of models resembling MOF~\cite{mof} and UML~\cite{uml}, and aims at covering the entire cycle of system creation and evolution. As an AOM, it allows the introduction of changes to the system during runtime, thus providing a particular kind of confined end-user development. Fig.~\ref{fig:oghma_core_architecture} show the core architecture for this framework.
 
-It is structured as a collection of \textsc{Layered Component Library} \cite{metaprogramming_metamodeling}, allowing their high-level composition to achieve different functional architectures, e.g. client-server v.s. single-process.
+It is structured as a collection of \textsc{Layered Component Library}~\cite{metaprogramming_metamodeling}, allowing their high-level composition to achieve different functional architectures, e.g. client-server v.s. single-process.
 
 Furthermore, the framework leverages the infrastructure used to support system evolution to provide additional features, such as auditing over the system’s usage, and time-traveling to an arbitrary point along its evolution (i.e. to set the system in a past state).
 
@@ -228,7 +228,7 @@ Finally it adds the ability to specify a wide set of behavioural and validation 
 \begin{figure}[H]
   \centering
   \includegraphics[width=140mm]{oghma_core_architecture}
-  \caption{Implementation model of the structural meta-model for the Oghma framework, adapted from \cite{ferreira_phd_2010}}
+  \caption{Implementation model of the structural meta-model for the Oghma framework, adapted from~\cite{ferreira_phd_2010}}
   \label{fig:oghma_core_architecture}
 \end{figure}
 
