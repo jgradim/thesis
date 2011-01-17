@@ -64,8 +64,9 @@ For performance reasons (explained in \ref{sec:fa_social_network_impact_analysis
 %\end{itemize}
 
 % generated with http://truben.no/latex/table/
+\begin{small}
 \begin{center}
-  \begin{longtable}{|l|l|l|l|p{4cm}|}
+  \begin{longtable}{|l|l|l|l|p{5cm}|}
     \hline
     \textbf{Type}      & \textbf{Parent} & \textbf{Child} & \textbf{Through} & \textbf{Description} \\
     \hline \hline
@@ -86,6 +87,7 @@ For performance reasons (explained in \ref{sec:fa_social_network_impact_analysis
   \end{longtable}
   \vspace{2mm}
 \end{center}
+\end{small}
 
 Some of the aforementioned AccountabilityTypes are representative of every type of interpersonal relationship existent in the escolinhas.pt platform. At first sight, some of the AccountabilityTypes created may seem redundant, such as student and school\_parent: they exist because the school coordinator needs to be able to contact everyone who is part of the school. One could argue these connections could easily be inferred through the relations between the coordinator and his or her school, and the relations existent between the school and its students, and finally use the existent parenthood relationships. However, as described in \ref{sec:fa_social_network_variability_requirements}, one of the major design flaws (regarding variability), was the completely dynamic nature of the contacts network --- as the network was always built upon request, there was no viable way of modifying it without using hardcoded rules or a configuration setup external to the code. Thus, the choice to implement apparently redundant AccountabilityTypes tied itself with the necessity to have full control over the existent social relationships. The remainder of the AccountabilityTypes are used to store and facilitate access to membership-like relationships, by stating a certain user is part of a school or group at a given school year. This also allows the platform to keep a history of past (inactive) relationships between entities in the system.
 
