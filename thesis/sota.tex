@@ -84,11 +84,11 @@ As such, an end-user is not expected to have any kind of knowledge about program
 
 \subsection{AOM Architecture}\label{sec:aom_architecture}
 
-An Adaptive Object-Model pattern is a system architecture that represents classes, attributes, relationships, and behavior as \emph{metadata}. The system definition is based on instances of model abstractions rather than classes. This allows the modification of these model abstractions in runtime to reflect changes in the domain, effectively modifying the system behavior. As a direct consequence, the system instantly reacts to these changes, making it adaptable to change, without the need for recompiling or redeploying~\cite{YBJ01}. This architectural pattern is akin to the Meta Object Facility (MOF), which main purpose is to provide a metadata management and implementation framework. The basic architecture is divided into four tiers, each one compliant with the higher level\cite{mof}, as depicted in Fig.~\ref{fig:aom_mof_levels}:
+An Adaptive Object-Model pattern is a system architecture that represents classes, attributes, relationships, and behavior as \emph{metadata}. The system definition is based on instances of model abstractions rather than classes. This allows the modification of these model abstractions in runtime to reflect changes in the domain, effectively modifying the system behavior. As a direct consequence, the system instantly reacts to these changes, making it adaptable to change, without the need for recompiling or redeploying~\cite{YBJ01}. This architectural pattern is akin to the Meta Object Facility (MOF), which main purpose is to provide a metadata management and implementation framework. The basic architecture is divided into four tiers, each one compliant with the higher level\cite{mof}, as depicted in Fig.~\ref{fig:aom_mof_levels}.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=120mm]{aom_mof_levels}
+  \includegraphics[width=100mm]{aom_mof_levels}
   \caption{MOF levels}
   \label{fig:aom_mof_levels}
 \end{figure}
@@ -198,7 +198,7 @@ By themselves, the design patterns described before do not make up an AOM archit
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=160mm]{aom_pattern_composition}
+  \includegraphics[width=145mm]{aom_pattern_composition}
   \caption{AOM core architecture and design, adapted from~\cite{YBJ01}}
   \label{fig:aom_pattern_composition}
 \end{figure}
