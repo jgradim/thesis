@@ -95,11 +95,7 @@ Some of the aforementioned AccountabilityTypes are representative of every type 
 
 The usage of this design pattern not only solved some of the existing variability and performance problems, but introduced a new possibility: the ability to create relationships between any two entities in the system. This leads to a very flexible network, capable of being modified at the M0 (data) level (see \ref{sec:aom_architecture}), which is a pre-requisite for end-user level variability.
 
-A second objective pertaining to the application of this pattern was to improve the performance related to contact list creation and the identification of these before the user. This task is currently extremely expensive, with an edge case of 5724 queries needed to fetch and identify 715 contacts. A user with only 18 contacts generates 154 queries. This means that an average of 8 queries are performed for each one of the contacts, meaning the cost of this operation is approximately linear in nature, as depicted in Fig.~\ref{fig:contact_queries}. 
-
-The graph in Fig.~\ref{fig:contact_queries} represents the average number of queries performed per number of contacts a user has, and it was sampled from a random population of 10000 real users of the platform. As stated before cost growth of the function is only approximately linear: due to the dynamic nature of the network, some users may have a sparser network --- e.g. less groups associated with, but more users associated with each group the user is part of --- which can explain the unexpected decrease in the number of queries around the 200-mark and the irregularities in users with less than 100 contacts. However, in practice, this cost can be extrapolated to a linear cost, to a point where one can infer that the number of queries performed is approximately 8 times the number of contacts, which represents a very serious performance issue for one of the most used features of the platform.
-
-%The data used to build the chart can be found in \nameref{sec:appendix_a}
+A second objective pertaining to the application of this pattern was to improve the performance related to contact list creation and the identification of these before the user. This task is currently extremely expensive, with an edge case of 5724 queries needed to fetch and identify 715 contacts. A user with only 18 contacts generates 154 queries. This means that an average of 8 queries are performed for each one of the contacts, meaning the cost of this operation is approximately linear in nature, as depicted in Fig.~\ref{fig:contact_queries}.
 
 \begin{figure}[H]
   \centering
@@ -107,6 +103,10 @@ The graph in Fig.~\ref{fig:contact_queries} represents the average number of que
   \caption{Average number of queries performed per number of contacts.}
   \label{fig:contact_queries}
 \end{figure}
+
+The graph in Fig.~\ref{fig:contact_queries} represents the average number of queries performed per number of contacts a user has, and it was sampled from a random population of 10000 real users of the platform. As stated before cost growth of the function is only approximately linear: due to the dynamic nature of the network, some users may have a sparser network --- e.g. less groups associated with, but more users associated with each group the user is part of --- which can explain the unexpected decrease in the number of queries around the 200-mark and the irregularities in users with less than 100 contacts. However, in practice, this cost can be extrapolated to a linear cost, to a point where one can infer that the number of queries performed is approximately 8 times the number of contacts, which represents a very serious performance issue for one of the most used features of the platform.
+
+%The data used to build the chart can be found in \nameref{sec:appendix_a}
 
 The implementation of the \textsc{Accountability} pattern to maintain the relationships between users was able to reduce the cost of the abovementioned task to $O(1)$: only 11 queries are performed to fetch and identify an user contacts, regardless of the size of said contact list. This means that the platform is able to sustain a considerable growth without suffering serious impacts on the performance of seemingly trivial operations.
 
