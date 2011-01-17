@@ -64,30 +64,30 @@ For performance reasons (explained in \ref{sec:fa_social_network_impact_analysis
 %\end{itemize}
 
 % generated with http://truben.no/latex/table/
-\begin{small}
+
 \begin{center}
-  \begin{longtable}{|l|l|l|l|p{5cm}|}
-    \hline
-    \textbf{Type}      & \textbf{Parent} & \textbf{Child} & \textbf{Through} & \textbf{Description} \\
-    \hline \hline
-    group\_professor   & Group           & Professor      & ---              & establishes a connection between a \emph{Group} and a \emph{Professor}, meaning that the user is one of the teachers of \emph{Group} \\ \hline
-    professor          & Professor       & Student        & Group            & establishes a connection between two \emph{Users} --- a \emph{Professor} and a \emph{Student} --- creating a teacher-student relationship between them through whichever \emph{Group} they are related to \\ \hline 
-    group\_student     & Group           & Student        & ---              & establishes a connection between a \emph{Group} and a \emph{Student}, meaning that the user is part of the \emph{Group} and taught by the \textbf{group\_professors} associated with the aforementioned \emph{Group} \\ \hline 
-    school\_professor  & School          & Professor      & ---              & establishes a connection between a \emph{School} and a \emph{Professor} \\ \hline 
-    school\_student    & School          & Student        & ---              & establishes a connection between a \emph{School} and a \emph{Student} \\ \hline 
-    parent             & Parent          & Student        & ---              & establishes a parenthood relationship between two users \\ \hline 
-    school\_cordinator & School          & Coordinator    & ---              & dictates an \emph{User} is a coordinator (also known as an administrator) of a certain \emph{School} \\ \hline 
-    colleague          & Professor       & Coordinator    & School           & establishes a connection between two \emph{Users} --- either a \emph{Coordinator} or a \emph{Professor} --- through a \emph{School} they both work in \\ \hline 
-    student            & Coordinator     & Student        & School           & establishes a relationship between a \emph{Coordinator} and a \emph{Student} through a \emph{School} \\ \hline 
-    school\_parent     & Coordinator     & Parent         & School           & establishes a relationship between a \emph{Coordinator} and a \emph{Parent} through a \emph{School} \\ \hline 
-    friend             & User            & User           & ---              & establishes a connection between any two \emph{Users} of the system --- whichever their roles may be --- to indicate a friendship relation exists between them \\
-    \hline
-  \caption{AccountabilityTypes created to describe every type of existent relation.}
-  \label{table:accountability_types}
-  \end{longtable}
-  \vspace{2mm}
+  \begin{small}
+    \begin{longtable}{|l|l|l|l|p{5cm}|}
+      \hline
+      \textbf{Type}      & \textbf{Parent} & \textbf{Child} & \textbf{Through} & \textbf{Description} \\
+      \hline \hline
+      group\_professor   & Group           & Professor      & ---              & establishes a connection between a \emph{Group} and a \emph{Professor}, meaning that the user is one of the teachers of \emph{Group} \\ \hline
+      professor          & Professor       & Student        & Group            & establishes a connection between two \emph{Users} --- a \emph{Professor} and a \emph{Student} --- creating a teacher-student relationship between them through whichever \emph{Group} they are related to \\ \hline 
+      group\_student     & Group           & Student        & ---              & establishes a connection between a \emph{Group} and a \emph{Student}, meaning that the user is part of the \emph{Group} and taught by the \textbf{group\_professors} associated with the aforementioned \emph{Group} \\ \hline 
+      school\_professor  & School          & Professor      & ---              & establishes a connection between a \emph{School} and a \emph{Professor} \\ \hline 
+      school\_student    & School          & Student        & ---              & establishes a connection between a \emph{School} and a \emph{Student} \\ \hline 
+      parent             & Parent          & Student        & ---              & establishes a parenthood relationship between two users \\ \hline 
+      school\_cordinator & School          & Coordinator    & ---              & dictates an \emph{User} is a coordinator (also known as an administrator) of a certain \emph{School} \\ \hline 
+      colleague          & Professor       & Coordinator    & School           & establishes a connection between two \emph{Users} --- either a \emph{Coordinator} or a \emph{Professor} --- through a \emph{School} they both work in \\ \hline 
+      student            & Coordinator     & Student        & School           & establishes a relationship between a \emph{Coordinator} and a \emph{Student} through a \emph{School} \\ \hline 
+      school\_parent     & Coordinator     & Parent         & School           & establishes a relationship between a \emph{Coordinator} and a \emph{Parent} through a \emph{School} \\ \hline 
+      friend             & User            & User           & ---              & establishes a connection between any two \emph{Users} of the system --- whichever their roles may be --- to indicate a friendship relation exists between them \\ \hline
+    
+    \caption{AccountabilityTypes created to describe every type of existent relation.}
+    \label{table:accountability_types}
+    \end{longtable}
+  \end{small}
 \end{center}
-\end{small}
 
 Some of the aforementioned AccountabilityTypes are representative of every type of interpersonal relationship existent in the escolinhas.pt platform. At first sight, some of the AccountabilityTypes created may seem redundant, such as student and school\_parent: they exist because the school coordinator needs to be able to contact everyone who is part of the school. One could argue these connections could easily be inferred through the relations between the coordinator and his or her school, and the relations existent between the school and its students, and finally use the existent parenthood relationships. However, as described in \ref{sec:fa_social_network_variability_requirements}, one of the major design flaws (regarding variability), was the completely dynamic nature of the contacts network --- as the network was always built upon request, there was no viable way of modifying it without using hardcoded rules or a configuration setup external to the code. Thus, the choice to implement apparently redundant AccountabilityTypes tied itself with the necessity to have full control over the existent social relationships. The remainder of the AccountabilityTypes are used to store and facilitate access to membership-like relationships, by stating a certain user is part of a school or group at a given school year. This also allows the platform to keep a history of past (inactive) relationships between entities in the system.
 
