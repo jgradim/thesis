@@ -77,19 +77,19 @@ The second goal is to measure how the variability and performance of each compon
 
 In \emph{escolinhas.pt}, user roles are organized as an \textsc{Organization Hierarchy}~\cite{fowler_accountability}. This creates some problems when trying to create new roles or give special privileges to an user, due to multi-level hierarchy used.
 
-%\begin{figure}[H]
-%  \centering{\includegraphics[width=0.4\textwidth]{figures/user_roles_current}}
-%  \caption{sasdasd}
-%  \label{fig:user_roles_current}
-%\end{figure}
+\begin{figure}[H]
+  \centering{\includegraphics[width=0.4\textwidth]{figures/user_roles_current}}
+  \caption{Current User Roles Model.}
+  \label{fig:user_roles_current}
+\end{figure}
 
-By using the \textsc{Role Object} pattern, the roles are split into single classes, which allows capturing the key abstractions of each one individually. By discarding the hierarchy present before and transforming
+By using the \textsc{Role Object} pattern, the roles are split into single classes, which allows capturing the key abstractions of each one individually. By flattening the hierarchy, it is now possible to develop roles individually, as well as have users associated with multiple roles without fear of rule clashing.
 
-%\begin{figure}[H]
-%  \centering{\includegraphics[width=0.4\textwidth]{figures/user_roles_conceptual}}
-%  \caption{sasdasd}
-%  \label{fig:user_roles_conceptual}
-%\end{figure}
+\begin{figure}[H]
+  \centering{\includegraphics[width=0.4\textwidth]{figures/user_roles_conceptual}}
+  \caption{Conceptual User Roles Model.}
+  \label{fig:user_roles_conceptual}
+\end{figure}
 
 \section{Social Network}\label{sec:social_network}
 
@@ -97,7 +97,7 @@ The current design for the escolinhas.pt social network is based on the relation
 
 \begin{figure}[H]
   \centering{\includegraphics[width=35mm]{figures/social_network_current}}
-  \caption{sasdasd}
+  \caption{Current User Network Model.}
   \label{fig:social_network_current}
 \end{figure}
 
@@ -105,17 +105,17 @@ The usage of the \textsc{Accountability} design pattern, by Martin Fowler~\cite{
 
 \begin{figure}[H]
   \centering{\includegraphics[width=0.4\textwidth]{figures/social_network_conceptual}}
-  \caption{sasdasd}
+  \caption{Conceptual User Network Model.}
   \label{fig:social_network_conceptual}
 \end{figure}
 
 \section{Document Editor}\label{sec:document_editor}
 
-The document editor present in \emph{escolinhas.pt} is one of the core components of the system and one of the used features of the platform. This being the case, and due to the constantly evolving nature of the product and the product itself, it is also one of the most modified parts of the system. The document editor infrastructure has to grow both in size and complexity every time a new type of block content is introduced --- represented by the gray entities in Fig.~\ref{fig:documents_current} --- by creating 
+The existing document editor in \emph{escolinhas.pt} is one of the core components of the system and one of the used features. This being the case, and due to the constantly evolving nature of the product and the product itself, it is also one of the most modified parts of the system. The document editor infrastructure has to grow both in size and complexity every time a new type of block content is introduced --- represented by the gray entities in Fig.~\ref{fig:documents_current} --- by creating 
 
 \begin{figure}[H]
   \centering{\includegraphics[width=0.4\textwidth]{figures/documents_current}}
-  \caption{sasdasd}
+  \caption{Current Documents Model.}
   \label{fig:documents_current}
 \end{figure}
 
@@ -123,13 +123,13 @@ The solution devised for the \emph{Documents} infrastructure is, the simplest st
 
 \begin{figure}[H]
   \centering{\includegraphics[width=25mm]{figures/documents_conceptual}}
-  \caption{sasdasd}
+  \caption{Conceptual Documents Model.}
   \label{fig:documents_conceptual}
 \end{figure}
 
 \section{Conclusion}\label{sec:conclusion}
 
-Despite being built with a MVC architecture, the Ruby On Rails framework is, using the right approach, capable of working with some architectural and design patterns --- present in AOM architectures --- not obviously connected with MVC and AR. The application of these patterns is capable of increasing the level of variability present in a common Rails application, and a harmonious integration with the Rails 2.3.x infrastructure --- especially the \textsc{ActiveRecord} engine --- is possible and works elegantly.
+Despite being built with an MVC architecture, the Ruby On Rails framework is, using the right approach, capable of working with some architectural and design patterns --- present in AOM architectures --- not obviously connected with MVC and AR. The application of these patterns is capable of increasing the level of variability present in a common Rails application, and a harmonious integration with the Rails 2.3.x infrastructure --- especially the \textsc{ActiveRecord} engine --- is possible and works elegantly.
 
 It is also possible to conclude that the application of the appropriate design patterns is able to increase not only the variability and configurability needs of a specific part of an application, but also its performance, in some cases. However, this should not be taken as an universal truth, as it depends on a series of factors that may not be present in all implementations, such as a previous innapropriate design.
 
