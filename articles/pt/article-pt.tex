@@ -69,11 +69,11 @@ Face a estas situações, novos métodos de desenvolvimento de software começar
 
 \section{Objectivos}\label{sec:objectives}
 
-At the same time, many new systems are being developed with an emphasis on flexibility and run-time configuration~\cite{YJ02}. An Adaptive Object-Model (AOM) is an architectural style based on metamodeling and object-oriented design that exposes its domain model to the end-user, and aims to create better mechanisms for the evolution and adaption of software systems to their environments.
+Arquitecturas de ``Modelos de Objectos Adaptativos'' (\emph{Adaptive Object-Models}, ou \emph{AOM}) representam uma classe de arquitecturas baseadas na meta-modelação em desenho orientado a objectos que expoêm o seu modelo de domínio ao utilizador final, com o objectivo de criar melhores mecanismos para a evoluir e adaptar o software ao seu meio ambiente.
 
-The first chalenge is to adapt some of the ideologies and techniques of the AOM architectural style to a Ruby on Rails application (using an MVC architecture), using an application design based on a static schema from a relational database (MySQL), by applying a series of design patterns connected with AOM architectures. Three areas within the \emph{escolinhas.pt} platform were chosen to perform this refactoring: User Roles, Social Network and Document Editor.
+O primeiro objectivo é o de adaptar algumas das ideologias e técnicas das arquitecturas \emph{AOM} a uma aplicação \emph{Ruby on Rails} (que usa o padrão de arquitectura \emph{MVC} (Modelo-Vista-Controlador, ou \emph{Model-View-Controller}), cujo desenho da aplicação é baseado num esquema de base de dados relacional estático (MySQL), aplicando uma série de padrões de desenho ligados à classe de arquitecturas baseadas em \emph{AOMs}. Três áreas de estudo foram escolhidas dentro da aplicação \emph{escolinhas.pt}: os Papéis de Utilizadores (\emph{User Roles}), a Rede Social e o Editor de Documentos.
 
-The second goal is to measure how the variability and performance of each component are affected by the application of these design patterns.
+O segundo objectivo é a medição do impacto que o redesenho de cada componente (pela aplicação de novos padrões de desenho) teve na variabilidade e performance do sistema.
 
 \section{Papéis de Utilizadores}\label{sec:user_roles}
 
