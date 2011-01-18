@@ -20,3 +20,12 @@ thesis/*.pdf
 thesis/*.toc
 thesis/dia/*~
 prototypes/documents/log/*.log
+articles/**/*.aux
+articles/**/*.bbl
+articles/**/*.blg
+articles/**/*.lof
+articles/**/*.log
+articles/**/*.lot
+articles/**/*.out
+articles/**/*.pdf
+articles/**/*.toc
