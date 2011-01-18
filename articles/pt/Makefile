@@ -1,4 +1,4 @@
-TARGET=article-en
+TARGET=article-pt
 
 all:
 	pdflatex $(TARGET).tex

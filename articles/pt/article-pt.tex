@@ -6,8 +6,8 @@
 \documentclass[9pt,a4paper]{extarticle}
 
 %% English version: comment first, uncomment second
-%\usepackage[portuguese]{babel}  % Portuguese
-\usepackage[english]{babel}     % English
+\usepackage[portuguese]{babel}  % Portuguese
+%\usepackage[english]{babel}     % English
 \usepackage{graphicx}           % images .png or .pdf w/ pdflatex OR .eps w/ latex
 \usepackage{times}              % use Times type-1 fonts
 \usepackage[utf8]{inputenc}     % 8 bits using UTF-8
@@ -46,8 +46,8 @@
 
 \title{\vspace*{-8mm}\textbf{\textsc{Improving Variability of Applications using Adaptive Object-Models}}}
 \author{\emph{João Gradim Pereira}\\[2mm]
-\small{Dissertation realized under the supervision of \emph{Ademar Aguiar (Ph.D.)} and \emph{Hugo Ferreira (Ph.D. AbD)}}\\
-\small{at \emph{Tecla Colorida, Lda}}}
+\small{Dissertação realizada sob a orientação de \emph{Ademar Aguiar (Ph.D.)} e \emph{Hugo Ferreira (Ph.D. AbD)}}\\
+\small{na \emph{Tecla Colorida, Lda}}}
 \date{}
 \maketitle
 %no page number 
@@ -57,15 +57,17 @@
 
 \begin{multicols}{2}
 
-\section{Motivation}\label{sec:motivation}
+\section{Motivação}\label{sec:motivation}
 
 %Software systems are usually designed with a specific purpose in mind. They rely on a series of requirements which are often very difficult to capture and maintain, as they have a tendency to evolve faster than the implementation. This is caused mainly by the poor understanding by the stakeholders about their needs and expectations about what a software system should be able to do~\cite{PT07}. These situations lead to higher costs in software development, as creating and maintaining software systems is a knowledge intensive task~\cite{AdOdSBD07}. Moreover, most of these system are not static, and have a constant need to evolve in order to adapt themselves to their environment and new business rules, shifting the stakeholders' needs and expectations about these software systems.
-Software systems are usually designed with a specific purpose in mind. They rely on a series of requirements which are often very difficult to capture and maintain, as they have a tendency to evolve faster than the implementation. This is caused mainly by the poor understanding by the stakeholders about their needs and expectations about what a software system should be able to do. These situations lead to higher costs in software development, as creating and maintaining software systems is a knowledge intensive task. Moreover, most of these system are not static, and have a constant need to evolve in order to adapt themselves to their environment and new business rules, shifting the stakeholders' needs and expectations about these software systems.
+
+Um sistema de software é normalmente desenhado com um objectivo específico em mente. Este desenho depende de um conjunto de requisitos que na maior parte dos casos são difíceis de capturar e manter, visto que têm tendência a evoluir mais depressa do que a sua implementação. Esta situação é causada pelo pobre conhecimento que os \emph{stakeholders} têm acerca dos seus próprios desejos e expectativas acerca do que o software deverá ser capaz de fazer. Estas situações levam a custos de desenvolvimento de software mais altos, visto que a criação e manutenção (evolução) de software é uma tarefa que requere tempo e muito conhecimento. Para além disso, muitos do software não é estático, e possui uma necessidade constante de evolução de modo a adaptar-se ao seu ambiente e novas regras de negócio.
 
 %In face of these situations, new development methods started to focus more on iterative and incremental approaches, accepting \emph{incompleteness} as part of every software system's development cycle~\cite{WC03}. At the same time, many new systems are being developed with an emphasis on flexibility and run-time configuration~\cite{YJ02}.
-In face of these situations, new development methods started to focus more on iterative and incremental approaches, accepting \emph{incompleteness} as part of every software system's development cycle. At the same time, many new systems are being developed with an emphasis on flexibility and run-time configuration~\cite{YJ02}.
 
-\section{Objectives}\label{sec:objectives}
+Face a estas situações, novos métodos de desenvolvimento de software começaram a surgir, focando-se em abordagens iterativas e incrementais, aceitando que o software é permanentemente \emph{incompleto}. Ao mesmo tempo, novos sistemas estão em desenvolvimento, enfatizando a flexibilidade e a configuração em \emph{runtime}~\cite{YJ02}.
+
+\section{Objectivos}\label{sec:objectives}
 
 At the same time, many new systems are being developed with an emphasis on flexibility and run-time configuration~\cite{YJ02}. An Adaptive Object-Model (AOM) is an architectural style based on metamodeling and object-oriented design that exposes its domain model to the end-user, and aims to create better mechanisms for the evolution and adaption of software systems to their environments.
 
@@ -73,7 +75,7 @@ The first chalenge is to adapt some of the ideologies and techniques of the AOM 
 
 The second goal is to measure how the variability and performance of each component are affected by the application of these design patterns.
 
-\section{User Roles}\label{sec:user_roles}
+\section{Papéis de Utilizadores}\label{sec:user_roles}
 
 In \emph{escolinhas.pt}, user roles are organized as an \textsc{Organization Hierarchy}~\cite{fowler_accountability}. This creates some problems when trying to create new roles or give special privileges to an user, due to multi-level hierarchy used.
 
@@ -91,7 +93,7 @@ By using the \textsc{Role Object} pattern, the roles are split into single class
   \label{fig:user_roles_conceptual}
 \end{figure}
 
-\section{Social Network}\label{sec:social_network}
+\section{Rede Social}\label{sec:social_network}
 
 The current design for the escolinhas.pt social network is based on the relationships formed through the connections between users and their schools, groups, and other users, as depicted in Fig.~\ref{fig:social_network_current}. This allows the construction of a network where all the connections can be inferred dynamically and where an user can be identified towards another through these same connections. This model, however useful, offers a very small degree of variability.
 
@@ -109,7 +111,7 @@ The usage of the \textsc{Accountability} design pattern, by Martin Fowler~\cite{
   \label{fig:social_network_conceptual}
 \end{figure}
 
-\section{Document Editor}\label{sec:document_editor}
+\section{Editor de Documentos}\label{sec:document_editor}
 
 The existing document editor in \emph{escolinhas.pt} is one of the core components of the system and one of the used features. This being the case, and due to the constantly evolving nature of the product and the product itself, it is also one of the most modified parts of the system. The document editor infrastructure has to grow both in size and complexity every time a new type of block content is introduced --- represented by the gray entities in Fig.~\ref{fig:documents_current} --- by creating 
 
@@ -136,7 +138,7 @@ It is also possible to conclude that the application of the appropriate design p
 %%English version: comment first, uncomment second
 \bibliographystyle{unsrt-pt}  % numeric, unsorted refs
 %\bibliographystyle{numeric}  % numeric, unsorted refs
-\bibliography{article-en}
+\bibliography{article-pt}
 
 \end{multicols}
 
