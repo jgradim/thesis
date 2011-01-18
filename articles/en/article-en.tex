@@ -1,0 +1,85 @@
+%-----------------------------------------------
+% Template para criação de resumos de projectos/dissertação
+% jlopes AT fe.up.pt,   Fri Jul  3 11:08:59 2009
+%-----------------------------------------------
+
+\documentclass[9pt,a4paper]{extarticle}
+
+%% English version: comment first, uncomment second
+%\usepackage[portuguese]{babel}  % Portuguese
+\usepackage[english]{babel}     % English
+\usepackage{graphicx}           % images .png or .pdf w/ pdflatex OR .eps w/ latex
+\usepackage{times}              % use Times type-1 fonts
+\usepackage[utf8]{inputenc}     % 8 bits using UTF-8
+\usepackage{url}                % URLs
+\usepackage{multicol}           % twocolumn, etc
+\usepackage{float}              % improve figures & tables floating
+\usepackage[tableposition=top]{caption} % captions
+%% English version: comment first (maybe)
+\usepackage{indentfirst}        % portuguese standard for paragraphs
+%\usepackage{parskip}
+
+%% page layout
+\usepackage[a4paper,margin=30mm,noheadfoot]{geometry}
+
+%% space between columns
+\columnsep 12mm
+
+%% headers & footers
+\pagestyle{empty}
+
+%% figure & table caption
+\captionsetup{figurename=Fig.,tablename=Tab.,labelsep=endash,font=bf,skip=.5\baselineskip}
+
+%% heading
+\makeatletter
+\renewcommand*{\@seccntformat}[1]{%
+  \csname the#1\endcsname.\quad
+}
+\makeatother
+
+%% avoid widows and orphans
+\clubpenalty=300
+\widowpenalty=300
+
+\begin{document}
+
+\title{\vspace*{-8mm}\textbf{\textsc{Improving Variability of Applications using Adaptive Object-Models}}}
+\author{\emph{João Gradim Pereira}\\[2mm]
+\small{Dissertation realized under the supervision of \emph{Ademar Aguiar (Ph.D.)} and \emph{Hugo Ferreira (Ph.D. AbD)}}\\
+\small{at \emph{Tecla Colorida, Lda}}}
+\date{}
+\maketitle
+%no page number 
+\thispagestyle{empty}
+
+\vspace*{-4mm}\noindent\rule{\textwidth}{0.4pt}\vspace*{4mm}
+
+\begin{multicols}{2}
+
+\section{Motivation}\label{sec:motivation}
+
+Software systems are usually designed with a specific purpose in mind. They rely on a series of requirements which are often very difficult to capture and maintain, as they have a tendency to evolve faster than the implementation. This is caused mainly by the poor understanding by the stakeholders about their needs and expectations about what a software system should be able to do~\cite{PT07}. These situations lead to higher costs in software development, as creating and maintaining software systems is a knowledge intensive task~\cite{AdOdSBD07}. Moreover, most of these system are not static, and have a constant need to evolve in order to adapt themselves to their environment and new business rules, shifting the stakeholders' needs and expectations about these software systems.
+
+In face of these situations, new development methods started to focus more on iterative and incremental approaches, accepting \emph{incompleteness} as part of every software system's development cycle~\cite{WC03}. At the same time, many new systems are being developed with an emphasis on flexibility and run-time configuration~\cite{YJ02}.
+
+\section{Objectives}\label{sec:objectives}
+
+At the same time, many new systems are being developed with an emphasis on flexibility and run-time configuration~\cite{YJ02}. An Adaptive Object-Model (AOM) is an architectural style based on metamodeling and object-oriented design that exposes its domain model to the end-user, and aims to create better mechanisms for the evolution and adaption of software systems to their environments.
+
+The first chalenge is to adapt some of the ideologies and techniques of the AOM architectural style to a Ruby on Rails application (using an MVC architecture), using an application design based on a static schema from a relational database (MySQL), by applying a series of design patterns connected with AOM architectures.
+
+The second goal is to measure how the variability and performance of each component are affected by the application of these design patterns.
+
+\section{Approach \& Results}\label{sec:approach_results}
+
+\section{Conclusion}\label{sec:conclusion}
+
+%%English version: comment first, uncomment second
+\bibliographystyle{unsrt-pt}  % numeric, unsorted refs
+%\bibliographystyle{unsrt}  % numeric, unsorted refs
+\bibliography{refs}
+
+\end{multicols}
+
+\end{document}
