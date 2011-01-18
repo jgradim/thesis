@@ -99,7 +99,9 @@ Com o uso do padrão \textsc{Role Object}, os papéis do utilizadores são separ
 
 \section{Rede Social}\label{sec:social_network}
 
-The current design for the escolinhas.pt social network is based on the relationships formed through the connections between users and their schools, groups, and other users, as depicted in Fig.~\ref{fig:social_network_current}. This allows the construction of a network where all the connections can be inferred dynamically and where an user can be identified towards another through these same connections. This model, however useful, offers a very small degree of variability.
+%The current design for the escolinhas.pt social network is based on the relationships formed through the connections between users and their schools, groups, and other users, as depicted in Fig.~\ref{fig:social_network_current}. This allows the construction of a network where all the connections can be inferred dynamically and where an user can be identified towards another through these same connections. This model, however useful, offers a very small degree of variability.
+
+O desenho actual da rede social da plataforma \emph{escolinhas.pt} assenta nas relações criadas através de ligações entre os utilizadores e as suas escolas, turmas e até mesmo outros utilizadores, como mostrado na Fig.~ref{fig:social_network_current}. Isto permite a construção de uma rede onde todas as ligações pode ser inferidas dinamicamente e onde um utilizador pode ser perante outro através destas mesmas ligações. Apesar de útil, este modelo oferece um grau muito baixo de variabilidade
 
 \begin{figure}[H]
   \centering{\includegraphics[width=35mm]{figures/social_network_current}}
@@ -107,7 +109,9 @@ The current design for the escolinhas.pt social network is based on the relation
   \label{fig:social_network_current}
 \end{figure}
 
-The usage of the \textsc{Accountability} design pattern, by Martin Fowler~\cite{fowler_accountability} allows the creation of a relationship between two different entities in the system, with a third optional entity providing more information as to how they are connected.
+%The usage of the \textsc{Accountability} design pattern, by Martin Fowler~\cite{fowler_accountability} allows the creation of a relationship between two different entities in the system, with a third optional entity providing more information as to how they are connected.
+
+O uso do padrão de desenho \textsc{Accountability}, por Martin Fowler~\cite{fowler_accountability} permite a criação de relações entre quaisquer duas entidades do sistema, com uma terceira entidade opcional que pode providenciar mais informações relativamente ao modo como as duas entidades originais estão ligadas.
 
 \begin{figure}[H]
   \centering{\includegraphics[width=0.4\textwidth]{figures/social_network_conceptual}}
