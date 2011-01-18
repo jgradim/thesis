@@ -77,7 +77,9 @@ O segundo objectivo é a medição do impacto que o redesenho de cada componente
 
 \section{Papéis de Utilizadores}\label{sec:user_roles}
 
-In \emph{escolinhas.pt}, user roles are organized as an \textsc{Organization Hierarchy}~\cite{fowler_accountability}. This creates some problems when trying to create new roles or give special privileges to an user, due to multi-level hierarchy used.
+No contexto do \emph{escolinhas.pt}, os papéis dos utilizadores estão organizados numa \textsc{Organization Hierarchy}~\cite{fowler_accountability}. Esta abordagem cria alguns problemas que é necessário criar novos papéis ou atribuir privilégios especiais a um utilizador, devido à hierarquia multi-nivel usada.
+
+%In \emph{escolinhas.pt}, user roles are organized as an \textsc{Organization Hierarchy}~\cite{fowler_accountability}. This creates some problems when trying to create new roles or give special privileges to an user, due to multi-level hierarchy used.
 
 \begin{figure}[H]
   \centering{\includegraphics[width=0.4\textwidth]{figures/user_roles_current}}
@@ -85,7 +87,9 @@ In \emph{escolinhas.pt}, user roles are organized as an \textsc{Organization Hie
   \label{fig:user_roles_current}
 \end{figure}
 
-By using the \textsc{Role Object} pattern, the roles are split into single classes, which allows capturing the key abstractions of each one individually. By flattening the hierarchy, it is now possible to develop roles individually, as well as have users associated with multiple roles without fear of rule clashing.
+%By using the \textsc{Role Object} pattern, the roles are split into single classes, which allows capturing the key abstractions of each one individually. By flattening the hierarchy, it is now possible to develop roles individually, as well as have users associated with multiple roles without fear of rule clashing.
+
+Com o uso do padrão \textsc{Role Object}, os papéis do utilizadores são separados em entidades singulares, o que permite que a definição das suas abstrações chave seja feita individualmente. Ao alisar a hierarquia, torna-se possível o desenvolvimento individual dos papéis, sem problemas de contradição de regras.
 
 \begin{figure}[H]
   \centering{\includegraphics[width=0.4\textwidth]{figures/user_roles_conceptual}}
