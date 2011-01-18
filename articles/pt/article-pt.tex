@@ -101,7 +101,7 @@ Com o uso do padrão \textsc{Role Object}, os papéis do utilizadores são separ
 
 %The current design for the escolinhas.pt social network is based on the relationships formed through the connections between users and their schools, groups, and other users, as depicted in Fig.~\ref{fig:social_network_current}. This allows the construction of a network where all the connections can be inferred dynamically and where an user can be identified towards another through these same connections. This model, however useful, offers a very small degree of variability.
 
-O desenho actual da rede social da plataforma \emph{escolinhas.pt} assenta nas relações criadas através de ligações entre os utilizadores e as suas escolas, turmas e até mesmo outros utilizadores, como mostrado na Fig.~ref{fig:social_network_current}. Isto permite a construção de uma rede onde todas as ligações pode ser inferidas dinamicamente e onde um utilizador pode ser perante outro através destas mesmas ligações. Apesar de útil, este modelo oferece um grau muito baixo de variabilidade
+O desenho actual da rede social da plataforma \emph{escolinhas.pt} assenta nas relações criadas através de ligações entre os utilizadores e as suas escolas, turmas e até mesmo outros utilizadores, como mostrado na Fig.~\ref{fig:social_network_current}. Isto permite a construção de uma rede onde todas as ligações pode ser inferidas dinamicamente e onde um utilizador pode ser perante outro através destas mesmas ligações. Apesar de útil, este modelo oferece um grau muito baixo de variabilidade.
 
 \begin{figure}[H]
   \centering{\includegraphics[width=35mm]{figures/social_network_current}}
@@ -121,7 +121,9 @@ O uso do padrão de desenho \textsc{Accountability}, por Martin Fowler~\cite{fow
 
 \section{Editor de Documentos}\label{sec:document_editor}
 
-The existing document editor in \emph{escolinhas.pt} is one of the core components of the system and one of the used features. This being the case, and due to the constantly evolving nature of the product and the product itself, it is also one of the most modified parts of the system. The document editor infrastructure has to grow both in size and complexity every time a new type of block content is introduced --- represented by the gray entities in Fig.~\ref{fig:documents_current} --- by creating 
+%The existing document editor in \emph{escolinhas.pt} is one of the core components of the system and one of the used features. This being the case, and due to the constantly evolving nature of the product and the product itself, it is also one of the most modified parts of the system. The document editor infrastructure has to grow both in size and complexity every time a new type of block content is introduced --- represented by the gray entities in Fig.~\ref{fig:documents_current} --- by creating 
+
+O editor de documentos presente no \emph{escolinhas.pt} é um dos componentes centrais do sistema e uma das funcionalidades mais usadas. Sendo este o caso, e devido à constante evolução da plataforma, é também um dos seus componentes mais modificados. A infrastrutura do editor cresce em tamanho e complexidade sempre que é necessário introduzir um novo tipo bloco --- representado pelas entidades a cinzento na Fig.~\ref{fig:documents_current} --- criando um novo Modelo, Controlador e Vistas, e duplicando toda a lógica presente de um bloco já existente.
 
 \begin{figure}[H]
   \centering{\includegraphics[width=0.4\textwidth]{figures/documents_current}}
@@ -129,7 +131,9 @@ The existing document editor in \emph{escolinhas.pt} is one of the core componen
   \label{fig:documents_current}
 \end{figure}
 
-The solution devised for the \emph{Documents} infrastructure is, the simplest structure possible that makes everything work (as seen in Fig.~\ref{fig:documents_conceptual}). This is made possible by using a variant of the \textsc{Property} pattern~\cite{metadata_and_active_object_models} and the \textsc{System Memento}~\cite{patterns_data_and_metadata_evolution_in_aoms}
+%The solution devised for the \emph{Documents} infrastructure is, the simplest structure possible that makes everything work (as seen in Fig.~\ref{fig:documents_conceptual}). This is made possible by using a variant of the \textsc{Property} pattern~\cite{metadata_and_active_object_models} and the \textsc{System Memento}~\cite{patterns_data_and_metadata_evolution_in_aoms}
+
+A solução desenvolvida para a infraestructura do editor de documentos passa por criar o desenho mais simples possível (tal como visto na Fig.~\ref{fig:documents_conceptual}). Isto é possível devido ao uso dos padrões de desenho \textsc{Property}~\cite{metadata_and_active_object_models} (variante) e \textsc{System Memento}~\cite{patterns_data_and_metadata_evolution_in_aoms}
 
 \begin{figure}[H]
   \centering{\includegraphics[width=25mm]{figures/documents_conceptual}}
@@ -139,7 +143,7 @@ The solution devised for the \emph{Documents} infrastructure is, the simplest st
 
 \section{Conclusion}\label{sec:conclusion}
 
-Despite being built with an MVC architecture, the Ruby On Rails framework is, using the right approach, capable of working with some architectural and design patterns --- present in AOM architectures --- not obviously connected with MVC and AR. The application of these patterns is capable of increasing the level of variability present in a common Rails application, and a harmonious integration with the Rails 2.3.x infrastructure --- especially the \textsc{ActiveRecord} engine --- is possible and works elegantly.
+%Despite being built with an MVC architecture, the Ruby On Rails framework is, using the right approach, capable of working with some architectural and design patterns --- present in AOM architectures --- not obviously connected with MVC and AR. The application of these patterns is capable of increasing the level of variability present in a common Rails application, and a harmonious integration with the Rails 2.3.x infrastructure --- especially the \textsc{ActiveRecord} engine --- is possible and works elegantly.
 
 It is also possible to conclude that the application of the appropriate design patterns is able to increase not only the variability and configurability needs of a specific part of an application, but also its performance, in some cases. However, this should not be taken as an universal truth, as it depends on a series of factors that may not be present in all implementations, such as a previous innapropriate design.
 

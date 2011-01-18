@@ -111,7 +111,7 @@ The usage of the \textsc{Accountability} design pattern, by Martin Fowler~\cite{
 
 \section{Document Editor}\label{sec:document_editor}
 
-The existing document editor in \emph{escolinhas.pt} is one of the core components of the system and one of the used features. This being the case, and due to the constantly evolving nature of the product and the product itself, it is also one of the most modified parts of the system. The document editor infrastructure has to grow both in size and complexity every time a new type of block content is introduced --- represented by the gray entities in Fig.~\ref{fig:documents_current} --- by creating 
+The existing document editor in \emph{escolinhas.pt} is one of the core components of the system and one of the used features. This being the case, and due to the constantly evolving nature of the product and the product itself, it is also one of the most modified parts of the system. The document editor infrastructure has to grow both in size and complexity every time a new type of block content is introduced --- represented by the gray entities in Fig.~\ref{fig:documents_current} --- by creating new Models, Controller, Views and duplicating all the logic from existing Block types.
 
 \begin{figure}[H]
   \centering{\includegraphics[width=0.4\textwidth]{figures/documents_current}}
