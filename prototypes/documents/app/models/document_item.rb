@@ -17,14 +17,24 @@ class DocumentItem
     
   end
   
+  # builder method
+  def self.from_json(j)
+    j.first.first.constantize.new(j.first.last)
+  end
+  
+  # serialize object in JSON, with root, like in AR to_json 
+  def serialize
+    "{\"#{self.class.to_s}\":#{self.to_json}}"
+  end
+  
   # setter for default values
-  def self.defaults(dv = {})
-    self.default_values.merge!(dv)
+  def self.defaults(attribute, value)
+    self.default_values.merge!({attribute => value})
   end
   
   # setter for validations
-  def self.validates(v = {})
-    self.validations.merge!(v)
+  def self.validates(attribute, rule)
+    self.validations.merge!({attribute => rule})
   end
   
 end
