@@ -1,5 +1,7 @@
 class DocumentItem
 
+  include ActiveModel::Serialization
+
   include ClassLevelInheritableAttributes
   inheritable_attributes :default_values, :validations
   @default_values = {}
