@@ -6,9 +6,16 @@ http://www.slideshare.net/squaredeye/communicating-with-type <= Great background
 
 http://www.slideshare.net/whafro/up-to-speed-on-html-5-and-css-3 <= Very beautiful Typography!
 
-http://www.slideshare.net/stupidapp/guy-haviv-history-of-gui-visual-design
-
 http://www.slideshare.net/collylogic/adaptive-layouts
+http://www.slideshare.net/collylogic/the-process-toolbox
+
+http://www.slideshare.net/carsonified/12-things-i-wish-id-known-before-building-a-web-app
+
+http://www.slideshare.net/jbrenman/yugma
+
+http://www.slideshare.net/cameronmoll/good-vs-great-design
+
+http://www.slideshare.net/stupidapp/guy-haviv-history-of-gui-visual-design
 
 http://www.slideshare.net/kyooslides/qwerty-monsters
 
