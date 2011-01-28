@@ -29,3 +29,4 @@ articles/**/*.lot
 articles/**/*.out
 articles/**/*.pdf
 articles/**/*.toc
+presentations/~*
