@@ -1,3 +1,7 @@
 building_framework.jpg: http://www.flickr.com/photos/icathing/2096201045/sizes/l/in/photostream/
 
 old_books.jpg: http://www.flickr.com/photos/dklimke/4724842339/sizes/l/in/photostream/
+
+nikon_domo_kun.jpg: http://www.flickr.com/photos/terenceleezy/5394898451/sizes/l/in/photostream/
+
+open_book: http://www.flickr.com/photos/seb-o/4647424096/sizes/l/in/photostream/
