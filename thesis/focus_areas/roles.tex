@@ -1,8 +1,8 @@
-\subsection{User Roles}\label{sec:fa_roles}
+\section{User Roles}\label{sec:fa_roles}
 
 Roles play a very important part in any application: by attaching them to users, they allow the application to authenticate and authorize users based on their roles. If an application has a strong tendency to evolve, so do its roles and authorization sets. This section describes the work involved in making the current system of roles used in \emph{escolinhas.pt} as adaptable as possible.
 
-\subsubsection{Variability Requirements}\label{sec:fa_roles_variability_requirements}
+\subsection{Variability Requirements}\label{sec:fa_roles_variability_requirements}
 
 Authorization is one of the most sensitive areas of any closed software system: it ensures everyone does only what it should in order to guarantee everything works as expected. In a constantly evolving system, the accesses granted by user roles have a tendency to shift and evolve alongside the application --- either because of new features or a new type of user is required in the system to perform specific tasks. In the context of \emph{escolinhas.pt} this problem ties itself with the ACL used: because of the diversity of roles (Fig.~\ref{fig:user_roles_current}) and the three different usage plans, a lot of different rules are applied to determine if a user can or can not perform certain actions; allied to the growing number of features of the platform, this means that the authorization scheme has to be as flexible as possible to ensure minimal overhead when determining new types of permission sets.
 
@@ -13,7 +13,7 @@ Authorization is one of the most sensitive areas of any closed software system: 
   \label{fig:user_roles_current}
 \end{figure}
 
-\subsubsection{Candidate Patterns}\label{sec:fa_roles_candidate_patterns}
+\subsection{Candidate Patterns}\label{sec:fa_roles_candidate_patterns}
 
 The current logic on roles and users states that a user may be a professor, a student, a parent, a coordinator (in which case it also has a professor role associated), or an administrator. Of these five different types of roles, only two of them are allowed editing privileges, which means that only students and professors have to ability to create and edit documents, which leads to an unnecessary level of complexity. If, for example, it was necessary to have a parent with editing privileges, a new Role, descendant of Role::Editor, would have to be created just for that user.
 
@@ -21,7 +21,7 @@ An obvious solution to this problem would be to tie a ``traditional'' \textsc{Ac
 
 As such, the usage of a full-fledged ACL is unnecessary. As \emph{CanCan} rules are written in Ruby and are based on the AR engine used by Rails, \emph{CanCan} is capable of handling authorizations based either on Models (MVC) or \emph{instances} of these Models. The application of an ACL to define user permissions would allow a fine-grained control over the actions of every individual --- instances of \emph{User} Model --- on the system. However, the cases when this kind of control is necessary are rare, which would mean that the increase in complexity brought with the usage of an ACL would not be surpassed by its usefulness: it would be necessary to rewrite every rule already defined within \emph{CanCan} and then associate each user on the system with a specific set of rules, instead of maintaining the current setup and writing a few (rare) exceptions for the users the system administrator saw fit.
 
-\subsubsection{Chosen Patterns \& Rationale}\label{sec:fa_roles_chosen_patterns_rationale}
+\subsection{Chosen Patterns \& Rationale}\label{sec:fa_roles_chosen_patterns_rationale}
 
 As the implementation of an ACL was discarded in \ref{sec:fa_roles_candidate_patterns}, the best solution is to enhance the already present roles system: a flat Role hierarchy, as described in~\cite{baumer_riehle_role_object} would allow for a more flexible authorization scheme, where a User could have one or more roles associated, depending on what actions he would be allowed to do, as shown on Fig.~\ref{fig:user_roles_conceptual}. This also makes the task of creating new roles with different authorization schemes much easier, as there is not a need to conform to any special hierarchy scheme: a new role simply means a new type of user. This clearly contrasts with the previous role's logic, where a multi-level hierarchy was in place.
 
@@ -32,11 +32,11 @@ As the implementation of an ACL was discarded in \ref{sec:fa_roles_candidate_pat
   \label{fig:user_roles_conceptual}
 \end{figure}
 
-\subsubsection{Implementation}\label{sec:fa_roles_implementation}
+\subsection{Implementation}\label{sec:fa_roles_implementation}
 
 The refactoring of the roles infrastructure was of very low impact, as codebase and database schema are regarded. The hierarchy of Role classes was flattened, keeping it at only two levels: a generic, non-instantiable class \emph{Role}, and all of its currently existent subclasses: \emph{Editor, Parent, Student, Professor, Coordinator} and \emph{Administrator}. Then, the existent rules were adapted to fit this new hierarchy. The last steps pertains to the modification of the current data to fit the new role organization, which entails analyzing each user current roles and performing the adequate substitutions from the previous roles schema. 
 
-\subsubsection{Impact Analysis}\label{sec:fa_roles_impact_analysis}
+\subsection{Impact Analysis}\label{sec:fa_roles_impact_analysis}
 
 The main issues related to the current Roles schema and consequent authorization strategies are caused by the difficulty to capture the constantly evolving necessities of different types of users. As the platform evolves, so do its users and their associated roles. If a new feature is added to the application, it is necessary to define the privileges each user type has over it. The flattening of the Roles hierarchy allows the representation of this Roles as separate, independent objects, allowing the different contexts they refer to be kept separate and also simplify the system configuration.
 

@@ -1,8 +1,8 @@
-\subsection{Documents}\label{sec:fa_documents}
+\section{Documents}\label{sec:fa_documents}
 
 The last studied area --- the Document Editor --- is also the most used and most complex component of the system. It is the main means of collaboration between students and teachers, and used to create essays, using a series of different digital contents, such as images, videos, or maps. As one of the most used features of the system, it is also the one most subject to modification. This section details the work performed in order to make the process of modifying the Document Editor as agile as possible.
 
-\subsubsection{Variability Requirements}\label{sec:fa_documents_variability_requirements}
+\subsection{Variability Requirements}\label{sec:fa_documents_variability_requirements}
 
 The document editor present in \emph{escolinhas.pt} is one of the core components of the system and one of the used features of the platform. This being the case, and due to the constantly evolving nature of the product and the product itself, it is also one of the most modified parts of the system. As it can be seen in Fig.~\ref{fig:documents_current}, this structure has to grow both in size and complexity every time a new type of \emph{Block} content is introduced --- represented by the gray entities in Fig.~\ref{fig:documents_current}. This means that whenever a new type of content is introduced in the system, which happens somewhat frequently --- from three types of \emph{Blocks} (\emph{Paragraphs}, \emph{Drawings} and \emph{ImageDocuments/Photos}) in September 2009 to seven in April/May 2010 --- it is necessary to setup a new \textsc{ActiveRecord} class (along with all the logic for versioning) and a new \textsc{Controller} (MVC) to accept the requests necessary to create, edit or delete any of these entities. Despite working as intended, this workflow is not adequate to the constant evolution and prototyping the document editor is subjected to.
 
@@ -13,7 +13,7 @@ The document editor present in \emph{escolinhas.pt} is one of the core component
   \label{fig:documents_current}
 \end{figure}
 
-\subsubsection{Candidate Patterns}\label{sec:fa_documents_candidate_patterns}
+\subsection{Candidate Patterns}\label{sec:fa_documents_candidate_patterns}
 
 % \emph{Block} types
 One of the major causes of slow and irksome development of new types of \emph{Blocks}, is, as stated in the previous section, the sheer amount of code duplication involved. This involves painstakingly copying the Model, the Controller and all the Views from a previous existing \emph{Block} type, and then modifying the required parts. This approach is brittle and extremely prone to errors. However, if a more general and abstract analysis is performed, a \emph{Block} type is nothing more than a very complex variable. As such, the problem can now be approached to as finding the best way to create new types of variables, on demand, and with as little work involved as possible --- and the current research on AOM architectures has already solved this problem, by means of the \textsc{Type-Object} and \textsc{Property} (and, consequently, the \textsc{Type-Square}, described in \ref{sec:type-object_pattern}, \ref{sec:property_pattern} and \ref{sec:type-square_pattern}, respectively) patterns.
@@ -24,7 +24,7 @@ The research on versioning and maintaining a temporal history for objects is ext
 % validations
 One important part of the document editor is the validation of user input. As it is the only focus area which deals directly with free-form user input, the validation of the values need to be taken into account. The \textsc{Strategy} and \textsc{Interpreter} pattern (described in \ref{sec:strategy_pattern} and \ref{sec:interpreter_pattern}, respectively), are two patterns that would be adequate to write and perform all of the validations required by the \emph{Block} \texttt{item} logic. However, these two patterns are mainly directed to when a system needs to have end-user level variability. In this particular case, the definition and creation of new types of \emph{Blocks} is a task for the development team. As such, the usage of these patterns is unnecessary as far as validations are regarded. In order to simplify development and validations themselves, Ruby will act as both the \emph{language} and \emph{execution} engine for the validations. This is done by using a custom, extensible DSL built atop of the language itself; thus, the \textsc{Strategy} and \textsc{Interpreter} pattern are effectively ``absorbed'' by the host language (Ruby) atop of which the platform is built.
 
-\subsubsection{Chosen Patterns \& Rationale}\label{sec:fa_documents_chosen_patterns_rationale}
+\subsection{Chosen Patterns \& Rationale}\label{sec:fa_documents_chosen_patterns_rationale}
 
 The solution devised for the \emph{Documents} infrastructure is, as required by all the necessities stated in \ref{sec:fa_documents_variability_requirements} and \ref{sec:fa_documents_candidate_patterns}, the simplest structure possible --- as seen in Fig.~\ref{fig:documents_conceptual} --- that makes everything work as before and makes the data transition tasks as simple and seamless as possible. This is due to the metaprogramming facilities of the Ruby language and the excellent support present in the serialization and \textsc{ActiveRecord} tools provided by RoR.
 
@@ -44,7 +44,7 @@ The pattern used is a \emph{composite} design pattern as described in~\cite{rieh
 
 The variant of the \textsc{Property} pattern implemented is simplified due to the highly dynamic nature of the Ruby language --- which means that, for this particular problem, it is able to build new types of objects or even create new class definitions in runtime, which allows discarding the \textsc{Property}--\textsc{PropertyType} pair (see \ref{sec:property_pattern}) in favour of a single entity, \texttt{item}, as shown on Fig.~\ref{fig:documents_conceptual}.
 
-\subsubsection{Implementation}\label{sec:fa_documents_implementation}
+\subsection{Implementation}\label{sec:fa_documents_implementation}
 
 The implementation of this composite pattern takes advantage of the highly dynamic nature of the Ruby language and the API provided by the \textsc{ActiveRecord} implementation of Rails.
 
@@ -64,7 +64,7 @@ The defaulting and validation mechanisms implemented for the \emph{DocumentItem}
 
 JSON is exclusively used for serialization, and its usage objectives are two-fold: allowing serialization and de-serialization of any Ruby object, and the ability to use a serialized object directly in Javascript, without any need for a server-side transformation. JSON usage also allows for a more robust de-serialization of objects: as a JSON object is just a hash of key-value pairs, objects are built from a class method, \emph{DocumentItem.from\_json}, which takes a JSON-serialized object represented as a native Ruby hash, and creates an object of the appropriate class. The difference of this approach from other serialization methods\footnote{Marshalling, YAML, etc.} is that the constructor of the class to be built is called manually\footnote{Marshalling and YAML mechanisms do not call the serialized object's constructor, only rebuild it}, which is vital to deal with system evolution. If at any point during the development the definition of a \emph{DocumentItem} specialization is modified (i.e. a new attribute is added to the class definition), the previous objects stored will not have these new attributes. The defaulting mechanism implemented solves this problem by merging the existing default values with the ones passed to the class constructor, thereby creating a valid object, regardless of the information stored in the serialized object.
 
-\subsubsection{Impact Analysis}\label{sec:fa_documents_impact_analysis}
+\subsection{Impact Analysis}\label{sec:fa_documents_impact_analysis}
 
 The refactoring of the Document Editor infrastructure had two major points of impact: performance, and variability.
 
