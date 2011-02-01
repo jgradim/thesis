@@ -108,5 +108,5 @@ The graph in Fig.~\ref{fig:contact_queries} represents the average number of que
 
 %The data used to build the chart can be found in \nameref{sec:appendix_a}
 
-The implementation of the \textsc{Accountability} pattern to maintain the relationships between users was able to reduce the cost of the abovementioned task to from $O(n)$ (Fig.~\ref{contact_queries}) $O(1)$: by using the RoR \textsc{ActiveRecord} API to access and manipulate these connections, only 11 queries are performed to fetch and identify an user contacts, regardless of the size of said contact list. This means that the platform is able to sustain a considerable growth without suffering serious impacts on the performance of seemingly trivial operations.
+The implementation of the \textsc{Accountability} pattern to maintain the relationships between users was able to reduce the cost of the abovementioned task to from $O(n)$ (Fig.~\ref{fig:contact_queries}) $O(1)$: by using the RoR \textsc{ActiveRecord} API to access and manipulate these connections, only 11 queries are performed to fetch and identify an user contacts, regardless of the size of said contact list. This means that the platform is able to sustain a considerable growth without suffering serious impacts on the performance of seemingly trivial operations.
 
