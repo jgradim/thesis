@@ -44,7 +44,7 @@ The usage of a \emph{matricial} ACL implementation, as discussed in \ref{sec:fa_
 
 The usage of a \emph{declarative} ACL (\emph{CanCan}) in conjunction with the \textsc{Role Object} pattern, leads to some important consequences: despite losing the ability to \emph{easily} control the specific set of rules of each user\footnotemark and increasing the difficulty of maintaining constraints between roles, it allows the independent evolution of each \emph{Role}, while making the task of defining their key abstractions regarding each role's position within the platform much more simple and concise.
 
-Comparing the solution described in \ref{sec:fa_roles_chosen_patterns_rationale} with the previous system, some conclusions can be drawn: by eliminating complex hierarchies and keeping all roles on the same level, \emph{Roles} are easily evolved, as each \emph{Role} is independent from every other one. However, this solution must be be used with some caution, as maintaining constraints between roles becomes difficult: since a \emph{User} rule set consists of several \emph{Roles}, maintaining constraints and preserving the overall subject consistency might become difficult due to conflicting rules. Nevertheless, the ability to easily add new \emph{Roles} and write the appropriate rules (as the example from Listing~\ref{src:cancan_examples} shows) is enough to warrant the use of this solution.
+Comparing the solution described in \ref{sec:fa_roles_chosen_patterns_rationale} with the previous system, some conclusions can be drawn: by eliminating complex hierarchies and keeping all roles on the same level, \emph{Roles} are easily evolved, as each \emph{Role} is independent from every other one. However, this solution must be be used with some caution, as maintaining constraints between roles becomes difficult: since a \emph{User} rule set consists of several \emph{Roles}, maintaining constraints and preserving the overall subject consistency might become difficult due to conflicting rules. Nevertheless, the ability to easily add new \emph{Roles} and write the appropriate rules (as the example from Listing~\ref{src:cancan_examples} shows) is enough to warrant the use of this solution. Finally, the rules currently in place for the \emph{escolinhas.pt} platform are a mix of rules based on \emph{Roles} and actions that can performed on objects: this makes defining new \emph{Roles} and rule sets somewhat more complicated than defining them based solely based on the application \emph{Roles}. The usage of the \textsc{Role Object} pattern, combined with a rewrite of the current rules will make the act of creating new \emph{Roles} much more affordable.
 
 \begin{lstlisting}[language=ruby, float=htb, label=src:cancan_examples, caption=CanCan rule definition example.]
  class Ability
@@ -59,6 +59,7 @@ Comparing the solution described in \ref{sec:fa_roles_chosen_patterns_rationale}
    end
  end
 \end{lstlisting}
+
 
 \footnotetext{This ability  is not completely lost. If necessary, \emph{CanCan} can be used to define authorizations based on a User instance (a specific user)}
 
