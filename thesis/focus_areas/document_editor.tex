@@ -82,7 +82,7 @@ With the current foundation for the editor, the number of queries grows linearly
 
 From an universe of 4000 documents used in the study, the graph present in Fig.~\ref{fig:queries_per_blocks_in_document} shows a linear growth in the number of queries necessary to render a Document: the number of queries necessary are directly proportional to the number of \emph{Blocks} in a document with a 1:1 ratio. Just like in \ref{sec:fa_social_network_impact_analysis}, this represents a serious performance issue: as the most used feature in the \emph{escolinhas.pt} platform, a sustainable growth is very difficult to achieve if the database load increases linearly with the number of existent \emph{Blocks} in Documents.
 
-\begin{figure}[h]
+\begin{figure}[htb]
   \centering
   \includegraphics[width=150mm]{graphs/document_queries}
   \caption{Average number of queries performed per number of \emph{Blocks} in a single Document.}
@@ -95,3 +95,49 @@ The introduction of the model described in \ref{sec:fa_documents_chosen_patterns
 
 Using the aforementioned infrastructure for the document editor, the work necessary to create new types of \emph{Blocks} has been greatly reduced. This allows for much shorter prototyping and testing iteration times --- no database schemas or migrations to worry about, allowing the developers to focus on the details of the model rather than implementation details --- which ultimately leads to a higher degree of variability.
 
+Listings \ref{src:block_before} and \ref{src:block_after} show how the work necessary to create a \emph{Block} \texttt{item} has been greatly reduced, while keeping the necessary logic to a minimum. The logic for versioning is now handled by the \texttt{item} \emph{Block} instead of the \texttt{item} itself, which allows its logic and structure to be succinctly described.
+
+\begin{lstlisting}[language=ruby, float=htb, label=src:block_before, caption=Original ``Map'' Block item.]
+
+class GoogleMapsMap < ActiveRecord::Base
+
+  acts_as_paranoid_manually_versioned
+  has_one :block, :as : :item
+  
+  has_many :google_maps_markers, :dependent : :destroy
+  
+  # shortcut methods
+  def markers
+    self.google_maps_markers
+  end
+  
+  # save markers associations
+  def before_save
+    self.markers_for_version = self.markers.map(&:id).to_yaml
+  end
+
+  # FIXME
+  # include callback actions in the plugin
+  def before_update
+  
+    self.block.document.head.version += 1
+    self.block.document.head.save
+
+    self.set_new_version(self.block.document.head.version)
+    self.save_version(self.block.document.head.version)
+  end
+end
+\end{lstlisting}
+
+\begin{lstlisting}[language=ruby, float=htb, label=src:block_after, caption=Refactored ``Map'' Block item.]
+class DocumentItem::Map < DocumentItem
+
+  attr_accessor :lat, :lng, :map_type, :markers
+  
+  defaults :lat,      0.0
+  defaults :lng,      0.0
+  defaults :map_type, 'roadmap'
+  defaults :markers,  []
+  
+end
+\end{lstlisting}
