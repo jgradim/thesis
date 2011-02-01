@@ -4,7 +4,7 @@ As a social platform, \emph{escolinhas.pt} makes heavy use of the social network
 
 \subsection{Variability Requirements}\label{sec:fa_social_network_variability_requirements}
 
-The current design for the escolinhas.pt social network is based on the relationships formed through the connections between users and their schools, groups, and other users, as depicted in Fig.~\ref{fig:social_network_current}. The User's Roles play an important part in the definition of this network, as an user is only linked directly to other users; any other connection is mediated through their Roles, creating their association with Schools and Groups. This allows the construction of a network where all the connections can be inferred dynamically and where an user can be identified to another through these same connections: friends, classmates, parent--child, teacher--student, and so on. This network is used mainly in the internal messaging system (and, in a brief future, the instant messaging, or chat system) of \emph{escolinhas.pt}, which allows users to communicate with each other within the platform.
+The current design for the escolinhas.pt social network is based on the relationships formed through the connections between users and their schools, groups, and other users, as depicted in Fig.~\ref{fig:social_network_current}. The User's Roles play an important part in the definition of this network, as an user is only linked directly to other users; any other connection is mediated through their Roles, creating their association with Schools and Groups. This allows the construction of a network where all the connections can be inferred dynamically and where an user can be identified to another through these same connections: friends, classmates, parent--child, teacher--student, and so on. This network is used mainly in the internal communication systems of \emph{escolinhas.pt}, which allows users to communicate with each other within the platform.
 
 \begin{figure}[H]
   \centering
@@ -108,5 +108,5 @@ The graph in Fig.~\ref{fig:contact_queries} represents the average number of que
 
 %The data used to build the chart can be found in \nameref{sec:appendix_a}
 
-The implementation of the \textsc{Accountability} pattern to maintain the relationships between users was able to reduce the cost of the abovementioned task to $O(1)$: only 11 queries are performed to fetch and identify an user contacts, regardless of the size of said contact list. This means that the platform is able to sustain a considerable growth without suffering serious impacts on the performance of seemingly trivial operations.
+The implementation of the \textsc{Accountability} pattern to maintain the relationships between users was able to reduce the cost of the abovementioned task to $O(1)$: by using the RoR \textsc{ActiveRecord} API to access and manipulate these connections, only 11 queries are performed to fetch and identify an user contacts, regardless of the size of said contact list. This means that the platform is able to sustain a considerable growth without suffering serious impacts on the performance of seemingly trivial operations.
 
