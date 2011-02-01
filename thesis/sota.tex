@@ -1,10 +1,10 @@
 \chapter{State of the Art}\label{chap:sota}
 
-This Chapter presents a bibliographic review on the areas of interest and contribution of this study and it is mainly divided in three parts. The first one presents the most commonly used techniques, approaches and ideologies to building adaptable software. The second part is concerned with the current research on AOMs, describing the main design patterns and how they work together to create an AOM architecture. A current implementation of this architecture is presented. The last part briefly present the Ruby programming language and describes how some of its concepts can be seen as analogous to the techniques and patterns described before.
+This chapter presents a bibliographic review on the areas of interest and contribution of this study and it is mainly divided in three parts. The first one presents the most commonly used techniques, approaches and ideologies to build adaptable software. The second part is concerned with the current research on AOMs, describing the main design patterns and how they work together to create an AOM architecture. A current implementation of this architecture is presented. The last part briefly presents the Ruby programming language and describes how some of its concepts can be seen as analogous to the techniques and patterns described before.
 
-\section{Approaches to Creating Adaptable Software}\label{sec:approaches_to_creating_adaptable_software}
+\section{Approaches to Create Adaptable Software}\label{sec:approaches_to_creating_adaptable_software}
 
-There are two main approaches to making systems adaptable: generative programming approaches and meta-architectures.
+There are two main approaches to make systems adaptable: generative programming approaches and meta-architectures.
 
 Generative programming methods approach the adaptability of a system by using an ontological model representative of this system to automatically create executable artifacts or code skeleton than can be further refined according to different needs.
 
@@ -14,7 +14,7 @@ On the other hand, systems created with a special architecture designed to adapt
 
 \section{Software Product Lines}\label{sec:spl}
 
-The Software Product Lines (SPL) software development paradigm is promoted as means of reducing time to market, increasing productivity, improving quality and gaining cost effectiveness and efficiency through large-scale reuse~\cite{TC06}. Software product line methods (SPLMs) are practices-based, or plan-driven, software development approaches in which a set of software-intensive systems that share a common, managed set of features are produced from a set of re-usable core assets in a predictive, rather than opportunistic way --- meaning artifacts are only created when the need for their use arises, instead of providing generic, reusable components.
+The Software Product Lines (SPL) paradigm is promoted as a means of reducing time to market, increasing productivity, improving quality and gaining cost effectiveness and efficiency through large-scale reuse~\cite{TC06}. Software product line methods (SPLMs) are practices-based, or plan-driven, software development approaches in which a set of software-intensive systems that share a common, managed set of features are produced from a set of re-usable core assets in a predictive, rather than opportunistic way --- meaning artifacts are only created when the need for their use arises, instead of providing generic, reusable components.
 
 \section{Domain-Driven Design}\label{sec:ddd}
 
@@ -29,17 +29,17 @@ A third, informal premise is usually associated with DDD, wherein a collaboratio
 
 \section{Model-Driven Engineering}\label{sec:mda}
 
-Model-Driven Engineering first appeared in 2001~\cite{Mil03} as an answer to the growing complexity system architectures. This growing complexity and the lack of a integrated view ``forced many developers to implement suboptimal solutions that unnecessarily duplicate code, violate key architectural principles, and complicate system evolution and quality assurance''~\cite{Sch06}.
+Model-Driven Engineering first appeared in 2001~\cite{Mil03} as an answer to the growing complexity of system architectures. This growing complexity and the lack of an integrated view ``forced many developers to implement suboptimal solutions that unnecessarily duplicate code, violate key architectural principles, and complicate system evolution and quality assurance''~\cite{Sch06}.
 
-To address these issues, Model-Driven engineering combines \emph{domain-specific modeling languages} (DSMLs) with \emph{transformation engines} and \emph{generators} in order to generate various types of artifacts, such as source code or alternative model definitions.
+To address these issues, Model-Driven engineering combines \emph{domain-specific modeling languages} (DSML) with \emph{transformation engines} and \emph{generators} in order to generate various types of artifacts, such as source code or alternative model definitions.
 
-The usage of DSMLs ensures that the domain model is perfectly captured in terms of syntax and semantics. This guarantees a flatter learning curve as the concepts present in the language are already known by the domain experts. This also helps a broader range of experts, such as system engineers and experienced software architects, ensure that software systems meet user needs.
+The usage of DSML ensures that the domain model is perfectly captured in terms of syntax and semantics. This guarantees a flatter learning curve as the concepts present in the language are already known by the domain experts. This also helps a broader range of experts, such as system engineers and experienced software architects, to ensure that software systems meet user needs.
 
-The ability to synthesize artifacts from models helps ensure the consistency between application implementations and analysis information associated with functional and quality of service requirements captured by models.
+The ability to synthesize artifacts from models helps to ensure the consistency between application implementations and analysis information associated with functional and quality of service requirements captured by models.
 
 \section{Frameworks}\label{sec:frameworks}
 
-Frameworks provide a series of loosely-coupled components created for a specific purpose that provide generic functionality for the creation of software systems. These components can be overridden or specialized in order to create specific functionality. Frameworks can improve developer productivity and improve the quality, reliability and robustness of new software.  Developer productivity is improved by allowing developers to focus on the unique requirements of their application instead of spending time on application infrastructure. XNA~\cite{xna} and RoR~\cite{rubyonrails} are good examples of popular frameworks that aim to cut development time and costs in very different scenarios.
+Frameworks provide a series of loosely-coupled components created for a specific purpose that provide generic functionality for the creation of software systems. These components can be overridden or specialized in order to create specific functionality. Frameworks can improve developer productivity and improve the quality, reliability and robustness of new software.  Developer productivity is improved by allowing developers to focus on the unique requirements of their application instead of spending time on application infrastructure. XNA~\cite{xna} and Ruby on Rails (RoR)~\cite{rubyonrails} are good examples of popular frameworks that aim to cut development time and costs in very different scenarios.
 
 Frameworks can also be used together with code-generation techniques~\cite{DH04, rails_generators} to improve the overall production speed and ease of use.
 
@@ -67,7 +67,7 @@ As stated by the architect Christopher Alexander in~\cite{christopher_alexander_
   ``Each pattern describes a problem which occurs over and over again in our environment, and then describes the core of the solution to that problem, in such a way that you can use this solution a million times over, without ever doing it the same way twice''
 \end{quote}
 
-Despite applying the term \emph{design pattern} to architectural problems, it is possible to transpose these ideas to object-oriented design. As such, a design pattern is, to put it simply, a common solution to a recurring problem.~\cite{gang_of_four} then defines the four essential components of a design pattern:
+Despite applying the term \emph{design pattern} to architectural problems, it is possible to transpose these ideas to object-oriented design. As such, a design pattern is, to put it simply, a common solution to a recurring problem.~\cite{posa_vol1, christopher_alexander_a_pattern_language, gang_of_four} then defines the four essential components of a design pattern:
 
 \begin{itemize}
   \item The \textbf{Name}, which captures the essence of a design pattern and describes it in as few words as possible (one or two, usually); \\
@@ -84,7 +84,7 @@ As such, an end-user is not expected to have any kind of knowledge about program
 
 \subsection{AOM Architecture}\label{sec:aom_architecture}
 
-An Adaptive Object-Model pattern is a system architecture that represents classes, attributes, relationships, and behavior as \emph{metadata}. The system definition is based on instances of model abstractions rather than classes. This allows the modification of these model abstractions in runtime to reflect changes in the domain, effectively modifying the system behavior. As a direct consequence, the system instantly reacts to these changes, making it adaptable to change, without the need for recompiling or redeploying~\cite{YBJ01}. This architectural pattern is akin to the Meta Object Facility (MOF), which main purpose is to provide a metadata management and implementation framework. The basic architecture is divided into four tiers, each one compliant with the higher level\cite{mof}, as depicted in Fig.~\ref{fig:aom_mof_levels}.
+An Adaptive Object-Model pattern is a system architecture that represents classes, attributes, relationships, and behavior as \emph{metadata}. The system definition is based on instances of model abstractions rather than classes. This allows the modification of these model abstractions in runtime to reflect changes in the domain, effectively modifying the system behavior. As a direct consequence, the system instantly reacts to these changes, making it adaptable to change, without the need for recompiling or redeploying~\cite{YBJ01}. This architectural pattern is akin to the Meta Object Facility (MOF), which main purpose is to provide a metadata management and implementation framework. The basic architecture is divided into four tiers, each one compliant with the higher level~\cite{mof}, as depicted in Fig.~\ref{fig:aom_mof_levels}.
 
 \begin{figure}[H]
   \centering
@@ -100,16 +100,16 @@ An Adaptive Object-Model pattern is a system architecture that represents classe
 %  \item M3 (invariant): Meta-model definition (self-compliant, present if the architecture is based on MOF)
 %\end{itemize}
 
-This kind of architecture relies on a series of design patterns: the \textsc{Type-Object} and \textsc{Property} patterns form the basic building blocks whereupon the AOM architecture settles. Despite being extremely simple, they create the fundamental infrastructure able to decouple the model definition from code-level implementation. In addition to these two patterns mentioned, other design patterns which are able to form an AOM architecture will be described, as well as the interactions between them.
+This kind of architecture relies on a series of design patterns: the \textsc{Type-Object} and \textsc{Property} patterns form the basic building blocks whereupon the AOM architecture settles. Despite being extremely simple, they create the fundamental infrastructure able to decouple the model definition from code-level implementation. In addition to these two patterns mentioned, other design patterns that are able to form an AOM architecture will be described, as well as the interactions between them.
 
 \subsubsection{\textsc{Type-Object} Pattern}\label{sec:type-object_pattern}
 
-Object-oriented languages usually structure a program as a set of classes that define the structure and behavior of objects, usually organizing them as a separate class for each object type, which means that any structural change to the model requires code-level modifications. However, variable systems are usually faced with the problem of having a class that will be subclassed by an arbitrary number of specializations. The key to solving this problem is to detach the object definition from the code level and instead define it using meta-data --- generalizing objects and describing their variation as parameters. \textsc{Type-Object} works by splitting a class in two\cite{YBJ01}: the meta-class for the object to be created --- EntityType, and an instance of that class --- Type. Fig. \ref{fig:type-object_pattern} shows the UML class diagram for this design pattern.
+Object-oriented languages usually structure a program as a set of classes that define the structure and behavior of objects, usually organizing them as a separate class for each object type, which means that any structural change to the model requires code-level modifications. However, variable systems are usually faced with the problem of having a class that will be subclassed by an arbitrary number of specializations. The key to solve this problem is to detach the object definition from the code level and instead define it using meta-data --- generalizing objects and describing their variation as parameters. \textsc{Type-Object} works by splitting a class in two~\cite{YBJ01}: the meta-class for the object to be created --- EntityType, and an instance of that class --- Type. Fig.~\ref{fig:type-object_pattern} shows the UML class diagram for this design pattern.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=75mm]{type_object.pdf}
-  \caption[\textsc{Type-Object} pattern]{\textsc{Type-Object} pattern, adapted from \cite{metadata_and_active_object_models}.}
+  \caption[\textsc{Type-Object} pattern]{\textsc{Type-Object} pattern, adapted from~\cite{metadata_and_active_object_models}.}
   \label{fig:type-object_pattern}
 \end{figure}
 
@@ -120,7 +120,7 @@ Similar to the problem solved by the \textsc{Type-Object}, the \textsc{Property}
 \begin{figure}[H]
   \centering
   \includegraphics[width=80mm]{property}
-  \caption[\textsc{Property} pattern]{\textsc{Property} pattern, adapted from \cite{metadata_and_active_object_models}.}
+  \caption[\textsc{Property} pattern]{\textsc{Property} pattern, adapted from~\cite{metadata_and_active_object_models}.}
   \label{fig:property_pattern}
 \end{figure}
 
@@ -137,14 +137,14 @@ Usually a class is modeled with a number of different attributes, representing t
 
 \subsubsection{\textsc{Strategy} and \textsc{Rule Object} Pattern}\label{sec:strategy_pattern}
 
-The original goal of the \textsc{Strategy} pattern is to, given a set of algorithms, encapsulate each one in order to use them interchangeably which allows the easy usage of different strategies to solve different problems\cite{gang_of_four}.
+The original goal of the \textsc{Strategy} pattern is to, given a set of algorithms, encapsulate each one in order to use them interchangeably, which allows the easy usage of different strategies to solve different problems~\cite{gang_of_four}.
 
 As AOM architectures are concerned, this pattern is used to perform user-defined validations for user input, whichever they may be. An example can be found on Fig.~\ref{fig:strategy_pattern}.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=130mm]{strategy}
-  \caption[\textsc{Strategy} pattern, as applied to an AOM architecture]{\textsc{Strategy} pattern, as applied to an AOM architecture, adapted from \cite{gang_of_four}.}
+  \caption[\textsc{Strategy} pattern, as applied to an AOM architecture]{\textsc{Strategy} pattern, as applied to an AOM architecture, adapted from~\cite{gang_of_four}.}
   \label{fig:strategy_pattern}
 \end{figure}
 
@@ -172,7 +172,7 @@ The \textsc{System Memento} Pattern is used when one wishes to preserve the diff
 
 \subsubsection{Relationships Between Entities}\label{sec:relationships_between_entities}
 
-Yoder \textit{et al.}\cite{YJ02} describes the relationships between AOM classes by using the \textsc{Accountability} pattern~\cite{fowler, hay}. The \textsc{Accountability} pattern is used when there is a need to express multiple types of relationships between \emph{parties} (regardless of what their types may be), all of which carry a different meaning\cite{fowler_accountability}. This pattern is shown on Figure~\ref{fig:accountability}.
+Yoder \textit{et al.}~\cite{YJ02} describes the relationships between AOM classes by using the \textsc{Accountability} pattern~\cite{fowler, hay}. The \textsc{Accountability} pattern is used when there is a need to express multiple types of relationships between \emph{parties} (regardless of what their types may be), all of which carry a different meaning~\cite{fowler_accountability}. This pattern is shown on Figure~\ref{fig:accountability}.
 
 \begin{figure}[H]
   \centering
@@ -213,7 +213,7 @@ However, the separate rendering of single properties is not enough to capture th
 
 \subsection{Oghma}\label{sec:oghma}
 
-Oghma is a reference framework for the development of AOM systems, developed in C\#. It allows the rapid creation of highly variable, dynamic systems. It is currently being developed in the context of the doctoral dissertation of Hugo Ferreira. It is a very complete framework able to create, manage and persist AOM systems, from backend to GUI generation, by making extensive use of metaprogramming and metamodeling techniques, by following the general guidelines of the \textsc{Naked Objects} architectural pattern~\cite{naked_objects}.
+Oghma is a reference framework for the development of AOM systems, developed in C\#. It allows the rapid creation of highly variable, dynamic systems. It is currently being developed in the context of the doctoral dissertation of Hugo Ferreira~\cite{ferreira_phd_2010}. It is a very complete framework able to create, manage and persist AOM systems, from backend to GUI generation, by making extensive use of metaprogramming and metamodeling techniques, by following the general guidelines of the \textsc{Naked Objects} architectural pattern~\cite{naked_objects}.
 
 Oghma is thus a concrete implementation of a framework based on the reference architecture to develop AOM-based systems established in~\cite{ferreira_phd_2010}, that balances several design and engineering forces. It supports the creation of models resembling MOF~\cite{mof} and UML~\cite{uml}, and aims at covering the entire cycle of system creation and evolution. As an AOM, it allows the introduction of changes to the system during runtime, thus providing a particular kind of confined end-user development. Fig.~\ref{fig:oghma_core_architecture} show the core architecture for this framework.
 
@@ -248,7 +248,7 @@ Ruby uses metaprogramming techniques extensively --- in fact, metaprogramming is
  end
 \end{lstlisting}
 
-The use of the \verb!attr_accessor! declaration is actually a shortcut method for a \emph{getter} and \emph{setter} for the \verb!name! and \verb!age! attributes of the \verb!Person! class. It does so by automatically creating the necessary methods inside a \verb!class_eval! context --- effectively modifying the class definition by evaluating code in runtime. Figure~\ref{fig:ruby_class_metaprogramming_after} represents the code generated internally by the Ruby interpreter when interpreting Listing~\ref{fig:ruby_class_metaprogramming}:
+The use of the \verb!attr_accessor! declaration is actually a shortcut method for a \emph{getter} and \emph{setter} for the \verb!name! and \verb!age! attributes of the \verb!Person! class. It does so by automatically creating the necessary methods inside a \verb!class_eval! context --- effectively modifying the class definition by evaluating code in runtime. Listing~\ref{fig:ruby_class_metaprogramming_after} represents the code generated internally by the Ruby interpreter when interpreting Listing~\ref{fig:ruby_class_metaprogramming}:
 
 \begin{lstlisting}[language=ruby, float=htb, label=fig:ruby_class_metaprogramming_after, caption=Code generated by Ruby metaprogramming constructs.]
  class Person
@@ -282,6 +282,6 @@ In regards to code generation, the Ruby on Rails framework includes a series of 
 
 \section{Conclusions}\label{sec:sota_conclusions}
 
-The Adaptive Object-Model architectural style can be defined as a metamodeling, object-oriented approach to building software architectures that, by relying on a series of techniques, have the property of being reflective and specially tailored to allow end-users to make modifications to the domain. A series of patterns that make this possible were described, as well as their connection to the Ruby language, on top of which the \emph{escolinhas.pt} platform is built.
+The Adaptive Object-Model architectural style can be defined as a metamodeling, object-oriented approach to build software architectures that, by relying on a series of techniques, have the property of being reflective and specially tailored to allow end-users to make modifications to the domain. A series of patterns that make this possible were described, as well as their connection to the Ruby language, on top of which the \emph{escolinhas.pt} platform is built.
 
 
