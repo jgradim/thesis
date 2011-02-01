@@ -47,17 +47,17 @@ The usage of a \emph{declarative} ACL (\emph{CanCan}) in conjunction with the \t
 Comparing the solution described in \ref{sec:fa_roles_chosen_patterns_rationale} with the previous system, some conclusions can be drawn: by eliminating complex hierarchies and keeping all roles on the same level, \emph{Roles} are easily evolved, as each \emph{Role} is independent from every other one. However, this solution must be be used with some caution, as maintaining constraints between roles becomes difficult: since a \emph{User} rule set consists of several \emph{Roles}, maintaining constraints and preserving the overall subject consistency might become difficult due to conflicting rules. Nevertheless, the ability to easily add new \emph{Roles} and write the appropriate rules (as the example from Listing~\ref{src:} shows) is enough to warrant the use of this solution.
 
 \begin{lstlisting}[language=ruby, float=htb, label=src:cancan_examples, caption=CanCan rule definition example.]
- ...
+ class Ability
+   include CanCan::Ability
  
- if user.is_admin?    # set of rules for users with 'Admin' role associated
-   can :manage, :all
+   if user.is_admin?    # set of rules for users with 'Admin' role associated
+     can :manage, :all
+   end
+   
+   if user.is_guest?    # set of rules for users with no roles associated
+     can :read, [Post, Comment]
+   end
  end
- 
- if user.is_guest?    # set of rules for users with no roles associated
-   can :read, [Post, Comment]
- end
- 
- ...
 \end{lstlisting}
 
 \footnotetext{This ability  is not completely lost. If necessary, \emph{CanCan} can be used to define authorizations based on a User instance (a specific user)}
