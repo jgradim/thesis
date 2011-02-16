@@ -25,8 +25,8 @@
 \usepackage[english]{babel}
 
 %% For the final version, comment next line and uncomment the second line
-\usepackage[provisional,alpharefs]{feupteses}
-%\usepackage[alpharefs]{feupteses}
+%\usepackage[provisional,alpharefs]{feupteses}
+\usepackage[alpharefs]{feupteses}
 
 %% Options:
 %% - portuges: titles, etc in portuguese
@@ -45,7 +45,6 @@
 \usepackage{float}
 \usepackage{subfig}
 \usepackage[final=true,step=1]{microtype}
-%\usepackage{lmodern}
 \usepackage{longtable}
 \usepackage{lscape}
 
@@ -81,7 +80,7 @@
 %% Provide a version number in order to keep track of
 %% thesis versions (it will printed in the footer of most pages)
 
-\version{0.99}
+\version{1.0}
 
 %% Uncomment in the final version in order to make version footer disappear
 \noversiontrue
@@ -121,12 +120,13 @@
 \supervisor{Supervisor}{Hugo Sereno Ferreira}{(Ph.D AbD)}
 
 %% Uncomment committee stuff in the final version
-%\committeetext{Approved in oral examination by the committee:}
-%\committeemember{Chair}{Name of the President}{(Title)}
-%\committeemember{External Examiner}{Name of the Examiner}{(Title)}
-%\committeemember{Supervisor}{Ademar Aguiar}{(Ph.D)}
-%\signature
-%\committeedate{31$^{st}$ July, 2010}
+\committeetext{Approved in oral examination by the committee:}
+\committeemember{Chair}{João Pascoal Faria}{(Ph.D)}
+\committeemember{External Examiner}{António Nestor Ribeiro}{(Ph.D)}
+\committeemember{Supervisor}{Ademar Aguiar}{(Ph.D)}
+\committeemember{Supervisor}{Hugo Ferreira}{(Ph.D AbD)}
+\signature
+\committeedate{11$^{th}$ February, 2011}
 
 %% Specify cover logo (in folder ``figures'')
 \logo{feup-logo.pdf}
@@ -145,7 +145,7 @@
 \StartPrelim
 \begin{singlespace}
   \include{abstract} % the abstract
-  %\include{acknows}  % the acknowledgments
+  \include{acknows}  % the acknowledgments
   \include{quote}    % initial quotation if desired
   \cleardoublepage
   \pdfbookmark[0]{Table of Contents}{contents}

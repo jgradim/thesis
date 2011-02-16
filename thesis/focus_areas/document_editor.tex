@@ -8,7 +8,7 @@ The document editor present in \emph{escolinhas.pt} is one of the core component
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=165mm]{documents_current.pdf}
+  \includegraphics[width=150mm]{documents_current.pdf}
   \caption{Current Documents Model.}
   \label{fig:documents_current}
 \end{figure}
@@ -30,7 +30,7 @@ The solution devised for the \emph{Documents} infrastructure is, as required by 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=65mm]{documents_conceptual.pdf}
+  \includegraphics[width=55mm]{documents_conceptual.pdf}
   \caption{Conceptual Documents Model.}
   \label{fig:documents_conceptual}
 \end{figure}
@@ -97,8 +97,7 @@ Using the aforementioned infrastructure for the document editor, the work necess
 
 Listings \ref{src:block_before} and \ref{src:block_after} show how the work necessary to create a \emph{Block} \texttt{item} has been greatly reduced, while keeping the necessary logic to a minimum. The logic for versioning is now handled by the \texttt{item} \emph{Block} instead of the \texttt{item} itself, which allows its logic and structure to be succinctly described.
 
-\begin{lstlisting}[language=ruby, float=htb, label=src:block_before, caption=Original ``Map'' Block item.]
-
+\begin{lstlisting}[language=ruby, float=h, label=src:block_before, caption=Original ``Map'' Block item.]
 class GoogleMapsMap < ActiveRecord::Base
 
   acts_as_paranoid_manually_versioned
@@ -117,7 +116,6 @@ class GoogleMapsMap < ActiveRecord::Base
   end
 
   def before_update
-  
     self.block.document.head.version += 1
     self.block.document.head.save
 
@@ -127,7 +125,7 @@ class GoogleMapsMap < ActiveRecord::Base
 end
 \end{lstlisting}
 
-\begin{lstlisting}[language=ruby, float=htb, label=src:block_after, caption=Refactored ``Map'' Block item.]
+\begin{lstlisting}[language=ruby, float=h, label=src:block_after, caption=Refactored ``Map'' Block item.]
 class DocumentItem::Map < DocumentItem
 
   attr_accessor :lat, :lng, :map_type, :markers
