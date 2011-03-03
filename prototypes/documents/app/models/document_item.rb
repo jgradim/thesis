@@ -7,6 +7,13 @@ class DocumentItem
   
     self.class.default_values ||= {}
     self.class.default_values.merge(params).each do |k,v|
+      v.map!{ |o|
+        if o.is_a?(Hash) and o.try(:first).try(:first) =~ /DocumentItem/
+          DocumentItem.from_json(o)
+        else
+          o
+        end
+      } if v.is_a?(Array)
       self.send("#{k}=", v)
     end
     
@@ -37,4 +44,5 @@ class DocumentItem
   def to_json(*args, &block)
     "{\"#{self.class}\": #{super}}"
   end
+  
 end
