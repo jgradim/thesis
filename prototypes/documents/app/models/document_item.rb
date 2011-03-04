@@ -5,7 +5,6 @@ class DocumentItem
 
   def initialize(params = {})
   
-    self.class.default_values ||= {}
     self.class.default_values.merge(params).each do |k,v|
       v.map!{ |o|
         if o.is_a?(Hash) and o.try(:first).try(:first) =~ /DocumentItem/
@@ -17,7 +16,6 @@ class DocumentItem
       self.send("#{k}=", v)
     end
     
-    self.class.validations ||= {}
     self.class.validations.each do |k,v|
       throw "invalid value for '#{k}': #{v.inspect}" if not self.send("#{k}") =~ v
     end
@@ -31,18 +29,22 @@ class DocumentItem
   
   # setter for default values
   def self.defaults(attribute, value)
-    self.default_values ||= {}
     self.default_values.merge!({attribute => value})
   end
   
   # setter for validations
   def self.validates(attribute, rule)
-    self.validations ||= {}
     self.validations.merge!({attribute => rule})
   end
 
   def to_json(*args, &block)
     "{\"#{self.class}\": #{super}}"
+  end
+  
+  # initialize inheritable traits
+  def self.inherited(subclass)
+    subclass.default_values ||= {}
+    subclass.validations ||= {}
   end
   
 end
