@@ -37,6 +37,7 @@ class DocumentItem
     self.validations.merge!({attribute => rule})
   end
 
+  # serialize with class name so object can be rebuilt
   def to_json(*args, &block)
     "{\"#{self.class}\": #{super}}"
   end
