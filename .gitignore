@@ -20,7 +20,7 @@ thesis/*.pdf
 thesis/*.toc
 thesis/dia/*~
 prototypes/documents/log/*.log
-prototypes/documents/public/uploads/*
+prototypes/documents/public/uploads
 articles/**/*.aux
 articles/**/*.bbl
 articles/**/*.blg
