@@ -21,7 +21,9 @@ class DocumentItem
     end
     
     self.class.validations.each do |k,v|
-      throw "invalid value for '#{k}': #{v.inspect}" if not self.send("#{k}") =~ v
+      unless self.send("#{k}") =~ v
+        raise DocumentItem::Exceptions::InvalidValue.new("invalid value '#{self.send(k).inspect}' for '#{k}'")
+      end
     end
     
   end
@@ -53,6 +55,11 @@ class DocumentItem
   def self.inherited(subclass)
     subclass.default_values ||= {}
     subclass.validations ||= {}
+  end
+  
+  # exception classes
+  module Exceptions
+    class InvalidValue < Exception; end
   end
   
 end
