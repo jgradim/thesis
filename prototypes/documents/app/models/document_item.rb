@@ -1,5 +1,7 @@
 class DocumentItem
 
+  attr_accessor :block_id # used for file attachments
+
   include InheritableTraits
   traits :default_values, :validations
 
@@ -24,6 +26,7 @@ class DocumentItem
   
   # builder method
   def self.from_json(j)
+    j = JSON.parse(j) if j.is_a?(String)
     j.first.first.constantize.new(j.first.last)
   end
   
@@ -39,7 +42,9 @@ class DocumentItem
 
   # serialize with class name so object can be rebuilt
   def to_json(*args, &block)
-    "{\"#{self.class}\": #{super}}"
+    instance_values = self.instance_values # Remove the @_mounters instance var added by CarrierWave (0.4.1 atm),
+    instance_values.delete("_mounters")    # which contains circular references :(
+    "{\"#{self.class}\": #{instance_values.to_json}}"
   end
   
   # initialize inheritable traits
