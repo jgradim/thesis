@@ -15,6 +15,8 @@ class DocumentItem
           o
         end
       } if v.is_a?(Array)
+      
+      v = v.call if v.is_a?(Proc) # for runtime instead of loadtime evaluations (i18n, current time, etc)
       self.send("#{k}=", v)
     end
     
