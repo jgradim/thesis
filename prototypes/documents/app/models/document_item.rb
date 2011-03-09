@@ -8,6 +8,8 @@ class DocumentItem
   def initialize(params = {})
   
     self.class.default_values.merge(params).each do |k,v|
+      
+      # nested DocumentItem:: objects
       v.map!{ |o|
         if o.is_a?(Hash) and o.try(:first).try(:first) =~ /DocumentItem/
           DocumentItem.from_json(o)
@@ -16,7 +18,9 @@ class DocumentItem
         end
       } if v.is_a?(Array)
       
-      v = v.call if v.is_a?(Proc) # for runtime instead of loadtime evaluations (i18n, current time, etc)
+      # runtime instead of loadtime evaluations (i18n, current time, etc)
+      v = v.call if v.is_a?(Proc)
+      
       self.send("#{k}=", v)
     end
     
