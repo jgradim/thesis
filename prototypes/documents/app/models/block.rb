@@ -1,15 +1,9 @@
 class Block < ActiveRecord::Base
 
-  belongs_to :document
+  belongs_to :document, :touch => true
   acts_as_list :scope => :document
   
-  def item 
-    #i = YAML.load(content)
-    #if i.class.is_a?(String)
-    #  i.class.constantize
-    #  return YAML.load(content)
-    #end
-    #i
+  def item
     j = JSON.parse(self.content)
     DocumentItem.from_json(j)
   end
@@ -31,12 +25,12 @@ class Block < ActiveRecord::Base
   
   def serialize_content
     if self.content and not self.content.is_a?(String)
-      #self.content = YAML.dump(self.content) rescue nil
-      self.content = self.content.serialize
+      self.content = self.content.to_json
     end
   end
   
   def save_document
+    puts "saving block"
     self.document.reload.save!
   end
   
