@@ -12,7 +12,7 @@
 ActiveRecord::Schema.define(:version => 20101116152640) do
 
   create_table "blocks", :force => true do |t|
-    t.text     "content"
+    t.text     "content",     :limit => 2147483647
     t.integer  "position"
     t.integer  "document_id"
     t.datetime "created_at"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20101116152640) do
     t.integer  "version"
     t.integer  "obj_id"
     t.string   "obj_type"
-    t.text     "content"
+    t.text     "content",    :limit => 2147483647
     t.datetime "created_at"
     t.datetime "updated_at"
   end
