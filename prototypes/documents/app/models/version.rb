@@ -1,6 +1,5 @@
 class Version < ActiveRecord::Base
 
-
   #
   ## FINDER METHODS
   def self.one_for(obj, version)
