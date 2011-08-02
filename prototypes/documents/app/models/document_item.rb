@@ -50,9 +50,9 @@ class DocumentItem
 
   # serialize with class name so object can be rebuilt
   def to_json(*args, &block)
-    instance_values = self.instance_values # Remove the @_mounters instance var added by CarrierWave (0.4.1 atm),
-    instance_values.delete("_mounters")    # which contains circular references :(
-    "{\"#{self.class}\": #{instance_values.to_json}}"
+    # Remove the @_mounters instance var added by CarrierWave (0.4.1 atm),
+    # which contains circular references :(
+    "{\"#{self.class}\": #{instance_values.except('_mounters').to_json}}"
   end
   
   # initialize inheritable traits

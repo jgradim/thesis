@@ -30,7 +30,6 @@ class Block < ActiveRecord::Base
   end
   
   def save_document
-    puts "saving block"
     self.document.reload.save!
   end
   
