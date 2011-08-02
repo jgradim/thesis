@@ -30,6 +30,7 @@ module InheritableTraits
           instance_variable_get(ivar)
         )
       end
+      super # fixes "can't dup NilClass error" as AR::Base also defines `included'
     end
   end
 
