@@ -37,7 +37,7 @@ module Versioned
       new_version_number = self.head.version + 1 rescue 1
       serialized_object  = self.to_json(:include => self.class.versioned_associations)
 
-      #Version.create(:obj_id => self.id, :obj_type => self.class.to_s, :content => serialized_object, :version => new_version_number)
+      Version.create(:obj_id => self.id, :obj_type => self.class.to_s, :content => serialized_object, :version => new_version_number)
     end
 
   end
