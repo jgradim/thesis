@@ -2,6 +2,8 @@ class Block < ActiveRecord::Base
 
   belongs_to :document, :touch => true
   acts_as_list :scope => :document
+
+  include Versioned
   
   def item
     j = JSON.parse(self.content)
