@@ -2,17 +2,12 @@ module Versioned
 
   module ClassMethods
 
-    attr_accessor :vam, :va
-    @vam = [:has_many]
-    @va  = []
+    attr_accessor :versioned_associations
 
-    def versioned_association_macros(*macros)
-      @vam = macros
+    def include_in_versioning(*associations)
+      @versioned_associations = associations.compact.uniq || []
     end
-    
-    def versioned_associations(*associations)
-      @va = associations
-    end
+
   end
 
   module InstanceMethods
@@ -39,9 +34,8 @@ module Versioned
     ##
     def create_version
       # select all has_many associations in order to serialize along with itself
-      associations       = self.class.reflect_on_all_associations.select{ |a| self.class.vam.include?(a.macro) }.map(&:name)
       new_version_number = self.head.version + 1 rescue 1
-      serialized_object  = self.to_json(:include => associations)
+      serialized_object  = self.to_json(:include => self.class.versioned_associations)
 
       #Version.create(:obj_id => self.id, :obj_type => self.class.to_s, :content => serialized_object, :version => new_version_number)
     end
@@ -53,7 +47,7 @@ module Versioned
     receiver.send :include, InstanceMethods
 
     receiver.send(:after_save, :create_version)
-    receiver.send(:versioned_association_macros, :has_many)
-    receiver.send(:versioned_associations, nil)
+    receiver.send(:include_in_versioning, nil)
   end
+
 end
