@@ -1,4 +1,4 @@
-class DocumentItem::Paragraph < DocumentItem
+class Serializable::Paragraph < Serializable
   
   attr_accessor :content, :title
   

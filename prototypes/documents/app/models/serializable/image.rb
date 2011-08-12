@@ -1,4 +1,4 @@
-class DocumentItem::Image < DocumentItem
+class Serializable::Image < Serializable
 
   attr_accessor :photo_id
   

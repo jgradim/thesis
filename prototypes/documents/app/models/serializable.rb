@@ -1,4 +1,4 @@
-class DocumentItem
+class Serializable
 
   attr_accessor :block_id # used for file attachments
 

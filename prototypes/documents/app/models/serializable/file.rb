@@ -1,4 +1,4 @@
-class DocumentItem::File < DocumentItem
+class Serializable::File < Serializable
 
   attr_accessor :attachment_file_id
   

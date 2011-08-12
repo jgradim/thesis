@@ -1,4 +1,4 @@
-class DocumentItem::Marker < DocumentItem
+class Serializable::Marker < Serializable
 
   attr_accessor :lat, :lng, :title, :icon
   

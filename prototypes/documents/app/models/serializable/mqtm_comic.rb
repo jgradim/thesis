@@ -1,4 +1,4 @@
-class DocumentItem::MqtmComic < DocumentItem
+class Serializable::MqtmComic < Serializable
 
   attr_accessor :mqtm_history_id
   

@@ -1,4 +1,4 @@
-class DocumentItem::YoutubeVideo < DocumentItem
+class Serializable::YoutubeVideo < Serializable
 
   attr_accessor :video_id
   

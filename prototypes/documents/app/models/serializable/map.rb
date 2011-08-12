@@ -1,4 +1,4 @@
-class DocumentItem::Map < DocumentItem
+class Serializable::Map < Serializable
 
   attr_accessor :lat, :lng, :map_type, :markers
   

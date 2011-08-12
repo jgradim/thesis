@@ -1,4 +1,4 @@
-class DocumentItem::Drawing < DocumentItem
+class Serializable::Drawing < Serializable
 
   attr_accessor :content
   
