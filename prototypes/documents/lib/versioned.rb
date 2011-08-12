@@ -1,11 +1,17 @@
 module Versioned
 
+  EXCLUDE_FROM_REVERT = %w(id created_at updated_at)
+
   module ClassMethods
 
-    attr_accessor :versioned_associations
+    attr_reader :versioned_associations, :triggered_associations
 
     def include_in_versioning(*associations)
       @versioned_associations = associations.compact.uniq || []
+    end
+
+    def trigger_version_in(*associations)
+      @triggered_associations = associations.compact.uniq || []
     end
 
   end
