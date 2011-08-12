@@ -3,9 +3,14 @@ class Block < ActiveRecord::Base
   belongs_to :document, :touch => true
   acts_as_list :scope => :document
 
+  def initialize
+    super
+    @item = item
+  end
+
   def item
     j = JSON.parse(self.content)
-    DocumentItem.from_json(j)
+    Serializable.from_json(j)
   end
   def item=(item)
     self.content = item

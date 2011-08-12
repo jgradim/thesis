@@ -10,17 +10,16 @@ class MementoTest < ActiveSupport::TestCase
     assert_equal doc.head.version,  1, "Document head version should equal 1"
 
     puts "before block create"
-    doc.blocks.create :content => DocumentItem::Paragraph.new(:title => 'Paragraph 1');
-    doc.blocks.create :content => DocumentItem::Paragraph.new(:title => 'Paragraph 2');
-    doc.blocks.create :content => DocumentItem::Paragraph.new(:title => 'Paragraph 3');
+    b1 = doc.blocks.create :content => Serializable::Paragraph.new(:title => 'Paragraph 1');
+    b2 = doc.blocks.create :content => Serializable::Paragraph.new(:title => 'Paragraph 2');
+    b3 = doc.blocks.create :content => Serializable::Paragraph.new(:title => 'Paragraph 3');
 
     assert_equal doc.versions.size, 4, "Document should have 4 version"
     assert_equal doc.head.version,  4, "Document head version should equal 4"
 
     Document.without_version do
-      b = doc.blocks.last
-      b.item.title = 'Paragraph 3, no new version!'
-      b.save
+      b3.item.title = 'Paragraph 3, no new version!'
+      b3.save
     end
 
     assert_equal doc.versions.size, 4, "Document should have 4 version"
