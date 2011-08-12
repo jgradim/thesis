@@ -7,7 +7,15 @@ development:
   user: root
   password: 
   encoding: utf8
-  
+
+test:
+  adapter: mysql2
+  database: documents_prototype_test
+  host: localhost
+  user: root
+  password:
+  encoding: utf8
+
 production:
   adapter: mysql2
   database: documents_prototype
