@@ -3,17 +3,19 @@ class Block < ActiveRecord::Base
   belongs_to :document, :touch => true
   acts_as_list :scope => :document
 
-  def initialize
-    super
-    @item = item
+  def initialize(attributes = nil)
+    super(attributes)
+    @_item = self.item rescue attributes[:content]
   end
 
   def item
+    return @_item if @_item
     j = JSON.parse(self.content)
-    Serializable.from_json(j)
+    @_item = Serializable.from_json(j)
   end
   def item=(item)
-    self.content = item
+    self.content = item.to_json
+    @_item = item
   end
 
   # we can't have @block.destroy calling after_save callbacks, it would mess up
@@ -28,9 +30,8 @@ class Block < ActiveRecord::Base
   before_save :serialize_content
 
   def serialize_content
-    if self.content and not self.content.is_a?(String)
-      self.content = self.content.to_json
-    end
+    self.content = @_item.to_json if @_item.is_a?(Serializable)
   end
+
 
 end
