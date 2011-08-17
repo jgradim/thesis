@@ -25,6 +25,7 @@ Rails::Initializer.run do |config|
   config.gem 'acts_as_list'
   config.gem 'yajl-ruby', :lib => 'yajl'
   config.gem 'carrierwave', :version => '~> 0.4.10'
+  config.gem 'turn'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
