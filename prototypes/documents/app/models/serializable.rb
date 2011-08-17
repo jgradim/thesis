@@ -38,6 +38,20 @@ class Serializable
     j.first.first.constantize.new(j.first.last)
   end
 
+  # reference to AR models
+  # automatically creates attr_accessor and methods for retrieval
+  def self.references_ar(*models)
+    models.each do |ar_model|
+      foreign_key = "#{ar_model.to_s}_id".to_sym
+      class_eval do
+        attr_accessor foreign_key
+        define_method ar_model do
+          ar_model.to_s.classify.constantize.find(instance_variable_get("@#{foreign_key.to_s}"))
+        end
+      end
+    end
+  end
+
   # setter for default values
   def self.defaults(attribute, value)
     self.default_values.merge!({attribute => value})
