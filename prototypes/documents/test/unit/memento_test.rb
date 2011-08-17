@@ -9,7 +9,6 @@ class MementoTest < ActiveSupport::TestCase
     assert_equal doc.versions.size, 1, "Document should have 1 version"
     assert_equal doc.head.version,  1, "Document head version should equal 1"
 
-    puts "before block create"
     b1 = doc.blocks.create :content => Serializable::Paragraph.new(:title => 'Paragraph 1');
     b2 = doc.blocks.create :content => Serializable::Paragraph.new(:title => 'Paragraph 2');
     b3 = doc.blocks.create :content => Serializable::Paragraph.new(:title => 'Paragraph 3');

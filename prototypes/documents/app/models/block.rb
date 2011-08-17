@@ -8,6 +8,20 @@ class Block < ActiveRecord::Base
     @_item = self.item rescue attributes[:content]
   end
 
+  # use to create blocks and set the build_id
+  # blocks should only be created using this method
+  def self.make(attributes)
+    block = nil
+    Document.without_version do
+      block = Block.create(attributes)
+    end
+    if block.item
+      block.item.block_id = block.id
+      block.save
+    end
+    block.reload
+  end
+
   def item
     return @_item if @_item
     j = JSON.parse(self.content)
