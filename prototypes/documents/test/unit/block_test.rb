@@ -36,14 +36,15 @@ class BlockTest < ActiveSupport::TestCase
 
     assert_equal b.id, b.item.block_id, "Block and item should have the same id"
 
-    b.item.image = File.open('README')
-
-    assert_not_nil b.item.image
-    assert_not_nil b.item.image.url
-
+    # try to upload an invalid file
+    b.item.image = File.open('config/environment.rb')
     b.item.image.store!
+    assert_nil b.item.image.url
 
-    assert_not_nil b.item.static_image_url
+    # try to upload a valid file
+    b.item.image = File.open('public/images/rails.png')
+    b.item.image.store!
+    assert_not_nil b.item.image.url
 
   end
 

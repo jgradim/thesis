@@ -3,7 +3,7 @@ class Serializable
   attr_accessor :block_id # used for file attachments
 
   include InheritableTraits
-  traits :default_values, :validations
+  traits :default_values, :validations, :allowed_extensions
 
   def initialize(params = {})
 
@@ -41,6 +41,7 @@ class Serializable
   # reference to AR models
   # automatically creates attr_accessor and methods for retrieval
   def self.references_ar(*models)
+
     models.each do |ar_model|
       foreign_key = "#{ar_model.to_s}_id".to_sym
       class_eval do
@@ -50,6 +51,16 @@ class Serializable
         end
       end
     end
+
+  end
+
+  def self.attaches(attachment_name, opts = {})
+
+    extend CarrierWave::Mount
+    attr_accessor "static_#{attachment_name.to_s}_url"
+    mount_uploader attachment_name, DocumentUploader
+    self.allowed_extensions = opts[:allowed_extensions] if opts[:allowed_extensions]
+
   end
 
   # setter for default values
@@ -73,6 +84,7 @@ class Serializable
   def self.inherited(subclass)
     subclass.default_values ||= {}
     subclass.validations ||= {}
+    subclass.allowed_extensions ||= []
   end
 
   # exception classes
