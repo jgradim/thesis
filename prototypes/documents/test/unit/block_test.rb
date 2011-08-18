@@ -22,7 +22,7 @@ class BlockTest < ActiveSupport::TestCase
 
   end
 
-  test "attachments in Serializable objects" do
+  test "versions creation and #block.item.block_id with Block#make method" do
 
     d = Document.create :title => 'test document'
 
@@ -32,9 +32,16 @@ class BlockTest < ActiveSupport::TestCase
     b = d.blocks.make :content => Serializable::Drawing.new
 
     assert_equal d.versions.size, 2, "Document should have 2 versions"    # Block.build should only create 1 version in the document
-    assert_equal d.head.version,  2, "Document head version should be 2" # but set the right block_id in its item
+    assert_equal d.head.version,  2, "Document head version should be 2"  # but set the right block_id in its item
 
     assert_equal b.id, b.item.block_id, "Block and item should have the same id"
+
+  end
+
+  test "attachments in Serializable objects" do
+
+    d = Document.create :title => 'test document'
+    b = d.blocks.make :content => Serializable::Drawing.new
 
     # try to upload an invalid file
     b.item.image = File.open('config/environment.rb')
