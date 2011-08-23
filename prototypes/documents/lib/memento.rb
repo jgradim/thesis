@@ -24,10 +24,8 @@ module Memento #:nodoc:
       @dont_keep_memento = true
     end
 
-    #
     # Allows saving a version without creating a memento
-    #
-    ############################################################################
+    #####################################################
     def without_version(&block)
       class_eval do
         CALLBACKS.each do |callback_name|

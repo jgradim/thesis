@@ -106,8 +106,6 @@ class Serializable
 
   def store_attachments(params = {})
     self.class.attrs_with_storage.each do |att|
-      puts "self.#{att}: #{self.send(att).inspect}"
-      puts "self.#{att}: #{self.send(att)}"
       self.send(att).store!
     end
   end
