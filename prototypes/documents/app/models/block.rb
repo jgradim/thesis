@@ -10,16 +10,26 @@ class Block < ActiveRecord::Base
 
   # use to create blocks and set the build_id
   # blocks should only be created using this method
-  def self.make(attributes)
+  def self.make(params)
+
+    block_params = { :document_id => params[:document_id] }
+    item_params  = params[:block]
+
     block = nil
     Document.without_version do
-      block = Block.create(attributes)
+      block = Block.create(block_params)
+      block.build_item(item_params)
+      block.save!
     end
-    if block.item
-      block.item.block_id = block.id
-      block.save
-    end
+
     block.reload
+  end
+
+  def build_item(params)
+    item = params[:type].classify.constantize.new(params[:params])
+    item.block_id = self.id
+    item.store_attachments
+    @_item = item
   end
 
   def item
@@ -36,7 +46,7 @@ class Block < ActiveRecord::Base
   # the versions creation
   def destroy
     d = self.document
-    self.delete
+    Block.delete(self.id)
     d.reload.save!
   end
 

@@ -15,5 +15,7 @@
 
 <%= render :partial => 'blocks/edit', :collection => @document.blocks %>
 
+<%= render :partial => 'blocks/new', :object => Serializable::Scratch.new %>
+
 <%= link_to 'Show', @document %> |
 <%= link_to 'Back', documents_path %>

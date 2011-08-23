@@ -1,5 +1,5 @@
-<% form_for edit do |f| -%>
-  <%= hidden_field_tag 'block[type]', edit.item.class.to_s.tableize %>
-  <%= render :partial => "#{edit.item.class.to_s.tableize}/edit", :object => edit.item %>
-  <%= f.submit 'edit' %>
-<% end -%>
+<% form_tag document_block_path(@document, edit), :multipart => true, :method => :put do %>
+  <%= block_params_type(edit.item) %>
+  <%= block_partial(edit.item) %>
+  <%= submit_tag 'edit' %>
+<% end %>
