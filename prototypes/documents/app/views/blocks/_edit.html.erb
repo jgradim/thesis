@@ -1,4 +1,4 @@
-<% form_tag document_block_path(@document, edit), :multipart => true, :method => :put do %>
+<% form_tag document_block_path(@document, edit, :format => :js), :multipart => true, :method => :put, :class => 'block-form'  do %>
   <%= block_params_type(edit.item) %>
   <%= block_partial(edit.item) %>
   <%= submit_tag 'edit' %>

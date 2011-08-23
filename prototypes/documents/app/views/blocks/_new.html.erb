@@ -1,4 +1,4 @@
-<% form_tag document_blocks_path(@document), :multipart => true do %>
+<% form_tag document_blocks_path(@document, :format => :js), :multipart => true, :class => 'block-form' do %>
   <%= block_params_type(new) %>
   <%= block_partial(new) %>
   <%= submit_tag 'create' %>
