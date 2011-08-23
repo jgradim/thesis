@@ -12,17 +12,19 @@ class Block < ActiveRecord::Base
   # blocks should only be created using this method
   def self.make(params)
 
-    block_params = { :document_id => params[:document_id] }
-    item_params  = params[:block]
+    Block.transaction do
+      block_params = { :document_id => params[:document_id] }
+      item_params  = params[:block]
 
-    block = nil
-    Document.without_version do
-      block = Block.create(block_params)
-      block.build_item(item_params)
-      block.save!
+      block = nil
+      Document.without_version do
+        block = Block.create(block_params)
+        block.build_item(item_params)
+        block.save!
+      end
+
+      block.reload
     end
-
-    block.reload
   end
 
   def build_item(params)

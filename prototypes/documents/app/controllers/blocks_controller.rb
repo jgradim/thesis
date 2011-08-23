@@ -1,5 +1,12 @@
 class BlocksController < ApplicationController
 
+  rescue_from Exception do |e|
+    respond_to do |format|
+      format.html { flash[:error] = "Ooops" }
+      format.js   { render :js => "alert('Oooops');" }
+    end
+  end
+
   def create
     @document = Document.find(params[:document_id])
     Block.make(params)
