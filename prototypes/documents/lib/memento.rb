@@ -8,6 +8,10 @@ module Memento #:nodoc:
 
     attr_reader :versioned_associations, :triggered_associations, :dont_keep_memento
 
+    #
+    # CONFIGURATION CLASS METHODS
+    #
+    ############################################################################
     def memento_includes(*associations)
       @versioned_associations = associations.compact.uniq || []
     end
@@ -23,7 +27,7 @@ module Memento #:nodoc:
     #
     # Allows saving a version without creating a memento
     #
-    ##
+    ############################################################################
     def without_version(&block)
       class_eval do
         CALLBACKS.each do |callback_name|
@@ -90,8 +94,6 @@ module Memento #:nodoc:
 
           versioned_association_class = versioned_association.to_s.classify.constantize
 
-          puts "#{current_ids}, #{versioned_ids}, #{ids_to_keep}, #{ids_to_delete}, #{ids_to_create}, #{versioned_association_class}"
-
           # delete associated objects
           versioned_association_class.find(ids_to_delete).map(&:destroy)
 
@@ -99,7 +101,13 @@ module Memento #:nodoc:
           ids_to_keep.each do |id|
             to_keep = versioned_association_objects.select{ |o| o["id"] == id }.first.except(*Memento::EXCLUDE_FROM_REVERT)
 
-            versioned_association_class.find(id).update_attributes(to_keep)
+            #
+            obj = versioned_association_class.find(id)
+            if obj.respond_to?(:revert)
+              obj.revert(v)
+            else
+              obj.update_attributes(to_keep)
+            end
           end
 
           # create associated objects
