@@ -19,9 +19,10 @@ class Block < ActiveRecord::Base
       block = nil
       Document.without_version do
         block = Block.create(block_params)
-        block.build_item(item_params)
-        block.save!
       end
+
+      block.build_item(item_params)
+      block.save!
 
       block.reload
     end
