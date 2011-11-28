@@ -4,6 +4,6 @@ class Serializable::Scratch < Serializable
   #mount_uploader :scratch_uploader
   #attr_accessor :static_attachment_url
   attaches :source_file,
-           :allowed_extensions => %(sb)
+           :allowed_extensions => %w(sb)
 
 end

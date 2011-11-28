@@ -23,7 +23,7 @@ class Serializable
       } if v.is_a?(Array)
 
       # runtime instead of loadtime evaluations (i18n, current time, etc)
-      v = v.call if v.is_a?(Proc)
+      v = v.call if v.respond_to?(:call)
 
       self.send("#{k}=", v)
     end
@@ -73,6 +73,8 @@ class Serializable
     mount_uploader attachment_name, DocumentUploader
     self.allowed_extensions = opts[:allowed_extensions] if opts[:allowed_extensions]
 
+    validates
+
   end
 
   # setter for default values
@@ -110,10 +112,19 @@ class Serializable
     end
   end
 
-  #
   # HELPER METHODS
   #
   ############################################################################
+
+  def valid?
+    self.class.validations.each do |k,v|
+      return false if not self.send("#{k}") =~ v
+    end
+    self.class.attrs_with_storage.each do |attr|
+      return false if self.send(attr) and not self.send(attr).cached? 
+    end
+    true
+  end
 
   # initialize inheritable traits
   def self.inherited(subclass)

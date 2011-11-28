@@ -4,6 +4,6 @@ class Serializable::Drawing < Serializable
 
   # drawing png
   attaches :image,
-           :allowed_extensions => %(png)
+           :allowed_extensions => %w(png)
 
 end
